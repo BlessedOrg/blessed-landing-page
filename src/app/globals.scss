@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 29 29 27;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+//flowbite overwrite
+
+* {
+  --tw-ring-color: rgb(0 0 0 / 0) !important;
+  --tw-ring-opacity: 0 !important;
+}
