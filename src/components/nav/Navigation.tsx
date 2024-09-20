@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import { MobileNav } from "@/components/nav/MobileNav";
-import { GrClose } from "react-icons/gr";
 import { AuthModal } from "@/components/authModal/AuthModal";
 import {
   DropdownMenu,
@@ -12,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useUserContext } from "@/store/UserContext";
 import { Button } from "@/components/ui/button";
 import { dashboardUrl } from "@/variables/varaibles";
@@ -75,7 +73,7 @@ export const Navigation = () => {
       </div>
 
       <button onClick={onNavToggle} className="lg:hidden text-2xl">
-        {isMobileNavOpen ? <GrClose /> : <GiHamburgerMenu />}
+        {isMobileNavOpen ? <X /> : <Menu />}
       </button>
       <MobileNav isOpen={isMobileNavOpen} />
     </nav>
