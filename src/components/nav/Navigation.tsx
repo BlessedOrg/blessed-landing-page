@@ -1,44 +1,81 @@
 "use client";
 import Image from "next/image";
-import { Button, Dropdown } from "flowbite-react";
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import { MobileNav } from "@/components/nav/MobileNav";
-import { GrClose } from "react-icons/gr";
+import { AuthModal } from "@/components/authModal/AuthModal";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useUserContext } from "@/store/UserContext";
+import { Button } from "@/components/ui/button";
+import { dashboardUrl } from "@/variables/varaibles";
 
 export const Navigation = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const onNavToggle = () => {
-    setIsMobileNavOpen(prev => !prev);
-  }
-  return <nav className="py-5 lg:py-8 px-4 lg:px-6 flex justify-between w-full">
-    <Image src={"/logo.svg"} alt="logo blessed" height={36} width={100} className="w-[100px] h-auto" />
+    setIsMobileNavOpen((prev) => !prev);
+  };
+  const { isLoggedIn, email } = useUserContext();
 
-    <div className="gap-4 items-center hidden lg:flex">
-      <Dropdown label="Product" inline>
-        <Dropdown.Item>Dashboard</Dropdown.Item>
-        <Dropdown.Item>Settings</Dropdown.Item>
-        <Dropdown.Item>Earnings</Dropdown.Item>
-      </Dropdown>
+  return (
+    <nav className="py-5 lg:py-8 px-4 lg:px-6 flex justify-between w-full">
+      <Image src={"/logo.svg"} alt="logo blessed" height={36} width={100} className="w-[100px] h-auto" />
 
-      <Dropdown label="Resources" inline>
-        <Dropdown.Item>Dashboard</Dropdown.Item>
-        <Dropdown.Item>Settings</Dropdown.Item>
-        <Dropdown.Item>Earnings</Dropdown.Item>
-      </Dropdown>
+      <div className="gap-8 items-center hidden lg:flex">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-2">
+            Product <ChevronDown />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
-      <Link href={"/pricing"}>Pricing</Link>
-    </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-2">
+            Resources <ChevronDown />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
-    <div className="lg:flex gap-4 items-center hidden">
-      <Link href={"/docs"} className="text-md">Docs</Link>
-      <button className="text-md">Log in</button>
-      <Button pill className="text-black bg-primary-500 hover:!bg-primary-600 !font-bold">Start for free</Button>
-    </div>
+        <Link href={"/pricing"}>Pricing</Link>
+      </div>
 
-    <button onClick={onNavToggle} className="lg:hidden text-2xl">{isMobileNavOpen ? <GrClose />: <GiHamburgerMenu />}</button>
+      <div className="lg:flex gap-4 items-center hidden">
+        <Link href={"/docs"} className="text-md">
+          Docs
+        </Link>
 
-    <MobileNav isOpen={isMobileNavOpen}/>
-  </nav>;
+        {!isLoggedIn && (
+          <>
+            <AuthModal type="login" />
+            <AuthModal type="onboarding" />
+          </>
+        )}
+        {isLoggedIn && (
+          <Button variant="green" className="rounded-full" size="lg" asChild>
+            <Link href={`${dashboardUrl}`}>Dashboard</Link>
+          </Button>
+        )}
+      </div>
+
+      <button onClick={onNavToggle} className="lg:hidden text-2xl">
+        {isMobileNavOpen ? <X /> : <Menu />}
+      </button>
+      <MobileNav isOpen={isMobileNavOpen} />
+    </nav>
+  );
 };

@@ -6,6 +6,7 @@
 .pnp.js
 .yarn/install-state.gz
 yarn.lock
+bun.lockb
 # testing
 /coverage
 
@@ -41,5 +42,6 @@ next-env.d.ts
 
 .idea/*
 
-# creds
+# rest
 1password-credentials.json
+.prettierrc
