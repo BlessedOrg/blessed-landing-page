@@ -1,10 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { toast } from "react-toastify";
-import { Button, TextInput } from "flowbite-react";
-import Image from "next/image";
-
 
 export const EntranceForm = () => {
   // const [enteredToEvent, setEnteredToEvent] = useState(false);
