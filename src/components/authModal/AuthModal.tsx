@@ -60,6 +60,8 @@ export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
       } else {
         setCookie("accessToken", type === "login" ? data?.newSessionData?.accessToken : data.accessToken, {
           maxAge: 60 * 60 * 24 * 2,
+          sameSite: "none",
+          secure: true,
         });
         window.location.href = `${dashboardUrl}?token=${type === "login" ? data?.newSessionData?.accessToken : data.accessToken}`;
         toast("Successfully logged in!", { type: "success" });
