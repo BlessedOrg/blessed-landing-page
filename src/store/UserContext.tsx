@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import useSWR from "swr";
-import { fetcher } from "../requests/requests";
+import { fetcherWithToken } from "../requests/requests";
 import { apiUrl } from "@/variables/varaibles";
 
 interface IProps {
@@ -35,7 +35,7 @@ const UserContextProvider = ({ children }: IProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(defaultState);
 
-  const { data, mutate, isLoading } = useSWR(`${apiUrl}/api/account/me`, fetcher);
+  const { data, mutate, isLoading } = useSWR(`${apiUrl}/api/account/me`, fetcherWithToken);
 
   useEffect(() => {
     if (!data?.error && data?.id) {
