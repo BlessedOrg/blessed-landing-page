@@ -38,7 +38,7 @@ const UserContextProvider = ({ children }: IProps) => {
   const { data, mutate, isLoading } = useSWR(`${apiUrl}/api/account/me`, fetcher);
 
   useEffect(() => {
-    if (data) {
+    if (!data?.error && data?.id) {
       setUserData(data);
       setIsLoggedIn(true);
     } else {
