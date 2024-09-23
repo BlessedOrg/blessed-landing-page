@@ -61,8 +61,8 @@ export const Navigation = () => {
 
         {!isLoggedIn && (
           <>
-            <AuthModal type="login" />
-            <AuthModal type="onboarding" />
+            <AuthModal authType="login" />
+            <AuthModal authType="onboarding" />
           </>
         )}
         {isLoggedIn && (

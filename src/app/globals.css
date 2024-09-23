@@ -60,3 +60,20 @@
     font-family: "TT Bluescreens";
   }
 }
+
+
+/*Animations*/
+
+/*loading icon*/
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+#arrow-top-arc, #arrow-top-head {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+#arrow-bottom-arc, #arrow-bottom-head {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
