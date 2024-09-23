@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
+import { Card } from "@/components/ui/card";
 
 export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
       });
       const data = await res.json();
       if (res.status !== 200) {
-        toast(`Something went wrong: ${data?.message || res.statusText}`, { type: "error" });
+        toast(`Error: ${data?.message || res.statusText}`, { type: "error" });
       } else {
         toast("Successfully send verification code, please check your inbox!", { type: "success" });
         setEmailSent(true);
@@ -60,8 +61,6 @@ export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
       } else {
         setCookie("accessToken", type === "login" ? data?.newSessionData?.accessToken : data.accessToken, {
           maxAge: 60 * 60 * 24 * 2,
-          sameSite: "none",
-          secure: true,
         });
         window.location.href = `${dashboardUrl}?token=${type === "login" ? data?.newSessionData?.accessToken : data.accessToken}`;
         toast("Successfully logged in!", { type: "success" });
@@ -69,12 +68,29 @@ export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
     } catch (e) {
       toast(`Something went wrong: ${e?.message}`, { type: "error" });
     }
+    onClearStates();
     setIsOpen(false);
     setIsLoading(false);
   };
 
+  const onClearStates = () => {
+    setCode(null);
+    setIsLoading(false);
+    setEmail("");
+    setEmailSent(false);
+  };
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        if (!open) {
+          onClearStates();
+          setIsOpen(false);
+        } else {
+          setIsOpen(open);
+        }
+      }}
+    >
       <DialogTrigger asChild={type === "onboarding"}>
         {type === "login" ? (
           "Log in"
@@ -84,62 +100,83 @@ export const AuthModal = ({ type }: { type: "onboarding" | "login" }) => {
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[350px]">
         <DialogHeader>
-          <DialogTitle>{type !== "login" ? "Sign up" : "Log in"}</DialogTitle>
-          <DialogDescription>Enter your email below to {type !== "login" ? "Sign up" : "Log in"}</DialogDescription>
+          <DialogTitle className="text-center text-sm font-semibold uppercase">
+            {type !== "login" ? "HELLO, GREAT TO SEE YOU HERE!" : "Log in"}
+          </DialogTitle>
+          <DialogDescription className="text-center font-bold text-5xl text-black uppercase font-ttBluescreens px-6">
+            {type !== "login" ? "Let’s Get You Set Up with Blessed" : "Enter your email to log in"}
+          </DialogDescription>
         </DialogHeader>
         {!emailSent && (
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="email" className="text-right">
-                Email
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="user@blessed.fan"
-                className="col-span-3"
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
+          <div className="flex flex-col gap-4">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="user@blessed.fan"
+              className="col-span-3"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <Card className="bg-yellow-500 !p-5">
+              <span>
+                <span className="font-semibold">We’ll send you a quick verification code</span>, so keep an eye on your
+                inbox.
+              </span>
+            </Card>
           </div>
         )}
         {emailSent && (
-          <div className="w-full flex justify-center">
-            <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS} onChange={(value) => setCode(value)}>
-              <InputOTPGroup>
-                <InputOTPSlot index={0} />
-                <InputOTPSlot index={1} />
-                <InputOTPSlot index={2} />
-                <InputOTPSlot index={3} />
-                <InputOTPSlot index={4} />
-              </InputOTPGroup>
-            </InputOTP>
+          <div className="flex flex-col gap-4 w-full">
+            <Label htmlFor="verificationCode" className="font-semibold">
+              Verification code
+            </Label>
+
+            <div className="w-full flex justify-center">
+              <InputOTP
+                maxLength={6}
+                pattern={REGEXP_ONLY_DIGITS}
+                onChange={(value) => setCode(value)}
+                disabled={isLoading}
+              >
+                <InputOTPGroup>
+                  <InputOTPSlot index={0} />
+                  <InputOTPSlot index={1} />
+                  <InputOTPSlot index={2} />
+                  <InputOTPSlot index={3} />
+                  <InputOTPSlot index={4} />
+                </InputOTPGroup>
+              </InputOTP>
+            </div>
+            <Card className="bg-yellow-500 !p-5">
+              <span className="font-semibold">Enter the 5-digit code we verify your account.</span>
+            </Card>
           </div>
         )}
-        <DialogFooter>
+        <DialogFooter className="flex !justify-center">
           {!emailSent && (
-            <Button onClick={onEmailSubmit} isLoading={isLoading}>
-              {type !== "login" ? "Sign up" : "Log in"}
+            <Button
+              onClick={onEmailSubmit}
+              isLoading={isLoading}
+              variant="green"
+              size="xl"
+              className="rounded-full px-8 min-w-[180px]"
+            >
+              {type !== "login" ? "Let's go" : "Log in"}
             </Button>
           )}
           {emailSent && (
-            <div className="flex gap-2 w-full justify-between">
-              <Button
-                onClick={() => {
-                  setCode(null);
-                  setIsLoading(false);
-                  setEmail("");
-                  setEmailSent(false);
-                }}
-              >
-                Cancel
-              </Button>
-              <Button onClick={onCodeSubmit} disabled={`${code}`?.length !== 5} isLoading={isLoading}>
-                Confirm code
-              </Button>
-            </div>
+            <Button
+              onClick={onCodeSubmit}
+              disabled={`${code}`?.length !== 5}
+              isLoading={isLoading}
+              variant="green"
+              size="xl"
+              className="rounded-full px-8 min-w-[180px]"
+            >
+              Confirm code
+            </Button>
           )}
         </DialogFooter>
       </DialogContent>
