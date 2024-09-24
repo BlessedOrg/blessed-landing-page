@@ -55,7 +55,7 @@ export const Navigation = () => {
       </div>
 
       <div className="lg:flex gap-4 items-center hidden">
-        <Link href={"/docs"} className="text-md">
+        <Link href={"https://docs.blessed.fan/"} className="text-md">
           Docs
         </Link>
 
