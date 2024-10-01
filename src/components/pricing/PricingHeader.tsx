@@ -92,6 +92,7 @@ export const PricingHeader = () => {
             <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
               Contact us
             </Button>
+
           </div>
         </div>
       </div>

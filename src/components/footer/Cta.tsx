@@ -1,5 +1,7 @@
-import { Button } from "flowbite-react";
+"use client";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { dashboardUrl } from "@/variables/varaibles";
 
 
 
@@ -12,11 +14,17 @@ export const Cta = () => {
         <div className="flex flex-col gap-6 md:flex-row justify-between items-center">
           <div className="flex flex-col gap-4">
             
-            <h2 className="font-bold uppercase text-3xl md:text-6xl text-left">How you manage your <span className="text-[#FFA500]">Tickets</span> matters</h2>
+          <h2 className="font-bold uppercase text-[96px] leading-[88px] md:text-6xl text-left">
+  How you manage your <span className="text-[#FFA500]">Tickets</span> matters
+            </h2>
+
           
             <p className="text-left">Join now and start building amazing experiences. Or explore <Link href={"/"} className="underline">our docs</Link>.</p>
           </div>
-            <Button pill className="text-black bg-primary-500 hover:!bg-primary-600 !font-bold w-[259px] h-[56px] flex items-center justify-center">View use cases</Button>
+         
+           <Button variant="green" className="rounded-full" size="lg" asChild>
+            <Link href={`${dashboardUrl}`}>Try Blessed today</Link>
+          </Button>
       </div>
 
       </div>

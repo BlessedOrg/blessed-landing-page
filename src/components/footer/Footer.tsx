@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+
 export const Footer = () => {
   return (
     <div className="w-full bg-[rgba(239,239,239,1)]">
@@ -11,26 +14,48 @@ export const Footer = () => {
 
    
             <div className="flex gap-40">
-       
-              <div className="flex flex-col gap-4">
-                <span className="font-bold">Product</span>
-                <span>Overview</span>
-                <span>What’s new</span>
-                <span>Guides & tutorials</span>
-                <span>Developer API</span>
-                <span>Docs</span>
-                <span>Pricing</span>
-              </div>
+            <div className="flex flex-col gap-4">
+  <span className="font-bold">Product</span>
+  <span>
+    <Link href="/overview">Overview</Link>
+  </span>
+  <span>
+    <Link href="/whats_new">What’s new</Link>
+  </span>
+  <span>
+    <Link href="/guides-tutorials">Guides & tutorials</Link>
+  </span>
+  <span>
+    <Link href="/developer-api">Developer API</Link>
+  </span>
+  <span>
+    <Link href="/docs">Docs</Link>
+  </span>
+  <span>
+    <Link href="/pricing">Pricing</Link>
+  </span>
+</div>
+
 
              
               <div className="flex flex-col gap-4">
-                <span className="font-bold">Company</span>
-                <span>About us</span>
-                <span>Contact</span>
-                <span>Media kit</span>
-                <span>Terms & conditions</span>
-                <span>Privacy policy</span>
-              </div>
+  <span className="font-bold">Company</span>
+  <span>
+    <Link href="/about_us">About us</Link> 
+  </span>
+  <span>
+    <Link href="/contact_us">Contact</Link>
+  </span>
+  <span>
+    <Link href="/media-kit">Media kit</Link>
+  </span>
+  <span>
+    <Link href="/terms">Terms & conditions</Link>
+  </span>
+  <span>
+    <Link href="/privacy">Privacy policy</Link>
+  </span>
+</div>
             </div>
           </div>
 
