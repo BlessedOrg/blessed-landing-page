@@ -49,9 +49,9 @@ export const Header = () => {
       ref={headerRef}
       className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-[1440px]"
     >
-      <p className="text-4xl md:text-7xl uppercase font-bold md:leading-[73px] text-center">
+      <h1 className="text-[107px] leading-[94px] uppercase font-bold text-center">
         Build, manage, and distribute <br /> <span className="text-[#FFA500]">Tickets</span> quickly and fairly
-      </p>
+      </h1>
       <p className="font-bold text-xl text-center mb-12">Start quickly in just three steps with easy integrations…</p>
       <HeaderTiles />
       <Image

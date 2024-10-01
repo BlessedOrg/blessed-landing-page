@@ -46,17 +46,16 @@ export const PricingHeader = () => {
   return (
     <header ref={headerRef} className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-[1440px]">
   
-      {/* Заголовок и контент */}
       <div className="z-10 flex flex-col items-center">
-        <p className="text-4xl md:text-7xl uppercase font-bold md:leading-[73px] text-center">
-          Radically transparent and flexible pricing plans
-        </p>
+        <h1 className="text-[107px] leading-[94px] uppercase font-bold text-center">
+          Radically transparent and<br />flexible pricing plans
+        </h1>
         <p className="font-regular text-xl text-center mb-12">
         Choose the plan that fits your needs. Try our Dev Environment for free.
         </p>
       </div>
 
-      {/* Полоски идут ниже контента */}
+    
       <div className="relative w-full mt-16">
         {leftBars}
         {rightBars}
