@@ -6,7 +6,7 @@ export const Footer = () => {
           <div className="flex items-start gap-64 w-full">
         
             <div>
-              <img src="/img/icons/logo.svg" alt="Logo" />
+              <img src="/logo.svg" alt="Logo" />
             </div>
 
    

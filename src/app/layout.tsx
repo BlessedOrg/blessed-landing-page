@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${ttBluescreens.variable}`}>
       <body className={inter.className}>
         <RootProvider>
-          <main className="flex flex-col gap-8 items-center w-full">{children}</main>
+          <main className="flex flex-col items-center w-full">{children}</main>
         </RootProvider>
       </body>
     </html>
