@@ -15,7 +15,7 @@ export const PricingHeader = () => {
     return (
       <div
         key={`left-${index}`}
-        className="absolute w-[60%] bg-black z-[-1]" 
+        className="absolute w-[60%] bg-green-500 z-[-1]" 
         style={{
           top: `${top}px`,
           left: `${isInView ? 0 : "-100%"}`,
@@ -32,7 +32,7 @@ export const PricingHeader = () => {
     return (
       <div
         key={`right-${index}`}
-        className="absolute w-[25%] bg-black z-[-1]" 
+        className="absolute w-[25%] bg-green-500 z-[-1]" 
         style={{
           top: `${top}px`,
           right: `${isInView ? 0 : "-100%"}`,
