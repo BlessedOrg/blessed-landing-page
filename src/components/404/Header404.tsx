@@ -15,7 +15,7 @@ export const Header404 = () => {
     return (
       <div
         key={`left-${index}`}
-        className="absolute w-[60%] bg-black z-[-1]" // Оставили оригинальную ширину
+        className="absolute w-[60%] bg-black z-[-1]" 
         style={{
           top: `${top}px`,
           left: `${isInView ? 0 : "-100%"}`,
@@ -52,10 +52,10 @@ export const Header404 = () => {
     alt="pacman"
     width={100}
     height={100}
-    className="absolute left-[46px] top-[50%] transform -translate-y-[50%]"
+    className="absolute left-[46px] top-[10%] transform -translate-y-[50%]"
   />
 
-  {/* Царь икона — Ghost */}
+
   <Image
     src={"/img/icons/ghost.svg"}
     alt="ghost"
@@ -64,13 +64,12 @@ export const Header404 = () => {
     className="z-10"
   />
 
-  {/* Правый красава — Broken Heart */}
   <Image
     src={"/img/icons/Broken-Heart.png"}
     alt="heart"
     width={100}
     height={100}
-    className="absolute right-[6px] top-[calc(50%-139px)] transform -translate-y-[50%]"
+    className="absolute right-[106px] top-[10%] transform -translate-y-[50%]"
   />
         </div>
 
