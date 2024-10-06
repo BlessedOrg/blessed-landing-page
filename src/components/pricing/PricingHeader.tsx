@@ -1,6 +1,6 @@
 
 "use client";
-import { Button } from "flowbite-react";
+import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
@@ -63,36 +63,35 @@ export const PricingHeader = () => {
         
         <div className="flex justify-center gap-8 mt-8">
 
-          <div className="flex flex-col items-start gap-6 p-8 w-[296px] h-[520px] border-2 border-[#06F881] bg-[#FFF] rounded-[24px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.06)] z-10">
-            <p className="text-lg font-bold text-left">Pay as you go</p>
-            <p className="text-base text-left">$12/mo</p>
-            <p className="text-base text-left">Only pay for what you use. Perfect for small events and variable needs.</p>
-            <p className="text-base text-left">Transparent pricing</p>
-            <p className="text-base text-left">No hidden fees</p>
-            <p className="text-base text-left">Ideal for super teams</p>
-            <p className="text-base text-left">Regular updates</p>
-            <p className="text-base text-left">Premium support</p>
-            <Button pill className="bg-primary-500 hover:!bg-primary-600 text-black">
-              Start for free
-            </Button>
-          </div>
+<div className="flex flex-col items-start gap-4 p-8 w-[296px] h-[520px] border-2 border-[#06F881] bg-[#FFF] rounded-[24px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.06)] z-10">
+  <p className="text-lg font-bold text-left">Pay as you go</p>
+  <p className="text-[34px] leading-[1] font-bold tracking-[-0.5px] text-left">$12/mo</p> 
+  <p className="text-[16px] text-left">Only pay for what you use. Perfect for small events and variable needs.</p>
+  <p className="text-[16px] text-left">Transparent pricing</p>
+  <p className="text-[16px] text-left">No hidden fees</p>
+  <p className="text-[16px] text-left">Ideal for super teams</p>
+  <p className="text-[16px] text-left">Regular updates</p>
+  <p className="text-[16px] text-left">Premium support</p>
+  <Button variant="green" size="default" className="rounded-[39px] text-black">
+    Started for free
+  </Button>
+</div>
 
-          
-          <div className="flex flex-col items-start gap-6 p-8 w-[296px] h-[520px] border-2 border-black bg-[#FFF] rounded-[24px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.06)] z-10">
-            <p className="text-lg font-bold text-left">Commitment plan</p>
-            <p className="text-base text-left">$80/mo</p>
-            <p className="text-base text-left">Get in touch for tailored pricing. Best for large-scale and recurring events.</p>
-            <p className="text-base text-left">Custom solutions</p>
-            <p className="text-base text-left">Dedicated support</p>
-            <p className="text-base text-left">Scalable pricing</p>
-            <p className="text-base text-left">Regular updates</p>
-            <p className="text-base text-left">Premium support</p>
-            <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
-              Contact us
-            </Button>
+<div className="flex flex-col items-start gap-4 p-8 w-[296px] h-[520px] border-2 border-black bg-[#FFF] rounded-[24px] shadow-[0px_1px_10px_0px_rgba(0,0,0,0.06)] z-10">
+  <p className="text-lg font-bold text-left">Commitment plan</p>
+  <p className="text-[34px] leading-[1] font-bold tracking-[-0.5px] text-left">$80/mo</p> 
+  <p className="text-[16px] text-left">Get in touch for tailored pricing. Best for large-scale and recurring events.</p>
+  <p className="text-[16px] text-left">Custom solutions</p>
+  <p className="text-[16px] text-left">Dedicated support</p>
+  <p className="text-[16px] text-left">Scalable pricing</p>
+  <p className="text-[16px] text-left">Regular updates</p>
+  <p className="text-[16px] text-left">Premium support</p>
+  <Button variant="outline" size="default" className="bg-primary-500 hover:!bg-primary-600 rounded-[39px] text-black">
+    Contact us
+  </Button>
+</div>
+</div>
 
-          </div>
-        </div>
       </div>
     </header>
   );

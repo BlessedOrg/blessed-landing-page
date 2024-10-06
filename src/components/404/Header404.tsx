@@ -15,7 +15,7 @@ export const Header404 = () => {
     return (
       <div
         key={`left-${index}`}
-        className="absolute w-[60%] bg-black z-[-1]" // Оставили оригинальную ширину
+        className="absolute w-[60%] bg-black z-[-1]"
         style={{
           top: `${top}px`,
           left: `${isInView ? 0 : "-100%"}`,
@@ -47,31 +47,10 @@ export const Header404 = () => {
     <header ref={headerRef} className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-[1440px] w-full mx-auto">
       <div className="relative bg-white w-[624px] h-[509px] flex flex-col items-center justify-center  ">
         <div className="flex gap-6 mb-6">
-        <Image
-    src={"/img/icons/pacman.svg"}
-    alt="pacman"
-    width={100}
-    height={100}
-    className="absolute left-[46px] top-[50%] transform -translate-y-[50%]"
-  />
-
-  {/* Царь икона — Ghost */}
-  <Image
-    src={"/img/icons/ghost.svg"}
-    alt="ghost"
-    width={200}
-    height={200}
-    className="z-10"
-  />
-
-  {/* Правый красава — Broken Heart */}
-  <Image
-    src={"/img/icons/Broken-Heart.png"}
-    alt="heart"
-    width={100}
-    height={100}
-    className="absolute right-[6px] top-[calc(50%-139px)] transform -translate-y-[50%]"
-  />
+          <Image src={"/img/icons/pacman.svg"} alt="pacman" width={100} height={100} />
+          <Image src={"/img/icons/ghost.svg"} alt="ghost" width={200} height={200} />
+          <Image src={"/img/icons/Broken-Heart.png"} alt="heart" width={100} height={100} />
+          
         </div>
 
         <h1 className="text-4xl md:text-7xl uppercase font-bold md:leading-[73px] text-center mb-4" style={{ color: 'rgba(97, 87, 255, 1)' }}>

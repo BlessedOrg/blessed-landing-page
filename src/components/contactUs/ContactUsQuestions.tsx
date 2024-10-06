@@ -9,7 +9,7 @@ return <div className="py-10 flex flex-col gap-6 px-4">
     <p className="text-center">Want to know more? Connect with our team via contact. <Link href={"/"} className="underline">contact</Link>.</p>
   </div>
 
-  <Accordion className="max-w-[850px] w-full mt-10">
+  {/* <Accordion className="max-w-[850px] w-full mt-10">
     <Accordion.Panel>
       <Accordion.Title>What is included in the pay as you go plan?</Accordion.Title>
       <Accordion.Content>
@@ -58,6 +58,6 @@ return <div className="py-10 flex flex-col gap-6 px-4">
         </p>
       </Accordion.Content>
     </Accordion.Panel>
-  </Accordion>
+  </Accordion> */}
 </div>;
 }
