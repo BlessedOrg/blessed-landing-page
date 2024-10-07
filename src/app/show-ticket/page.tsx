@@ -31,7 +31,7 @@ function TicketContent() {
     }
 
     try {
-      const apiBaseUrl = "https://api.blessed.fan";
+      const apiBaseUrl = "https://blessed-api-git-show-ticket-endpoint-blessed-org.vercel.app";
       const response = await fetch(`${apiBaseUrl}/api/v1/applications/${app}/tickets/${contractId}/${ticketId}/show-ticket?userEmail=${userEmail}`);
       if (!response.ok) {
         throw new Error("Failed to fetch ticket information");
