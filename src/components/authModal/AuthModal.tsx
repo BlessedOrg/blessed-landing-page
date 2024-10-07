@@ -4,15 +4,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { setCookie } from "cookies-next";
 import { apiUrl, dashboardUrl } from "@/variables/varaibles";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -32,9 +24,9 @@ export const AuthModal = ({ authType }: { authType: "onboarding" | "login" }) =>
   const onEmailSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${apiUrl}/api/auth/${type}`, {
+      const res = await fetch(`${apiUrl}/developers/login`, {
         method: "POST",
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email })
       });
       const data = await res.json();
       if (res.status !== 200) {
@@ -52,19 +44,19 @@ export const AuthModal = ({ authType }: { authType: "onboarding" | "login" }) =>
   const onCodeSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${apiUrl}/api/auth/${type}/verify`, {
+      const res = await fetch(`${apiUrl}/developers/verify`, {
         method: "POST",
-        body: JSON.stringify({ code }),
+        body: JSON.stringify({ code })
       });
       const data = await res.json();
 
-      if (res.status !== 200 || (!data?.newSessionData?.accessToken && !data?.accessToken)) {
+      if (res.status !== 200 || (!data?.accessToken)) {
         toast(`Something went wrong: ${data?.message || res.statusText}`, { type: "error" });
       } else {
-        setCookie("accessToken", type === "login" ? data?.newSessionData?.accessToken : data.accessToken, {
-          maxAge: 60 * 60 * 24 * 2,
+        setCookie("accessToken", data?.accessToken, {
+          maxAge: 60 * 60 * 24 * 2
         });
-        window.location.href = `${dashboardUrl}?token=${type === "login" ? data?.newSessionData?.accessToken : data.accessToken}`;
+        window.location.href = `${dashboardUrl}?token=${data?.accessToken}`;
         toast("Successfully logged in!", { type: "success" });
       }
     } catch (e) {
