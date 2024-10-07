@@ -1,4 +1,5 @@
-import { Button } from "flowbite-react";
+"use client";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const QuoteCard = () => {
@@ -10,9 +11,9 @@ export const QuoteCard = () => {
         >
           <div className="text-4xl font-bold" >Book a free meeting</div>
           <div className="text-xl font-regular" >Schedule a chat with our team.</div>
-          <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
-          Book on Calendly
-            </Button>
+          <Button variant="outline" size="default" className="rounded-[39px]">
+            Book on Calendly
+          </Button>
         </div>
   
      
@@ -21,9 +22,9 @@ export const QuoteCard = () => {
         >
           <div className="text-4xl font-bold">Chat with us</div>
           <div className="text-xl font-regular" >Join us on <Link href={"/"} className="underline">Telegram</Link> or connect with our team via contact.</div>
-          <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
-              Contact us
-            </Button>
+          <Button variant="outline" size="default" className="rounded-[39px]">
+            Contact us
+          </Button>
         </div>
       </div>
     );

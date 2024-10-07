@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
@@ -60,9 +61,17 @@ export const Footer = () => {
           </div>
 
        
-          <div className="text-right">
-            <span>De/En</span>
-          </div>
+ <div className="flex flex-row gap-[4px]">
+  <Button variant="default" size="icon" className="bg-primary-500 hover:!bg-primary-600 rounded-[39px] text-black">
+    De
+  </Button>
+  <span className="flex items-center justify-center text-lg leading-none">/</span>
+  <Button variant="green" size="icon" className="rounded-[39px] text-black">
+    En
+  </Button>
+</div>
+
+
         </div>
 
        

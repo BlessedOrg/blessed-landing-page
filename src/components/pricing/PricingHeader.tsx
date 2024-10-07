@@ -1,4 +1,3 @@
-
 "use client";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
@@ -72,8 +71,8 @@ export const PricingHeader = () => {
   <p className="text-[16px] text-left">Ideal for super teams</p>
   <p className="text-[16px] text-left">Regular updates</p>
   <p className="text-[16px] text-left">Premium support</p>
-  <Button variant="green" size="default" className="rounded-[39px] text-black">
-    Started for free
+  <Button variant="green" size="default" className="rounded-[39px] text-black"> 
+    Started for free 
   </Button>
 </div>
 
@@ -86,8 +85,8 @@ export const PricingHeader = () => {
   <p className="text-[16px] text-left">Scalable pricing</p>
   <p className="text-[16px] text-left">Regular updates</p>
   <p className="text-[16px] text-left">Premium support</p>
-  <Button variant="outline" size="default" className="bg-primary-500 hover:!bg-primary-600 rounded-[39px] text-black">
-    Contact us
+  <Button variant="outline" size="default" className="rounded-[39px] text-black">
+    Contact us 
   </Button>
 </div>
 </div>

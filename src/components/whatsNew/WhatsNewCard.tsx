@@ -1,5 +1,5 @@
-import { Button } from "flowbite-react";
-import Link from "next/link";
+"use client";
+import { Button } from "@/components/ui/button";
 
 export const WhatsNewCard = () => {
     return (
@@ -10,9 +10,9 @@ export const WhatsNewCard = () => {
         >
           <div className="text-4xl font-bold" >Newsletter</div>
           <div className="text-xl font-regular" >Sign up for our newsletter to get the latest updates.</div>
-          <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
-          Subscribe free
-            </Button>
+          <Button variant="outline" size="default" className="rounded-[39px] text-black">
+            Subscribe free 
+          </Button>
         </div>
   
      
@@ -21,9 +21,9 @@ export const WhatsNewCard = () => {
         >
           <div className="text-4xl font-bold">Missing a desired feature?</div>
           <div className="text-xl font-regular" >We’re listening. Tell us what you need to improve your experience.</div>
-          <Button pill className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white">
-              Contact us
-            </Button>
+          <Button variant="outline" size="default" className="rounded-[39px]">
+           Contact us 
+          </Button>
         </div>
       </div>
     );
