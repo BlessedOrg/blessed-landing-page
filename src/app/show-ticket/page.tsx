@@ -22,23 +22,26 @@ function TicketContent() {
     const app = searchParams.get("app");
     const contractId = searchParams.get("contractId");
     const ticketId = searchParams.get("tokenId");
-    const userEmail = searchParams.get("userEmail");
+    const userId = searchParams.get("userId");
 
-    if (!app || !contractId || !ticketId || !userEmail) {
+    if (!app || !contractId || !ticketId || !userId) {
       setError("Missing required query parameters");
       setIsLoading(false);
       return;
     }
 
+    console.log({app,contractId,ticketId,userId});
+
     try {
       const apiBaseUrl = "https://blessed-api-git-show-ticket-endpoint-blessed-org.vercel.app";
-      const response = await fetch(`${apiBaseUrl}/api/v1/applications/${app}/tickets/${contractId}/${ticketId}/show-ticket?userEmail=${userEmail}`);
+      const response = await fetch(`${apiBaseUrl}/api/v1/applications/${app}/tickets/${contractId}/${ticketId}/show-ticket?userId=${userId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch ticket information");
       }
       const data = await response.json();
       setTicketInfo(data);
     } catch (err) {
+      console.log("🔮 err: ", err)
       setError("An error occurred while fetching ticket information");
     } finally {
       setIsLoading(false);
