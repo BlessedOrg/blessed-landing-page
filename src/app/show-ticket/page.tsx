@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Copy, Loader2 } from "lucide-react";
@@ -11,7 +11,7 @@ interface TicketInfo {
   userEmail: string;
 }
 
-export default function ShowTicket() {
+function TicketContent() {
   const searchParams = useSearchParams();
   const [ticketInfo, setTicketInfo] = useState<TicketInfo | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +44,7 @@ export default function ShowTicket() {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     fetchTicketInfo();
   }, [searchParams]);
@@ -53,10 +54,12 @@ export default function ShowTicket() {
   };
 
   const copyToClipboard = useCallback(() => {
-    navigator.clipboard.writeText(ticketInfo.userWalletAddress);
-    setTooltipContent("Copied!");
-    setTimeout(() => setTooltipContent("Copy to clipboard"), 2000);
-  }, [ticketInfo?.userWalletAddress]);
+    if (ticketInfo) {
+      navigator.clipboard.writeText(ticketInfo.userWalletAddress);
+      setTooltipContent("Copied!");
+      setTimeout(() => setTooltipContent("Copy to clipboard"), 2000);
+    }
+  }, [ticketInfo]);
 
   if (isLoading) {
     return (
@@ -136,5 +139,15 @@ export default function ShowTicket() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ShowTicket() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen w-full bg-gray-100">
+      <Loader2 className="w-8 h-8 animate-spin text-primary" />
+    </div>}>
+      <TicketContent />
+    </Suspense>
   );
 }
