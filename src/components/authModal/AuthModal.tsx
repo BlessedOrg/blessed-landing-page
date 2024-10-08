@@ -106,7 +106,9 @@ export const AuthModal = ({ authType = "login" }: { authType: "onboarding" | "lo
         if (!open) {
           onClearStates();
           setIsOpen(false);
-          window.location.replace(new URL(window.location.origin));
+          if (isAfterLogout) {
+            window.location.replace(new URL(window.location.origin));
+          }
         } else {
           setIsOpen(open);
         }
