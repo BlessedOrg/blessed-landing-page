@@ -11,11 +11,15 @@ import { Input } from "@/components/ui/input";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Card } from "@/components/ui/card";
+import { useSearchParams } from "next/navigation";
 
-export const AuthModal = ({ authType }: { authType: "onboarding" | "login" }) => {
+export const AuthModal = ({ authType = "login" }: { authType: "onboarding" | "login" }) => {
+  const searchParams = useSearchParams();
+  const isAfterLogout = authType === "login" && searchParams.get("logout");
+
   const [resendTimer, setResendTimer] = useState(0);
   const [type, setType] = useState<"login" | "onboarding">(authType);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(!!isAfterLogout);
   const [code, setCode] = useState<number | null | string>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -102,6 +106,7 @@ export const AuthModal = ({ authType }: { authType: "onboarding" | "login" }) =>
         if (!open) {
           onClearStates();
           setIsOpen(false);
+          window.location.replace(new URL(window.location.origin));
         } else {
           setIsOpen(open);
         }
