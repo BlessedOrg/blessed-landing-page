@@ -53,8 +53,8 @@ export const AuthModal = ({ authType = "login" }: { authType: "onboarding" | "lo
         body: JSON.stringify({ code })
       });
       const data = await res.json();
-
-      if (res.status !== 200 || (!data?.accessToken)) {
+      console.log(data);
+      if (!data?.accessToken) {
         toast(`Something went wrong: ${data?.message || res.statusText}`, { type: "error" });
       } else {
         setCookie("accessToken", data?.accessToken, {
