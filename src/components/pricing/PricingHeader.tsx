@@ -71,7 +71,7 @@ export const PricingHeader = () => {
   <p className="text-[16px] text-left">Ideal for super teams</p>
   <p className="text-[16px] text-left">Regular updates</p>
   <p className="text-[16px] text-left">Premium support</p>
-  <Button variant="green" size="default" className="rounded-[39px] text-black"> 
+  <Button variant="green" size="default" className="rounded-[39px]"> 
     Started for free 
   </Button>
 </div>
@@ -85,7 +85,7 @@ export const PricingHeader = () => {
   <p className="text-[16px] text-left">Scalable pricing</p>
   <p className="text-[16px] text-left">Regular updates</p>
   <p className="text-[16px] text-left">Premium support</p>
-  <Button variant="outline" size="default" className="rounded-[39px] text-black">
+  <Button variant="outline" size="default" className="rounded-[39px]">
     Contact us 
   </Button>
 </div>

@@ -39,7 +39,7 @@ export const Footer = () => {
 
 
              
-              <div className="flex flex-col gap-4">
+  <div className="flex flex-col gap-4">
   <span className="font-bold">Company</span>
   <span>
     <Link href="/about_us">About us</Link> 
