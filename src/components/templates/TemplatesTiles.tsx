@@ -1,64 +1,65 @@
 "use client";
-import { useScroll } from "framer-motion";
-import { useEffect, useState } from "react";
+import { HeaderTiles } from "@/components/home/header/HeaderTiles";
 import Image from "next/image";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-
-const tiles = [
-  {
-    title: "Create",
-    description: "Pick your entry type and begin via our UI or API",
-    image: "/img/icons/heart.svg"
-  },
-  {
-    title: "Customize",
-    description: "Fine tune to your liking easily as a piece of cake",
-    image: "/img/icons/cake.svg"
-  },
-  {
-    title: "Publish",
-    description: "Publish and go live ASAP",
-    image: "/img/icons/rocket.svg"
-  }
-];
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export const TemplatesTiles = () => {
-  const isMobile = useMediaQuery(768)
-  const { scrollY } = useScroll();
-  const [adjustedScrollY, setAdjustedScrollY] = useState(50);
+  const barHeight = 75;
+  const headerRef = useRef(null);
+  const isInView = useInView(headerRef, { once: false });
 
-  useEffect(() => {
-    const unsubscribe = scrollY.onChange((latest) => {
-      const scrollPercentage = Math.min(latest / 1000 * 100, 100);
-      const adjusted = 50 - ((scrollPercentage / (isMobile ? 30 : 25) * 50));
-      setAdjustedScrollY(Math.max(-20, Math.min(50, adjusted)));
-    });
-    return () => unsubscribe();
-  }, [scrollY]);
+  const leftBars = Array.from({ length: 3 }, (_, index) => {
+    const top = index * (barHeight * 2) + barHeight;
 
+    return (
+      <div
+        key={`left-${index}`}
+        className={`absolute w-[60%] bg-green-500 z-[-1]`}
+        style={{
+          top: `${top}px`,
+          left: `${isInView ? 0 : "-100%"}`,
+          height: `${barHeight}px`,
+          transition: "left 1.5s",
+        }}
+      ></div>
+    );
+  });
 
-  return <div className="flex gap-4" style={{
-    transform: `translateX(calc(${adjustedScrollY}% - ${isMobile ? "150px": "300px"}))`,
-    transition: "all 100ms"
-  }}>
-    {tiles.map((tile, index) => {
-      return <div key={tile.title} className="w-[253px] md:w-[598px] h-[336px] md:h-[200px] bg-gradient-to-r from-[#06F881] to-[#FFFACD] p-4">
-        <div className="flex gap-4 flex-col bg-white p-4 w-full h-full ">
-          <div className="flex flex-col-reverse md:flex-row md:justify-between gap-2">
-            <div className="flex flex-col gap-2 font-bold text-2xl md:text-3xl">
-              <p>{index + 1}</p>
-              <p>{tile.title}</p>
-            </div>
-            <Image
-              width={100}
-              height={100}
-              src={tile.image}
-              alt=""
-            />
-          </div>
-          <p className="text-sm md:text-lg">{tile.description}</p>
-        </div>
-      </div>;
-    })}
-  </div>;
+  const rightBars = Array.from({ length: 4 }, (_, index) => {
+    const top = index * (barHeight * 2);
+
+    return (
+      <div
+        key={`right-${index}`}
+        className={`absolute w-[25%] bg-green-500 z-[-1]`}
+        style={{
+          top: `${top}px`,
+          height: `${barHeight}px`,
+          right: `${isInView ? 0 : "-100%"}`,
+          transition: "right 1.5s",
+        }}
+      ></div>
+    );
+  });
+
+  return (
+    <header
+      ref={headerRef}
+      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden overflow-y-hidden max-w-[1440px]"
+    >
+      <h1 className="text-[107px] leading-[94px] uppercase font-bold text-center">
+      See how it works
+      </h1>
+    
+      <HeaderTiles />                                                                                                                    
+
+      {leftBars}                                         
+      {rightBars}
+      <Button variant="outline" size="xl" className="rounded-[39px]">
+       Create your event
+      </Button>
+    </header>
+  );
 };
