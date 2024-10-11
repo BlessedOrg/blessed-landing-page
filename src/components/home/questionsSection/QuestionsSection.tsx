@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Accordion } from 'flowbite-react';
 
 export const QuestionsSection = () => {
   return (
@@ -15,40 +16,40 @@ export const QuestionsSection = () => {
         </p>
       </div>
 
-      {/*<Accordion className="max-w-[850px] w-full mt-10">*/}
-      {/*  <Accordion.Panel>*/}
-      {/*    <Accordion.Title>How does Blessed ensure the authenticity of entries?</Accordion.Title>*/}
-      {/*    <Accordion.Content>*/}
-      {/*      <p className="mb-2 text-gray-500">*/}
-      {/*        Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.*/}
-      {/*      </p>*/}
-      {/*    </Accordion.Content>*/}
-      {/*  </Accordion.Panel>*/}
-      {/*  <Accordion.Panel>*/}
-      {/*    <Accordion.Title>How does Blessed ensure the authenticity of entries?</Accordion.Title>*/}
-      {/*    <Accordion.Content>*/}
-      {/*      <p className="mb-2 text-gray-500">*/}
-      {/*        Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.*/}
-      {/*      </p>*/}
-      {/*    </Accordion.Content>*/}
-      {/*  </Accordion.Panel>*/}
-      {/*  <Accordion.Panel>*/}
-      {/*    <Accordion.Title>How does Blessed ensure the authenticity of entries?</Accordion.Title>*/}
-      {/*    <Accordion.Content>*/}
-      {/*      <p className="mb-2 text-gray-500">*/}
-      {/*        Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.*/}
-      {/*      </p>*/}
-      {/*    </Accordion.Content>*/}
-      {/*  </Accordion.Panel>*/}
-      {/*  <Accordion.Panel>*/}
-      {/*    <Accordion.Title>How does Blessed ensure the authenticity of entries?</Accordion.Title>*/}
-      {/*    <Accordion.Content>*/}
-      {/*      <p className="mb-2 text-gray-500">*/}
-      {/*        Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.*/}
-      {/*      </p>*/}
-      {/*    </Accordion.Content>*/}
-      {/*  </Accordion.Panel>*/}
-      {/*</Accordion>*/}
+      {/* <Accordion className="max-w-[850px] w-full mt-10">
+    <Accordion.Panel>
+      <Accordion.Title>How does Blessed ensure the authenticity of entries?</Accordion.Title>
+      <Accordion.Content>
+        <p className="mb-2 text-gray-500">
+          Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
+        </p>
+      </Accordion.Content>
+    </Accordion.Panel>
+    <Accordion.Panel>
+      <Accordion.Title>How can I integrate Blessed with my existing systems?</Accordion.Title>
+      <Accordion.Content>
+        <p className="mb-2 text-gray-500">
+          Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
+        </p>
+      </Accordion.Content>
+    </Accordion.Panel>
+    <Accordion.Panel>
+      <Accordion.Title>What kind of customization options are available for event organizers?</Accordion.Title>
+      <Accordion.Content>
+        <p className="mb-2 text-gray-500">
+          Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
+        </p>
+      </Accordion.Content>
+    </Accordion.Panel>
+    <Accordion.Panel>
+      <Accordion.Title>Can I track attendee engagement and loyalty?</Accordion.Title>
+      <Accordion.Content>
+        <p className="mb-2 text-gray-500">
+          Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
+        </p>
+      </Accordion.Content>
+    </Accordion.Panel>
+  </Accordion> */}
     </div>
   );
 };

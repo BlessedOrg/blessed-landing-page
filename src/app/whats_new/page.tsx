@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer/Footer";
 import { WhatsNewCard } from "@/components/whatsNew/WhatsNewCard";
 import { WhatsNewFeature } from "@/components/whatsNew/WhatsNewFeature";
 import { WhatsNewHeader } from "@/components/whatsNew/WhatsNewHeader";
+import { WhatsNews } from "@/components/whatsNew/WhatsNews";
+
 
 export default function Home() {
 
@@ -12,6 +14,7 @@ export default function Home() {
       <>
         <Navigation />
         <WhatsNewHeader />
+        <WhatsNews />
         <WhatsNewFeature />
         <WhatsNewQuote />
         <WhatsNewCard />
