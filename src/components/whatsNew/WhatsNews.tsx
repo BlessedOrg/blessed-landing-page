@@ -7,7 +7,7 @@ export const WhatsNews = () => {
   return (
     <div className="w-[842px] h-auto flex flex-col gap-6">
       
-      {/* Первая карточка */}
+    
       <div className="flex items-start gap-4 p-6 bg-white rounded-[24px] border border-gray-300">
         <div className="w-[175px] h-[99px] bg-gray-200 rounded-[16px] overflow-hidden">
           <img
@@ -25,7 +25,7 @@ export const WhatsNews = () => {
         </div>
       </div>
 
-      {/* Вторая карточка */}
+    
       <div className="flex items-start gap-4 p-6 bg-white rounded-[24px] border border-gray-300">
         <div className="w-[175px] h-[99px] bg-gray-200 rounded-[16px] overflow-hidden">
           <img
