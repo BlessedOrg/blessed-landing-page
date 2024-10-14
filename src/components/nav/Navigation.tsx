@@ -24,18 +24,20 @@ export const Navigation = () => {
 
   return (
     <nav className="py-5 lg:py-8 px-4 lg:px-6 flex justify-between w-full">
+      <Link href="https://blessed.fan">
       <Image src={"/logo.svg"} alt="logo blessed" height={36} width={100} className="w-[100px] h-auto" />
-
+      </Link>
       <div className="gap-8 items-center hidden lg:flex">
         <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center gap-2">
             Product <ChevronDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Coming soon</DropdownMenuItem>
+            {/* <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -44,10 +46,11 @@ export const Navigation = () => {
             Resources <ChevronDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Coming soon</DropdownMenuItem>
+            {/* <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
 

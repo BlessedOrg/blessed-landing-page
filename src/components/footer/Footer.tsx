@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
@@ -9,9 +10,9 @@ export const Footer = () => {
         <div className="flex justify-between items-start w-full border-t-2 border-black pt-10">
           <div className="flex items-start gap-64 w-full">
         
-            <div>
-              <img src="/logo.svg" alt="Logo" />
-            </div>
+          <Link href="https://blessed.fan">
+  <img src="/logo.svg" alt="Logo" />
+</Link>
 
    
             <div className="flex gap-40">
@@ -27,10 +28,10 @@ export const Footer = () => {
     <Link href="/guides-tutorials">Guides & tutorials</Link>
   </span>
   <span>
-    <Link href="/developer-api">Developer API</Link>
+    <Link href={"https://docs.blessed.fan/"}>Developer API</Link>
   </span>
   <span>
-    <Link href="/docs">Docs</Link>
+    <Link href={"https://docs.blessed.fan/"} >Docs</Link>
   </span>
   <span>
     <Link href="/pricing">Pricing</Link>
