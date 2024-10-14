@@ -19,13 +19,13 @@ export const Footer = () => {
             <div className="flex flex-col gap-4">
   <span className="font-bold">Product</span>
   <span>
-    <Link href="/overview">Overview</Link>
+    <Link href="/">Overview</Link>
   </span>
   <span>
     <Link href="/whats_new">What’s new</Link>
   </span>
   <span>
-    <Link href="/guides-tutorials">Guides & tutorials</Link>
+    <Link href="/guides&tutorials">Guides & tutorials</Link>
   </span>
   <span>
     <Link href={"https://docs.blessed.fan/"}>Developer API</Link>
@@ -49,13 +49,13 @@ export const Footer = () => {
     <Link href="/contact_us">Contact</Link>
   </span>
   <span>
-    <Link href="/media-kit">Media kit</Link>
+    <Link href="/media_kit">Media kit</Link>
   </span>
   <span>
-    <Link href="/terms">Terms & conditions</Link>
+    <Link href="/terms&conditions">Terms & conditions</Link>
   </span>
   <span>
-    <Link href="/privacy">Privacy policy</Link>
+    <Link href="/privacy_policy">Privacy policy</Link>
   </span>
 </div>
             </div>
@@ -80,7 +80,7 @@ export const Footer = () => {
     
           <div className="flex items-center gap-4">
             <span className="font-medium">© 2077 Blessed</span>
-            <span className="font-medium">Imprint</span>
+            <span className="font-medium"> <Link href="/imprint">Imprint</Link> </span>
           </div>
 
 
@@ -101,15 +101,24 @@ export const Footer = () => {
 
       
           <div className="flex gap-4">
-  {["twitter-x", "linkedin", "Discord", "Github"].map((icon) => (
-    <div
-      key={icon}
-      className="flex w-[36px] h-[36px] p-[9px] items-start gap-[10px] bg-white rounded-full"
-    >
-      <img src={`/img/icons/${icon}.svg`} alt={icon} />
-    </div>
-  ))}
+  {["twitter-x", "linkedin", "telegram-black", "Github"].map((icon, index) => {
+    const urls = [
+      "https://x.com/blessedfans",
+      "https://www.linkedin.com/company/blessedfan/",
+      "https://t.me/blessedsupport", 
+      "https://github.com/BlessedOrg/",
+    ];
+
+    return (
+      <a key={icon} href={urls[index]} target="_blank" rel="noopener noreferrer">
+        <div className="flex w-[36px] h-[36px] p-[9px] items-start gap-[10px] bg-white rounded-full">
+          <img src={`/img/icons/${icon}.svg`} alt={icon} />
+        </div>
+      </a>
+    );
+  })}
 </div>
+
 
         </div>
       </div>
