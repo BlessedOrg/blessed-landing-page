@@ -22,12 +22,6 @@ export const Footer = () => {
     <Link href="/">Overview</Link>
   </span>
   <span>
-    <Link href="/whats_new">What’s new</Link>
-  </span>
-  <span>
-    <Link href="/guides&tutorials">Guides & tutorials</Link>
-  </span>
-  <span>
     <Link href={"https://docs.blessed.fan/"}>Developer API</Link>
   </span>
   <span>
@@ -47,9 +41,6 @@ export const Footer = () => {
   </span>
   <span>
     <Link href="/contact_us">Contact</Link>
-  </span>
-  <span>
-    <Link href="/media_kit">Media kit</Link>
   </span>
   <span>
     <Link href="/terms&conditions">Terms & conditions</Link>
