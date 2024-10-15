@@ -1,11 +1,13 @@
 "use client";
 import { HeaderTiles } from "@/components/home/header/HeaderTiles";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { AuthModal } from "@/components/authModal/AuthModal"; 
 
 export const Header = () => {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false); 
   const barHeight = 75;
   const headerRef = useRef(null);
   const isInView = useInView(headerRef, { once: false });
@@ -64,9 +66,8 @@ export const Header = () => {
 
       {leftBars}
       {rightBars}
-      <Button className="w-fit rounded-full" variant="green" size="lg">
-        Get started for free
-      </Button>
+
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} authType="onboarding" /> 
     </header>
   );
 };

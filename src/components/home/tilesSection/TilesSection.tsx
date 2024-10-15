@@ -37,9 +37,10 @@ export const TilesSection = () => {
           </div>
           <Image src="/img/icons/coffe.svg" alt="Favorite Icon" className="self-center md:self-auto" width={200} height={200} />
         </div>
-        <button className="flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
+        <Link href="/use_cases"><button className="flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
           View use cases
         </button>
+        </Link>
       </div>
       <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
         {mediumTiles.map((tile, index) => {
@@ -51,7 +52,7 @@ export const TilesSection = () => {
                 <div className="text-[xl] font-medium">{tile.description}
                 </div>
               </div>
-              <Link href={"/"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px]`}>
+              <Link href={"/contact_us"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px]`}>
                 {tile.button}
               </Link>
             </div>
