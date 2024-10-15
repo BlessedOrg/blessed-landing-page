@@ -1,15 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { MobileNav } from "@/components/nav/MobileNav";
 import { AuthModal } from "@/components/authModal/AuthModal";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useUserContext } from "@/store/UserContext";
 import { Button } from "@/components/ui/button";
@@ -63,10 +58,10 @@ export const Navigation = () => {
         </Link>
 
         {!isLoggedIn && (
-          <>
+          <Suspense>
             <AuthModal authType="login" />
             <AuthModal authType="onboarding" />
-          </>
+          </Suspense>
         )}
         {isLoggedIn && (
           <Button variant="green" className="rounded-full" size="lg" asChild>

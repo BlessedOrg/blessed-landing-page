@@ -14,8 +14,6 @@ interface UserHook {
   id: string | null;
   mutate: () => Promise<any>;
   isLoggedIn: boolean;
-  accountDeployed: boolean;
-  vaultKey: string | null;
   ApiTokens: { id: string; vaultKey: string; createdAt: string; revoked: boolean; appId: string }[];
 }
 const defaultState = {
@@ -23,10 +21,8 @@ const defaultState = {
   isLoading: false,
   email: null,
   id: null,
-  accountDeployed: false,
-  vaultKey: null,
   isLoggedIn: false,
-  mutate: async () => {},
+  mutate: async () => {}
 } as UserHook;
 
 const UserContext = createContext<UserHook | undefined>(undefined);
@@ -35,7 +31,7 @@ const UserContextProvider = ({ children }: IProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(defaultState);
 
-  const { data, mutate, isLoading } = useSWR(`${apiUrl}/api/account/me`, fetcherWithToken);
+  const { data, mutate, isLoading } = useSWR(`${apiUrl}/developers/me`, fetcherWithToken);
 
   useEffect(() => {
     if (!data?.error && data?.id) {
@@ -52,7 +48,7 @@ const UserContextProvider = ({ children }: IProps) => {
         value={{
           ...defaultState,
           isLoading,
-          isLoggedIn,
+          isLoggedIn
         }}
       >
         {children}
@@ -66,7 +62,7 @@ const UserContextProvider = ({ children }: IProps) => {
         ...userData,
         mutate,
         isLoading,
-        isLoggedIn,
+        isLoggedIn
       }}
     >
       {children}
