@@ -3,6 +3,7 @@ import { AboutUsHeader } from "@/components/aboutUs/AboutUsHeader";
 import { AboutUsCard } from "@/components/aboutUs/AboutUsCard";
 import { AboutUsTiles } from "@/components/aboutUs/AboutUsTiles";
 import { Team } from "@/components/aboutUs/Team";
+import { Slogan } from "@/components/aboutUs/Slogan";
 import { PartnersClients } from "@/components/aboutUs/PartnersClients";
 import { Cta } from "@/components/footer/Cta";
 import { Footer } from "@/components/footer/Footer";
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutUsHeader />
       <AboutUsCard />
       <Team />
+      <Slogan />
       <PartnersClients />
       <AboutUsTiles />
       <Cta />
