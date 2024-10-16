@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Navigation />
       <PricingHeader/>
-      <PricingTestimonial/>
+      {/* <PricingTestimonial/> */}
       <QuoteSection/>
       <QuoteCard />
       <QuestionsSection/>

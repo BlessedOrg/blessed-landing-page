@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       <TabsSection />
       <TilesSection />
-      <HomeTestimonial />
+      {/* <HomeTestimonial /> */}
       <QuoteSection />
       <QuoteCard />
       <QuestionsSection />

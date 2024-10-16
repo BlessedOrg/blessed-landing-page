@@ -15,7 +15,7 @@ export default function Home() {
       <Navigation />
       <UseCasesHeader />
       <UseCases />
-      <PricingTestimonial />
+      {/* <PricingTestimonial /> */}
       <TemplatesCards />
       <QuoteSection />
       <QuoteCard />
