@@ -5,7 +5,7 @@ export const TermsConditions = () => {
         Terms and Conditions of PANDR UG
       </h2>
 
-      <p>Last Updated: [Insert Date] // Add the date when you publish</p>
+      <p>Last Updated: 15.10.2024</p>
 
       <p>
         Welcome to PANDR UG ("we," "our," or "us"). By using our services,
