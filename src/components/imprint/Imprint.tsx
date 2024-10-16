@@ -1,6 +1,6 @@
 export const Imprint = () => {
   return (
-    <div className="max-w-[640px] mx-auto px-4">
+    <div className="max-w-[640px] mx-auto px-4 [160px] pb-[160px]">
       <h2 className="font-bold uppercase text-3xl md:text-6xl mb-4">Imprint (Impressum)</h2>
 
       <p>

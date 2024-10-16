@@ -28,7 +28,7 @@ export const TeamMember = ({
 }) => {
   return (
     <Card className="flex flex-col items-left gap-4">
-      <div className="w-[296px] h-[307px] overflow-hidden ">
+      <div className="w-[296px] h-[307px] overflow-hidden">
         <img src={imgSrc} alt={name} className="w-full h-full object-cover" />
       </div>
 
@@ -85,7 +85,7 @@ export const Team = () => {
   ];
 
   return (
-    <div className="py-10">
+    <div className="max-w-[1440px] h-[1130px] mx-auto py-10">
       <h2 className="font-bold uppercase text-center text-3xl md:text-[80px] md:leading-[73px]">
         Our Blessed Team
       </h2>

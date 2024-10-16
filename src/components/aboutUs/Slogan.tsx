@@ -2,7 +2,7 @@
 
 export const Slogan = () => {
   return (
-    <div className="flex py-10 w-full max-w-[1280px] px-[80px]">
+    <div className="max-w-[1440px] h-[653px] mx-auto flex py-10 px-[80px]">
       <div className="flex flex-col justify-start w-[547px] h-auto gap-6">
         <h2 className="font-bold uppercase text-left text-3xl md:text-[48px] md:leading-[44px]">
           Mission impossible

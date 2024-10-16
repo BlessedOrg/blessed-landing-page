@@ -1,6 +1,6 @@
 export const PrivacyPolicy = () => {
   return (
-    <div className="max-w-[640px] mx-auto px-4">
+    <div className="max-w-[640px] mx-auto px-4 [80px] pb-[80px]">
       <h2 className="font-bold uppercase text-3xl md:text-6xl mb-4">
         Privacy Policy of PANDR UG
       </h2>
