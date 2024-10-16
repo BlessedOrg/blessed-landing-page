@@ -12,7 +12,7 @@ export const Cta = () => {
             <h2 className="font-bold uppercase text-[96px] leading-[88px] md:text-6xl text-left">
               How you manage your <span className="text-[#FFA500]">Tickets</span> matters
             </h2>
-            <p className="text-left">Join now and start building amazing experiences. Or explore <Link href={"/"} className="underline">our docs</Link>.</p>
+            <p className="text-left">Join now and start building amazing experiences. Or explore <Link href={"https://docs.blessed.fan/"} className="underline">our docs</Link>.</p>
           </div>
           <Button variant="green" className="rounded-full" size="lg" asChild>
             <Link href={`${dashboardUrl}`}>Try Blessed today</Link>

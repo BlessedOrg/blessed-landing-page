@@ -39,7 +39,7 @@ export const AboutUsTiles = () => {
             <Image src={tile.image} alt={tile.title} width={150} height={150} className="self-center md:self-end" />
             <div className="flex flex-col gap-4 justify-between h-full">
               <div className="flex flex-col gap-2">
-                <div className="text-4xl font-bold">{tile.title}</div>
+                <h2 className="text-4xl uppercase font-bold">{tile.title}</h2>
                 <div className="text-[xl] font-medium">{tile.description}</div>
               </div>
         
@@ -58,7 +58,7 @@ export const AboutUsTiles = () => {
       <div className="flex w-full min-h-[374px] py-6 px-4 md:py-10 md:px-8 bg-[rgba(239,239,239,1)] rounded-[1.5rem] justify-between flex-col gap-6 mt-10">
         <div className="flex flex-col gap-6 md:flex-row justify-between">
           <div className="flex flex-col gap-4">
-            <div className="text-4xl font-bold uppercase">Bring Awareness</div>
+            <h1 className="text-6xl font-bold uppercase">Bring Awareness</h1>
             <div className="text-[xl] font-medium">
               Help us spread the word of mouth. We only win, when we are united and big as a community.
             </div>
