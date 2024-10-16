@@ -24,9 +24,10 @@ export const GetInTouch = () => {
             />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Subject 1</DropdownMenuItem>
-            <DropdownMenuItem>Subject 2</DropdownMenuItem>
-            <DropdownMenuItem>Subject 3</DropdownMenuItem>
+            <DropdownMenuItem>Report bugs</DropdownMenuItem>
+            <DropdownMenuItem>Talk to sales</DropdownMenuItem>
+            <DropdownMenuItem>Account & billing</DropdownMenuItem>
+            <DropdownMenuItem>General contact inquires</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
