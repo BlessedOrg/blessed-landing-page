@@ -53,7 +53,7 @@ export const PricingHeader = () => {
           <br />
           flexible pricing plans
         </h1>
-        <p className="font-regular text-xl text-center mb-12">
+        <p className="font-regular text-center mb-12">
           Choose the plan that fits your needs. Try our Dev Environment for
           free.
         </p>
