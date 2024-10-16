@@ -30,17 +30,13 @@ function TicketContent() {
       return;
     }
 
-    console.log({app,contractId,ticketId,userId});
-
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/applications/${app}/tickets/${contractId}/${ticketId}/show-ticket?userId=${userId}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch ticket information");
-      }
+      const url = `${process.env.NEXT_PUBLIC_API_URL}/applications/${app}/tickets/${contractId}/show-ticket/${ticketId}?userId=${userId}`;
+      const response = await fetch(url);
       const data = await response.json();
       setTicketInfo(data);
     } catch (err) {
-      console.log("🔮 err: ", err)
+      console.log("🚨 Error while fetching ticket info: ", err.message)
       setError("An error occurred while fetching ticket information");
     } finally {
       setIsLoading(false);
