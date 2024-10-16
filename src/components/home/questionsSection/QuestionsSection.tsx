@@ -1,12 +1,19 @@
 "use client";
 import Link from "next/link";
-import { Accordion } from 'flowbite-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const QuestionsSection = () => {
   return (
-    <div className="py-10 flex flex-col items-center gap-6 px-4 font-inter"> 
+    <div className="py-10 flex flex-col items-center gap-6 px-4 font-inter">
       <div className="text-center">
-        <h2 className="font-bold uppercase text-3xl md:text-6xl">Questions? Check here!</h2>
+        <h2 className="font-bold uppercase text-3xl md:text-6xl">
+          Questions? Check here!
+        </h2>
         <p className="mt-2 text-lg">
           Want to know more? Connect with our team via{" "}
           <Link href={"/"} className="underline">
@@ -16,44 +23,44 @@ export const QuestionsSection = () => {
         </p>
       </div>
 
-    
-      <Accordion className="max-w-[850px] w-full mt-10 space-y-4 border-none">
-        <Accordion.Panel>
-          <Accordion.Title className="accordion-title text-2xl font-semibold font-inter">
-            How does Blessed ensure the authenticity of entries?
-          </Accordion.Title>
-          <Accordion.Content className="accordion-content text-base text-black border-b-2 border-black pb-4">
-            Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
-          </Accordion.Content>
-        </Accordion.Panel>
+      <Accordion type="single" collapsible className="max-w-[850px] w-full mt-10 space-y-4 border-none" defaultValue="item-1">
+  <AccordionItem value="item-1" className="w-full">
+    <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter">
+      How does Blessed ensure the authenticity of entries?
+    </AccordionTrigger>
+    <AccordionContent className="accordion-content w-full text-base text-black border-b-2 border-black pb-4">
+      Each entry is secured using advanced blockchain technology, ensuring tamper-proof and verifiable transactions. This guarantees that entries cannot be duplicated or altered.
+    </AccordionContent>
+  </AccordionItem>
 
-        <Accordion.Panel>
-          <Accordion.Title className="accordion-title text-2xl font-semibold font-inter">
-            How can I integrate Blessed with my existing systems?
-          </Accordion.Title>
-          <Accordion.Content className="accordion-content text-base text-black border-b-2 border-black pb-4">
-            Blessed offers easy integration via API, allowing seamless connections with your current systems for event management and tracking.
-          </Accordion.Content>
-        </Accordion.Panel>
+  <AccordionItem value="item-2" className="w-full">
+    <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter">
+      How can I integrate Blessed with my existing systems?
+    </AccordionTrigger>
+    <AccordionContent className="accordion-content w-full text-base text-black border-b-2 border-black pb-4">
+      Blessed offers easy integration via API, allowing seamless connections with your current systems for event management and tracking.
+    </AccordionContent>
+  </AccordionItem>
 
-        <Accordion.Panel>
-          <Accordion.Title className="accordion-title text-2xl font-semibold font-inter">
-            What kind of customization options are available for event organizers?
-          </Accordion.Title>
-          <Accordion.Content className="accordion-content text-base text-black border-b-2 border-black pb-4">
-            Event organizers can customize themes, branding, and engagement features to fit their event's unique needs and audience.
-          </Accordion.Content>
-        </Accordion.Panel>
+  <AccordionItem value="item-3" className="w-full">
+    <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter">
+      What kind of customization options are available for event organizers?
+    </AccordionTrigger>
+    <AccordionContent className="accordion-content w-full text-base text-black border-b-2 border-black pb-4">
+      Event organizers can customize themes, branding, and engagement features to fit their event's unique needs and audience.
+    </AccordionContent>
+  </AccordionItem>
 
-        <Accordion.Panel>
-          <Accordion.Title className="accordion-title text-2xl font-semibold font-inter">
-            Can I track attendee engagement and loyalty?
-          </Accordion.Title>
-          <Accordion.Content className="accordion-content text-base text-black border-b-2 border-black pb-4">
-            Yes, Blessed provides analytics tools to track attendee participation, engagement, and overall loyalty, helping you optimize future events.
-          </Accordion.Content>
-        </Accordion.Panel>
-      </Accordion>
+  <AccordionItem value="item-4" className="w-full">
+    <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter">
+      Can I track attendee engagement and loyalty?
+    </AccordionTrigger>
+    <AccordionContent className="accordion-content w-full text-base text-black border-b-2 border-black pb-4">
+      Yes, Blessed provides analytics tools to track attendee participation, engagement, and overall loyalty, helping you optimize future events.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
     </div>
   );
 };
