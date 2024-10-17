@@ -16,7 +16,7 @@ export default function Home() {
       <AboutUsCard />
       <Team />
       <Slogan />
-      <PartnersClients />
+      {/* <PartnersClients /> */}
       <AboutUsTiles />
       <Cta />
       <Footer />

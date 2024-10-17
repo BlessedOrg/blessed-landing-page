@@ -7,22 +7,22 @@ const tabs = [
   {
     id: 0,
     title: "Developer API",
-    content: <div>1</div>
+    content: <div>Create and customize tickets effortlessly in under 5 minutes using our no-code solution.</div>
   },
   {
     id: 1,
     title: "Analytics",
-    content: <div>2</div>
+    content: <div>Gain valuable insights into your ticket sales with real-time data and reporting.</div>
   },
   {
     id: 2,
     title: "Fee management",
-    content: <div>3</div>
+    content: <div>Easily allocate a portion of transaction fees to stakeholders or causes you care about.</div>
   },
   {
     id: 3,
     title: <span>Lotteries & auction <span className="text-gray-400">(cooming soon)</span></span>,
-    content: <div>4</div>,
+    content: <div>Enable fair, transparent distribution of limited items through secure lotteries and auctions.</div>,
     disabled: true
   }
 ];
