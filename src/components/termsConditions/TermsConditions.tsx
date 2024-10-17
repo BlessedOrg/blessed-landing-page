@@ -14,7 +14,7 @@ export const TermsConditions = () => {
         using our services.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">1. Introduction</h3>
+      <h4 className="font-bold mt-4 mb-2">1. Introduction</h4>
       <p>
         PANDR UG, located at Erich-Weinert-Str. 51, 10439 Berlin, Germany,
         offers a SaaS-based API solution branded as "Blessed," designed to help
@@ -26,7 +26,7 @@ export const TermsConditions = () => {
         terms. If you do not agree, you may not use our services.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">2. Eligibility</h3>
+      <h4 className="font-bold mt-4 mb-2">2. Eligibility</h4>
       <p>To use our services, you must:</p>
       <ul className="list-disc pl-6">
         <li>Be at least 18 years old.</li>
@@ -37,7 +37,7 @@ export const TermsConditions = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mt-4 mb-2">3. Services Provided</h3>
+      <h4 className="font-bold mt-4 mb-2">3. Services Provided</h4>
       <p>
         PANDR UG provides a platform through "Blessed" where users can create
         their own customized API solutions, which abstract web3 complexities
@@ -45,7 +45,7 @@ export const TermsConditions = () => {
         artists to create and monetize events or happenings using our API.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">4. Subscription and Payment</h3>
+      <h4 className="font-bold mt-4 mb-2">4. Subscription and Payment</h4>
       <p>
         Our services are offered on a subscription basis. Users can choose from
         various subscription plans, which may vary in pricing and features.
@@ -66,7 +66,7 @@ export const TermsConditions = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mt-4 mb-2">5. User Obligations</h3>
+      <h4 className="font-bold mt-4 mb-2">5. User Obligations</h4>
       <p>By using our services, you agree to:</p>
       <ul className="list-disc pl-6">
         <li>
@@ -80,14 +80,14 @@ export const TermsConditions = () => {
         obligations.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">6. Cancellation and Refund Policy</h3>
+      <h4 className="font-bold mt-4 mb-2">6. Cancellation and Refund Policy</h4>
       <p>
         You may cancel your subscription at any time. Refunds will be handled in
         accordance with applicable laws for online services, including the
         provisions of German consumer protection law.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">7. Limitation of Liability</h3>
+      <h4 className="font-bold mt-4 mb-2">7. Limitation of Liability</h4>
       <p>To the fullest extent permitted by law, PANDR UG is not liable for:</p>
       <ul className="list-disc pl-6">
         <li>Any indirect, incidental, or consequential damages.</li>
@@ -107,7 +107,7 @@ export const TermsConditions = () => {
         last 12 months, or €100, whichever is higher.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">8. Termination of Services</h3>
+      <h4 className="font-bold mt-4 mb-2">8. Termination of Services</h4>
       <p>
         We reserve the right to terminate or suspend your access to the service
         if you:
@@ -125,7 +125,7 @@ export const TermsConditions = () => {
         period.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">9. Modifications to Terms</h3>
+      <h4 className="font-bold mt-4 mb-2">9. Modifications to Terms</h4>
       <p>
         We may modify these terms at any time. If changes are made, you will be
         notified either by email or through a notification the next time you log
@@ -136,7 +136,7 @@ export const TermsConditions = () => {
         constitute your acceptance of the modified terms.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">10. Intellectual Property</h3>
+      <h4 className="font-bold mt-4 mb-2">10. Intellectual Property</h4>
       <p>
         All content, branding, and intellectual property rights associated with
         our services belong solely to PANDR UG. You may not copy, modify, or
@@ -144,7 +144,7 @@ export const TermsConditions = () => {
         permission.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">11. Third-Party Services</h3>
+      <h4 className="font-bold mt-4 mb-2">11. Third-Party Services</h4>
       <p>Our services may integrate third-party services, including:</p>
       <ul className="list-disc pl-6">
         <li>Insomnia and APIDogs for API management.</li>
@@ -157,16 +157,16 @@ export const TermsConditions = () => {
         respective terms and policies.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">
+      <h4 className="font-bold mt-4 mb-2">
         12. Governing Law and Jurisdiction
-      </h3>
+      </h4>
       <p>
         These terms are governed by the laws of Germany. Any disputes arising
         out of or in connection with these terms shall be resolved in the courts
         of Berlin, Germany.
       </p>
 
-      <h3 className="font-bold mt-4 mb-2">13. Contact Information</h3>
+      <h4 className="font-bold mt-4 mb-2">13. Contact Information</h4>
       <p>
         If you have any questions or concerns about these terms, please contact
         us at:
