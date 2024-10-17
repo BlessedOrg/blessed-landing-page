@@ -9,29 +9,29 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     template: "%s | Blessed ",
-    default: "Blessed.fan",
+    default: "Blessed.fan"
   },
   openGraph: {
-    images: [`/metadata/og-image.svg`],
+    images: [`/metadata/og-image.svg`]
   },
   twitter: {
-    images: [`/metadata/og-image.svg`],
-  },
+    images: [`/metadata/og-image.svg`]
+  }
 };
 const ttBluescreens = localFont({
   src: "../../public/fonts/TT_Bluescreens_Bold.woff",
   variable: "--font-tt-bluescreens",
-  display: "swap",
+  display: "swap"
 });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${ttBluescreens.variable}`}>
-      <body className={inter.className}>
-        <RootProvider>
-          <main className="flex flex-col gap-8 items-center w-full">{children}</main>
-        </RootProvider>
-      </body>
+    <body className={inter.className}>
+    <RootProvider>
+      <main className="flex flex-col items-center w-full">{children}</main>
+    </RootProvider>
+    </body>
     </html>
   );
 }

@@ -2,54 +2,76 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Bars } from "@/components/ui/bars";
 
 const tabs = [
   {
     id: 0,
     title: "Developer API",
-    content: <div>1</div>
+    content: (
+      <div>
+        Create and customize tickets effortlessly in under 5 minutes using our
+        no-code solution.
+      </div>
+    ),
+    image: "/img/icons/DeveloperApi.png",
+    disabled: false
   },
   {
     id: 1,
     title: "Analytics",
-    content: <div>2</div>
+    content: (
+      <div>
+        Gain valuable insights into your ticket sales with real-time data and
+        reporting.
+      </div>
+    ),
+    image: "/img/icons/Analytics.png",
+    disabled: false
   },
   {
     id: 2,
     title: "Fee management",
-    content: <div>3</div>
+    content: (
+      <div>
+        Easily allocate a portion of transaction fees to stakeholders or causes
+        you care about.
+      </div>
+    ),
+    image: "/img/icons/Fee.png",
+    disabled: false
   },
   {
     id: 3,
-    title: <span>Lotteries & auction <span className="text-gray-400">(cooming soon)</span></span>,
-    content: <div>4</div>,
-    disabled: true
+    title: (
+      <span>
+        Lotteries & auction <span className="text-gray-400">(coming soon)</span>
+      </span>
+    ),
+    content: (
+      <div>
+        Enable fair, transparent distribution of limited items through secure
+        lotteries and auctions.
+      </div>
+    ),
+    image: "/img/icons/Lotteries.png",
+    disabled: false
   }
 ];
+
 export const TabsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
   const onTabClick = (id: number) => setActiveTab(id);
 
-  const activeTabContent = tabs.find(tab => tab.id === activeTab)?.content;
+  const activeTabData = tabs.find((tab) => tab.id === activeTab);
 
-  const barHeight = 75;
-  const rightBars = Array.from({ length: 4 }, (_, index) => {
-    const bottom = index * (barHeight * 2) + barHeight;
-
-    return <div
-      key={`left-${index}`}
-      className={`absolute right-0 w-[25%] bg-[#FFFACD] z-0`}
-      style={{
-        bottom: `${bottom}px`,
-        height: `${barHeight}px`
-      }}
-    ></div>;
-  });
-
-  return <div className="relative w-full bg-gradient-to-r my-5 from-[#FFFACD] to-[#EFEFEF] py-[80px] px-4 flex flex-col items-center gap-8">
-    <h2 className="font-bold uppercase text-3xl md:text-6xl text-center">Why you'll love blessed</h2>
+  return (
+    <div className="relative w-full bg-gradient-to-r my-5 from-[#FFFACD] to-[#EFEFEF] py-[80px] px-4 flex flex-col items-center gap-8">
+      <h2 className="font-bold uppercase text-3xl md:text-6xl text-center">
+        Why you'll love blessed
+      </h2>
       <div className="flex rounded-full p-2 bg-white overflow-x-auto w-[340px] md:w-fit">
-        {tabs.map(tab => {
+        {tabs.map((tab) => {
           const isActive = tab.id === activeTab;
           return (
             <button
@@ -65,11 +87,31 @@ export const TabsSection = () => {
           );
         })}
       </div>
-    <p className="text-center">Build and customize your tickets in just 5 minutes. Integration takes under 1 minute.</p>
-    <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-white w-full max-w-[800px] flex flex-col items-center p-4">
-      <Image src={"/logo.svg"} alt="logo blessed" height={36} width={100} className="w-[100px] h-auto" />
-      {activeTabContent}
+      <p className="text-center">
+        Build and customize your tickets in just 5 minutes. Integration takes
+        under 1 minute.
+      </p>
+      <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4">
+        <Image
+          src={"/logo.svg"}
+          alt="logo blessed"
+          height={36}
+          width={100}
+          className="w-[100px] h-auto"
+        />
+        <div className="mt-8">{activeTabData?.content}</div>
+        <div className="mt-4 relative w-full aspect-[802/517]">
+          <Image
+            src={activeTabData?.image || "/placeholder.png"}
+            alt={`${activeTabData?.title} illustration`}
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+      <div className="absolute top-[50%] w-full h-[50%] mr-8" style={{ transform: "translateY(-50%)" }}>
+        <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />
+      </div>
     </div>
-    {rightBars}
-  </div>;
+  );
 };
