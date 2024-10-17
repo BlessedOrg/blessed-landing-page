@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const mediumTiles = [
   {
@@ -74,12 +75,16 @@ export const AboutUsTiles = () => {
 
     
         <div className="flex gap-6">
-          <Button variant="outline" size="xl" className="rounded-[39px] w-[165px] h-[52px]">
+        <Link href="/contact_us">
+        <Button variant="outline" size="xl" className="rounded-[39px] w-[165px] h-[52px]">
             Contact us
           </Button>
+          </Link>
+          <Link href="https://t.me/blessedsupport" target="_blank" className="underline">
           <Button variant="default" size="xl" className="rounded-[39px] w-[165px] h-[52px]">
             Join our community
           </Button>
+          </Link>
         </div>
       </div>
     </div>

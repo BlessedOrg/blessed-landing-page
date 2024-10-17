@@ -4,7 +4,6 @@ export const SeeYouIn = () => {
   return (
     <div className="flex flex-col items-center gap-[56px] w-[1108px] h-[508px] p-[48px]">
       {" "}
-      {/* Обновлены стили контейнера */}
       <h1 className="font-bold uppercase text-3xl md:text-6xl text-center">
         See You In...
       </h1>

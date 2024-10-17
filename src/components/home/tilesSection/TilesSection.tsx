@@ -52,7 +52,7 @@ export const TilesSection = () => {
                 <div className="text-[xl] font-medium">{tile.description}
                 </div>
               </div>
-              <Link href={"/contact_us"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px]`}>
+              <Link href={"/use_cases"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px]`}>
                 {tile.button}
               </Link>
             </div>
