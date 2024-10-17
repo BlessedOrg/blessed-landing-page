@@ -96,7 +96,7 @@ export const UseCases = () => {
         </div>
       </div>
 
-      {/* Основная секция */}
+     
       <div className="flex items-center mb-16" style={{ width: "1280px" }}>
         <div
           className="rounded-lg flex items-center justify-center"
@@ -182,7 +182,7 @@ export const UseCases = () => {
         </div>
       </div>
 
-      {/* Нижняя зеркальная секция */}
+     
       <div
         className="flex items-center flex-row-reverse"
         style={{ width: "1280px" }}
@@ -196,7 +196,7 @@ export const UseCases = () => {
           }}
         >
           <Image
-            src="/img/icons/pacman.svg"
+            src="/img/icons/pacman-white.svg"
             alt="Event Icon"
             width={200}
             height={200}

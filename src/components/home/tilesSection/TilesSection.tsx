@@ -15,7 +15,7 @@ const mediumTiles = [
   {
     title: "Gaming",
     description: "Issue and manage passes for gaming events and tournaments.",
-    image: "/img/icons/pacman.svg",
+    image: "/img/icons/pacman-white.svg",
     colors: {
       general: "bg-black text-white",
       button: "border-white text-white"

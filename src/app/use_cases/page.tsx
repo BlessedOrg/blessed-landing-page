@@ -1,5 +1,4 @@
 import { Navigation } from "@/components/nav/Navigation";
-
 import { UseCasesHeader } from "@/components/useCases/UseCasesHeader";
 import { UseCases } from "@/components/useCases/UseCases";
 import { PricingTestimonial } from "@/components/pricing/PricingTestimonial";
@@ -16,7 +15,7 @@ export default function Home() {
       <UseCasesHeader />
       <UseCases />
       {/* <PricingTestimonial /> */}
-      <TemplatesCards />
+      {/* <TemplatesCards /> */}
       <QuoteSection />
       <QuoteCard />
       <Cta />
