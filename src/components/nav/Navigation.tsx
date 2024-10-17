@@ -34,7 +34,7 @@ export const Navigation = () => {
         />
       </Link>
       <div className="flex gap-4">
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center gap-2 hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none">
             Product <ChevronDown />
           </DropdownMenuTrigger>
@@ -50,8 +50,19 @@ export const Navigation = () => {
           <DropdownMenuContent>
             <DropdownMenuItem>Coming soon</DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
-
+        </DropdownMenu> */}
+        <Link
+          href={"https://blessed.fan"}
+          className="hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none"
+        >
+          Product
+        </Link>
+        <Link
+          href={"https://docs.blessed.fan/"}
+          className="hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none"
+        >
+          Resources
+        </Link>
         <Link
           href={"/pricing"}
           className="hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none"

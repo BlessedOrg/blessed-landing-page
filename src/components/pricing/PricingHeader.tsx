@@ -2,6 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import Link from "next/link";
+import { dashboardUrl } from "@/variables/varaibles";
 
 export const PricingHeader = () => {
   const barHeight = 75;
@@ -99,9 +101,10 @@ export const PricingHeader = () => {
               <img src="/img/icons/Check-Simple.svg" alt="Check icon" className="mr-2 w-6 h-6" />
               <p className="text-[16px] text-left">White-glove service</p>
             </div>
-            <Button variant="outline" size="default" className="w-[232px] h-[52px] rounded-[39px] mt-14">
+            <Link href="/contact_us"><Button variant="outline" size="default" className="w-[232px] h-[52px] rounded-[39px] mt-14">
               Contact us
             </Button>
+            </Link>
           </div>
         </div>
       </div>
