@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { MobileNav } from "@/components/nav/MobileNav";
 import { AuthModal } from "@/components/authModal/AuthModal";
 import { Menu, X } from "lucide-react";
@@ -41,10 +41,10 @@ export const Navigation = () => {
         </Link>
 
         {!isLoggedIn && (
-          <Suspense>
+          <>
             <AuthModal authType="login" />
             <AuthModal authType="onboarding" />
-          </Suspense>
+          </>
         )}
         {isLoggedIn && (
           <Button variant="green" className="rounded-full " size="lg" asChild>

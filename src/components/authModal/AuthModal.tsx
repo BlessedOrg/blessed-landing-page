@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { setCookie } from "cookies-next";
 import { apiUrl, dashboardUrl } from "@/variables/varaibles";
@@ -14,6 +14,9 @@ import { Card } from "@/components/ui/card";
 import { useSearchParams } from "next/navigation";
 
 export const AuthModal = ({ authType = "login", label = "Start for free", className }: { authType?: "onboarding" | "login", label?: string, className?: string }) => {
+  return (<Suspense><AuthModalContent authType={authType} label={label} className={className} /></Suspense>);
+};
+const AuthModalContent = ({ authType = "login", label = "Start for free", className }: { authType?: "onboarding" | "login", label?: string, className?: string }) => {
   const searchParams = useSearchParams();
   const isAfterLogout = authType === "login" && searchParams.get("logout");
 
