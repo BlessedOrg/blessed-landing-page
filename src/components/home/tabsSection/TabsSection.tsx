@@ -14,8 +14,8 @@ const tabs = [
         no-code solution.
       </div>
     ),
-    image: "/img/icons/DeveloperApi.png",
-    disabled: false
+    image: "/img/screenshots/DeveloperApi.png",
+    disabled: false,
   },
   {
     id: 1,
@@ -26,8 +26,8 @@ const tabs = [
         reporting.
       </div>
     ),
-    image: "/img/icons/Analytics.png",
-    disabled: false
+    image: "/img/screenshots/Analytics.png",
+    disabled: false,
   },
   {
     id: 2,
@@ -38,8 +38,8 @@ const tabs = [
         you care about.
       </div>
     ),
-    image: "/img/icons/Fee.png",
-    disabled: false
+    image: "/img/screenshots/Fee.png",
+    disabled: false,
   },
   {
     id: 3,
@@ -54,9 +54,9 @@ const tabs = [
         lotteries and auctions.
       </div>
     ),
-    image: "/img/icons/Lotteries.png",
-    disabled: false
-  }
+    image: "/img/screenshots/Lotteries.png",
+    disabled: false,
+  },
 ];
 
 export const TabsSection = () => {
@@ -109,7 +109,10 @@ export const TabsSection = () => {
           />
         </div>
       </div>
-      <div className="absolute top-[50%] w-full h-[50%] mr-8" style={{ transform: "translateY(-50%)" }}>
+      <div
+        className="absolute top-[50%] w-full h-[50%] mr-8"
+        style={{ transform: "translateY(-50%)" }}
+      >
         <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />
       </div>
     </div>

@@ -14,7 +14,7 @@ export const SeeYouIn = () => {
         >
           <div className="text-4xl font-bold">Berlin</div>
           <div className="text-center text-xl font-regular">
-            Alexanderplatz 1, 10178 Berlin, Germany
+            Pandr UG c/o Blessed Erich-Weinert-Str. 51, 10439 Berlin, Germany
           </div>
           <Button
             variant="outline"
