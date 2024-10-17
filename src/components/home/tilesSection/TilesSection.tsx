@@ -32,14 +32,15 @@ export const TilesSection = () => {
       <div className="flex w-full min-h-[374px] py-6 px-4 md:py-10 md:px-8 bg-[rgba(239,239,239,1)] rounded-[1.5rem] justify-between flex-col gap-6">
         <div className="flex flex-col gap-6 md:flex-row justify-between">
           <div className="flex flex-col gap-4">
-            <div className="text-4xl font-bold uppercase">Conferences & meetups</div>
+            <h3 className="text-7xl font-bold uppercase">Conferences & meetups</h3>
             <div className="text-[xl] font-medium">Effortlessly manage entries for a smooth check-in experience.</div>
           </div>
           <Image src="/img/icons/coffe.svg" alt="Favorite Icon" className="self-center md:self-auto" width={200} height={200} />
         </div>
-        <Link href="/use_cases"><button className="flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
-        Learn more
-        </button>
+        <Link href="/use_cases">
+          <button className="font-semibold flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
+            Learn more
+          </button>
         </Link>
       </div>
       <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
@@ -48,11 +49,11 @@ export const TilesSection = () => {
             <Image src={tile.image} alt="Favorite Icon" width={200} height={200} className="self-center md:self-end" />
             <div className="flex flex-col gap-4 justify-between h-full">
               <div className="flex flex-col gap-2">
-                <div className="text-4xl font-bold">{tile.title}</div>
+                <h3 className="text-5xl font-bold">{tile.title}</h3>
                 <div className="text-[xl] font-medium">{tile.description}
                 </div>
               </div>
-              <Link href={"/use_cases"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px]`}>
+              <Link href={"/use_cases"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px] font-semibold`}>
                 {tile.button}
               </Link>
             </div>

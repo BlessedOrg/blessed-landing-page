@@ -5,7 +5,7 @@ export const UseCases = () => {
     <section
       className="flex flex-col justify-center items-center py-16"
       style={{
-        background: "linear-gradient(247.1deg, #FFFACD 0%, #FFFFFF 67%)",
+        background: "linear-gradient(247.1deg, #FFFACD 0%, #FFFFFF 67%)"
       }}
     >
       <div
@@ -17,7 +17,7 @@ export const UseCases = () => {
           style={{
             width: "624px",
             height: "576px",
-            backgroundColor: "#EFEFEF",
+            backgroundColor: "#EFEFEF"
           }}
         >
           <Image
@@ -42,9 +42,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Easy integration and management
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Seamlessly integrate our platform into your existing systems.
                 Manage ticket with ease, allowing you to focus on delivering a
@@ -62,9 +62,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Radical transparency
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Ensure transparency in how access is granted. Our platform uses
                 fair methods like lotteries and auctions, so participants trust
@@ -82,9 +82,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Fair access for all
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Break down traditional barriers like location or timing. Our
                 system ensures that every participant has a fair shot at ticket,
@@ -101,7 +101,7 @@ export const UseCases = () => {
           style={{
             width: "624px",
             height: "576px",
-            backgroundColor: "#FFFACD",
+            backgroundColor: "#FFFACD"
           }}
         >
           <Image
@@ -126,9 +126,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Effortless integration
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Add our platform as an extra service to your current setup
                 without disruption. Simplify how you manage ticketing, letting
@@ -147,9 +147,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Radical transparency
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Offer your audience a transparent and fair way to gain a ticket.
                 Our methods ensure everyone knows the process is unbiased and
@@ -167,9 +167,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Fair access for all
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Level the playing field by ensuring fair access to your events,
                 regardless of audience location or other potential barriers. Our
@@ -189,7 +189,7 @@ export const UseCases = () => {
           style={{
             width: "624px",
             height: "576px",
-            backgroundColor: "#000000",
+            backgroundColor: "#000000"
           }}
         >
           <Image
@@ -214,9 +214,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Seamless integration and management
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Easily integrate our platform with your current systems to
                 enhance your ticket management. Focus on creating great gaming
@@ -234,9 +234,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Radical transparency
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Provide your gaming community with a clear and transparent
                 ticket process. Our fair methods, like auctions and lotteries,
@@ -255,9 +255,9 @@ export const UseCases = () => {
               className="mr-4"
             />
             <div>
-              <h3 className="text-xl font-semibold mb-2">
+              <h4 className="text-xl font-semibold mb-2">
                 Fair access for all
-              </h3>
+              </h4>
               <p className="text-gray-600">
                 Ensure that access isn’t determined by external factors like
                 location or speed. Our platform offers a fair chance for

@@ -3,46 +3,12 @@ import { HeaderTiles } from "@/components/home/header/HeaderTiles";
 import Image from "next/image";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { AuthModal } from "@/components/authModal/AuthModal";
+import { Bars } from "@/components/ui/bars";
 
 export const Header = () => {
-  const barHeight = 75;
   const headerRef = useRef(null);
   const isInView = useInView(headerRef, { once: false });
-
-  const leftBars = Array.from({ length: 3 }, (_, index) => {
-    const top = index * (barHeight * 2) + barHeight;
-
-    return (
-      <div
-        key={`left-${index}`}
-        className={`absolute w-[60%] bg-green-500 z-[-1]`}
-        style={{
-          top: `${top}px`,
-          left: `${isInView ? 0 : "-100%"}`,
-          height: `${barHeight}px`,
-          transition: "left 1.5s",
-        }}
-      ></div>
-    );
-  });
-
-  const rightBars = Array.from({ length: 4 }, (_, index) => {
-    const top = index * (barHeight * 2);
-
-    return (
-      <div
-        key={`right-${index}`}
-        className={`absolute w-[25%] bg-green-500 z-[-1]`}
-        style={{
-          top: `${top}px`,
-          height: `${barHeight}px`,
-          right: `${isInView ? 0 : "-100%"}`,
-          transition: "right 1.5s",
-        }}
-      ></div>
-    );
-  });
 
   return (
     <header
@@ -62,11 +28,8 @@ export const Header = () => {
         className="absolute left-[1%] bottom-[0px] md:top-[30%]"
       />
 
-      {leftBars}
-      {rightBars}
-      <Button className="w-fit rounded-full" variant="green" size="lg">
-        Get started for free
-      </Button>
+      <Bars barHeight={75} isInView={isInView} leftBars={{ show: true }} rightBars={{ show: true }} />
+      <AuthModal label="Get started for free" authType="onboarding" />
     </header>
   );
 };

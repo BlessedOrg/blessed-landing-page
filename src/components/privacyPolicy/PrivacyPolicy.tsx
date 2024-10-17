@@ -16,7 +16,7 @@ export const PrivacyPolicy = () => {
         when you use our website.
       </p>
 
-      <h3 className="font-bold mb-2">1. Controller Information</h3>
+      <h4 className="font-bold mb-2">1. Controller Information</h4>
       <p className="mb-4">
         PANDR UG
         <br />
@@ -32,7 +32,7 @@ export const PrivacyPolicy = () => {
         </a>
       </p>
 
-      <h3 className="font-bold mb-2">2. Data We Collect</h3>
+      <h4 className="font-bold mb-2">2. Data We Collect</h4>
       <p className="mb-4">
         We collect personal data that you provide to us directly or through your
         use of our services. This includes:
@@ -54,7 +54,7 @@ export const PrivacyPolicy = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mb-2">3. How We Use Your Data</h3>
+      <h4 className="font-bold mb-2">3. How We Use Your Data</h4>
       <p className="mb-4">
         We process personal data for the following purposes:
       </p>
@@ -74,7 +74,7 @@ export const PrivacyPolicy = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mb-2">4. Legal Basis for Processing</h3>
+      <h4 className="font-bold mb-2">4. Legal Basis for Processing</h4>
       <p className="mb-4">
         We process personal data based on one or more of the following legal
         grounds:
@@ -99,7 +99,7 @@ export const PrivacyPolicy = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mb-2">5. Sharing Your Data</h3>
+      <h4 className="font-bold mb-2">5. Sharing Your Data</h4>
       <p className="mb-4">
         We may share your data with the following entities:
       </p>
@@ -121,7 +121,7 @@ export const PrivacyPolicy = () => {
         </li>
       </ul>
 
-      <h3 className="font-bold mb-2">6. International Data Transfers</h3>
+      <h4 className="font-bold mb-2">6. International Data Transfers</h4>
       <p className="mb-4">
         Your personal data may be transferred and processed in countries outside
         the European Economic Area (EEA). In such cases, we ensure that an
@@ -130,14 +130,14 @@ export const PrivacyPolicy = () => {
         other lawful transfer mechanisms.
       </p>
 
-      <h3 className="font-bold mb-2">7. Data Retention</h3>
+      <h4 className="font-bold mb-2">7. Data Retention</h4>
       <p className="mb-4">
         We retain your personal data for as long as necessary to fulfill the
         purposes outlined in this policy, unless a longer retention period is
         required by law.
       </p>
 
-      <h3 className="font-bold mb-2">8. Your Rights</h3>
+      <h4 className="font-bold mb-2">8. Your Rights</h4>
       <p className="mb-4">
         As a data subject, you have the following rights under the GDPR:
       </p>
@@ -177,14 +177,14 @@ export const PrivacyPolicy = () => {
         To exercise these rights, please contact us at [Insert Contact Email].
       </p>
 
-      <h3 className="font-bold mb-2">9. Security</h3>
+      <h4 className="font-bold mb-2">9. Security</h4>
       <p className="mb-4">
         We take the security of your personal data seriously and implement
         appropriate technical and organizational measures to protect it from
         unauthorized access, disclosure, alteration, or destruction.
       </p>
 
-      <h3 className="font-bold mb-2">10. Use of Cookies</h3>
+      <h4 className="font-bold mb-2">10. Use of Cookies</h4>
       <p className="mb-4">
         Our website uses cookies and similar technologies to provide you with a
         better experience. You can control the use of cookies through your
@@ -192,14 +192,14 @@ export const PrivacyPolicy = () => {
         Policy.
       </p>
 
-      <h3 className="font-bold mb-2">11. Changes to This Privacy Policy</h3>
+      <h4 className="font-bold mb-2">11. Changes to This Privacy Policy</h4>
       <p className="mb-4">
         We may update this privacy policy from time to time. Any changes will be
         posted on this page, and where appropriate, notified to you via email or
         other means. Please review this policy periodically.
       </p>
 
-      <h3 className="font-bold mb-2">12. Contact Information</h3>
+      <h4 className="font-bold mb-2">12. Contact Information</h4>
       <p>
         If you have any questions or concerns about this privacy policy or how
         your data is handled, please contact us at:

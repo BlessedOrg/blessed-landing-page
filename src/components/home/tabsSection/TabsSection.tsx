@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Bars } from "@/components/ui/bars";
 
 const tabs = [
   {
@@ -14,7 +15,7 @@ const tabs = [
       </div>
     ),
     image: "/img/icons/DeveloperApi.png",
-    disabled: false,
+    disabled: false
   },
   {
     id: 1,
@@ -26,7 +27,7 @@ const tabs = [
       </div>
     ),
     image: "/img/icons/Analytics.png",
-    disabled: false,
+    disabled: false
   },
   {
     id: 2,
@@ -38,7 +39,7 @@ const tabs = [
       </div>
     ),
     image: "/img/icons/Fee.png",
-    disabled: false,
+    disabled: false
   },
   {
     id: 3,
@@ -54,8 +55,8 @@ const tabs = [
       </div>
     ),
     image: "/img/icons/Lotteries.png",
-    disabled: false,
-  },
+    disabled: false
+  }
 ];
 
 export const TabsSection = () => {
@@ -63,22 +64,6 @@ export const TabsSection = () => {
   const onTabClick = (id: number) => setActiveTab(id);
 
   const activeTabData = tabs.find((tab) => tab.id === activeTab);
-
-  const barHeight = 75;
-  const rightBars = Array.from({ length: 4 }, (_, index) => {
-    const bottom = index * (barHeight * 2) + barHeight;
-
-    return (
-      <div
-        key={`left-${index}`}
-        className={`absolute right-0 w-[25%] bg-[#FFFACD] z-0`}
-        style={{
-          bottom: `${bottom}px`,
-          height: `${barHeight}px`,
-        }}
-      ></div>
-    );
-  });
 
   return (
     <div className="relative w-full bg-gradient-to-r my-5 from-[#FFFACD] to-[#EFEFEF] py-[80px] px-4 flex flex-col items-center gap-8">
@@ -124,7 +109,9 @@ export const TabsSection = () => {
           />
         </div>
       </div>
-      {rightBars}
+      <div className="absolute top-[50%] w-full h-[50%] mr-8" style={{ transform: "translateY(-50%)" }}>
+        <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />
+      </div>
     </div>
   );
 };
