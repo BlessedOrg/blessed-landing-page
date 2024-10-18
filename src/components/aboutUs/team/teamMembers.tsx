@@ -3,18 +3,18 @@ export const teamMembers = [
     name: "Viet Nguyen",
     role: "Head of Vision & Technology",
     imgSrc: "/img/team-avatars/Viet.png",
-    description: (
-      <div className="flex flex-col gap-4">
-        <p className="font-semibold">
-          Viet transforms ticket management with innovative, user-friendly
-          solutions.
-        </p>
-        <div>
-          <p className="font-semibold">Superpower</p>
-          <p>Mastermind of seamless ticket solutions</p>
-        </div>
-      </div>
-    ),
+    // description: (
+    //   <div className="flex flex-col gap-4">
+    //     <p className="font-semibold">
+    //       Viet transforms ticket management with innovative, user-friendly
+    //       solutions.
+    //     </p>
+    //     <div>
+    //       <p className="font-semibold">Superpower</p>
+    //       <p>Mastermind of seamless ticket solutions</p>
+    //     </div>
+    //   </div>
+    // ),
     socials: [
       {
         id: "twitter",
