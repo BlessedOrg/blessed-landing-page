@@ -25,18 +25,21 @@ export const Bars = ({ barHeight = 75, isInView = true, color = "bg-green-500", 
       show: rightBars?.show ?? false
     }
   };
+
   const leftBarsGenerate = Array.from({ length: values.leftBars.amount }, (_, index) => {
     const top = index * (barHeight * 2) + barHeight;
 
     return (
       <div
         key={`left-${index}`}
-        className={`absolute w-[${values.leftBars.widthPercentage}%] ${color} z-[${zIndex}]`}
+        className={`absolute ${color}`}
         style={{
           top: `${top}px`,
           left: `${isInView ? 0 : "-100%"}`,
           height: `${barHeight}px`,
-          transition: "left 1.5s"
+          transition: "left 1.5s",
+          width: `${values.leftBars.widthPercentage}%`,
+          zIndex: `${zIndex}`
         }}
       ></div>
     );
@@ -48,18 +51,20 @@ export const Bars = ({ barHeight = 75, isInView = true, color = "bg-green-500", 
     return (
       <div
         key={`right-${index}`}
-        className={`absolute w-[${values.rightBars.widthPercentage}%] ${color} z-[${zIndex}]`}
+        className={`absolute ${color}`}
         style={{
           top: `${top}px`,
           height: `${barHeight}px`,
           right: `${isInView ? 0 : "-100%"}`,
-          transition: "right 1.5s"
+          transition: "right 1.5s",
+          width: `${values.rightBars.widthPercentage}%`,
+          zIndex: `${zIndex}`
         }}
       ></div>
     );
   });
   return <>
-    {values.leftBars.show && leftBarsGenerate}
-    {values.rightBars.show && rightBarsGenerate}
+    {values.leftBars?.show && leftBarsGenerate}
+    {values.rightBars?.show && rightBarsGenerate}
   </>;
 };
