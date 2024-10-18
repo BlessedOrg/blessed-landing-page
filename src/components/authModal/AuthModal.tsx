@@ -12,6 +12,7 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Card } from "@/components/ui/card";
 import { useSearchParams } from "next/navigation";
+import { fetcher } from "@/requests/requests";
 
 export const AuthModal = ({ authType = "login", label = "Start for free", className }: { authType?: "onboarding" | "login", label?: string, className?: string }) => {
   return (<Suspense><AuthModalContent authType={authType} label={label} className={className} /></Suspense>);
@@ -31,13 +32,12 @@ const AuthModalContent = ({ authType = "login", label = "Start for free", classN
   const onEmailSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${apiUrl}/developers/login`, {
+      const res = await fetcher(`${apiUrl}/developers/login`, {
         method: "POST",
         body: JSON.stringify({ email })
       });
-      const data = await res.json();
-      if (res.status !== 200) {
-        toast(`Error: ${data?.message || res.statusText}`, { type: "error" });
+      if (!!res?.error) {
+        toast(`Error: ${res?.message || res.statusText}`, { type: "error" });
       } else {
         toast("Successfully send verification code, please check your inbox!", { type: "success" });
         setEmailSent(true);
