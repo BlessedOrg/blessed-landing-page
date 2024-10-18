@@ -75,7 +75,9 @@ export const TilesSection = () => {
                 />
                 <div className="flex flex-col gap-4 justify-between h-full">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-5xl font-bold">{tile.title}</h3>
+                    <h3 className="text-5xl uppercase font-bold">
+                      {tile.title}
+                    </h3>
                     <div className="text-[xl] font-medium">
                       {tile.description}
                     </div>

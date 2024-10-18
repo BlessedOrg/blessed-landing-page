@@ -17,7 +17,7 @@ export const Footer = () => {
               <div className="flex flex-col gap-4">
                 <span className="font-bold">Product</span>
                 <span>
-                  <Link href="/">Overview</Link>
+                  <Link href="/use-cases">Use cases</Link>
                 </span>
                 {/* <span>
                   <Link href="https://docs.blessed.fan/">Developer API</Link>
