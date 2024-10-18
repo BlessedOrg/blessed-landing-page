@@ -15,7 +15,7 @@ export const PricingHeader = () => {
       ref={headerRef}
       className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center w-full overflow-hidden max-w-[1440px]"
     >
-      <div className="z-10 flex flex-col items-center gap-4">
+      <div className="z-1 flex flex-col items-center gap-4">
         <h1 className="text-[107px] leading-[94px] uppercase font-bold text-center">
           Radically transparent and
           <br />
