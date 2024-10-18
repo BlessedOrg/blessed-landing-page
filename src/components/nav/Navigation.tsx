@@ -28,7 +28,7 @@ export const Navigation = () => {
           className="w-[100px] h-auto"
         />
       </Link>
-      <div className="lg:flex gap-4 justify-center hidden">
+      <div className="lg:flex gap-4 justify-center rounded-[99px] hidden">
         <NavMenu />
       </div>
 
@@ -53,7 +53,10 @@ export const Navigation = () => {
         )}
       </div>
 
-      <button onClick={onNavToggle} className="lg:hidden text-2xl justify-self-end">
+      <button
+        onClick={onNavToggle}
+        className="lg:hidden text-2xl justify-self-end"
+      >
         {isMobileNavOpen ? <X /> : <Menu />}
       </button>
       <MobileNav isOpen={isMobileNavOpen} />
