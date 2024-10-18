@@ -4,29 +4,37 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "About us",
-    href: "/about_us",
-    description: "Learn more about the company."
+    href: "/about-us",
+    description: "Learn more about the company.",
   },
   {
     title: "Contact us",
-    href: "/contact_us",
-    description: "Get in touch with us."
+    href: "/contact-us",
+    description: "Get in touch with us.",
   },
   {
     title: "Terms & conditions",
     href: "/terms-and-conditions",
-    description: "Learn more about our terms and conditions."
+    description: "Learn more about our terms and conditions.",
   },
   {
     title: "Privacy policy",
     href: "/privacy-policy",
-    description: "Learn more about our privacy policy."
-  }
+    description: "Learn more about our privacy policy.",
+  },
 ];
 
 export const NavMenu = () => {
@@ -40,7 +48,7 @@ export const NavMenu = () => {
               <ListItem href="https://docs.blessed.fan/" title="Docs">
                 Learn more about Blessed product.
               </ListItem>
-              <ListItem href="/pricing" title="Pircing">
+              <ListItem href="/pricing" title="Pricing">
                 Start your free trial.
               </ListItem>
               <ListItem href="/guides-and-tutorials" title="Guides & Tutorials">
