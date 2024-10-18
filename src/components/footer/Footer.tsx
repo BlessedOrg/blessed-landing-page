@@ -19,9 +19,9 @@ export const Footer = () => {
                 <span>
                   <Link href="/">Overview</Link>
                 </span>
-                <span>
+                {/* <span>
                   <Link href="https://docs.blessed.fan/">Developer API</Link>
-                </span>
+                </span> */}
                 <span>
                   <Link href="https://docs.blessed.fan/">Docs</Link>
                 </span>

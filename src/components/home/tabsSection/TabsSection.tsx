@@ -8,6 +8,13 @@ const tabs = [
   {
     id: 0,
     title: "Developer API",
+    content: <div>Integrate ticketing seamlessly with our powerful API.</div>,
+    image: "/img/screenshots/DeveloperApi.png",
+    disabled: false,
+  },
+  {
+    id: 1,
+    title: "Builder",
     content: (
       <div>
         Create and customize tickets effortlessly in under 5 minutes using our
@@ -17,46 +24,58 @@ const tabs = [
     image: "/img/screenshots/DeveloperApi.png",
     disabled: false,
   },
-  {
-    id: 1,
-    title: "Analytics",
-    content: (
-      <div>
-        Gain valuable insights into your ticket sales with real-time data and
-        reporting.
-      </div>
-    ),
-    image: "/img/screenshots/Analytics.png",
-    disabled: false,
-  },
-  {
-    id: 2,
-    title: "Fee management",
-    content: (
-      <div>
-        Easily allocate a portion of transaction fees to stakeholders or causes
-        you care about.
-      </div>
-    ),
-    image: "/img/screenshots/Fee.png",
-    disabled: false,
-  },
-  {
-    id: 3,
-    title: (
-      <span>
-        Lotteries & auction <span className="text-gray-400">(coming soon)</span>
-      </span>
-    ),
-    content: (
-      <div>
-        Enable fair, transparent distribution of limited items through secure
-        lotteries and auctions.
-      </div>
-    ),
-    image: "/img/screenshots/Lotteries.png",
-    disabled: false,
-  },
+  // {
+  //   id: 0,
+  //   title: "Developer API",
+  //   content: (
+  //     <div>
+  //       Create and customize tickets effortlessly in under 5 minutes using our
+  //       no-code solution.
+  //     </div>
+  //   ),
+  //   image: "/img/screenshots/DeveloperApi.png",
+  //   disabled: false,
+  // },
+  // {
+  //   id: 1,
+  //   title: "Analytics",
+  //   content: (
+  //     <div>
+  //       Gain valuable insights into your ticket sales with real-time data and
+  //       reporting.
+  //     </div>
+  //   ),
+  //   image: "/img/screenshots/Analytics.png",
+  //   disabled: false,
+  // },
+  // {
+  //   id: 2,
+  //   title: "Fee management",
+  //   content: (
+  //     <div>
+  //       Easily allocate a portion of transaction fees to stakeholders or causes
+  //       you care about.
+  //     </div>
+  //   ),
+  //   image: "/img/screenshots/Fee.png",
+  //   disabled: false,
+  // },
+  // {
+  //   id: 3,
+  //   title: (
+  //     <span>
+  //       Lotteries & auction <span className="text-gray-400">(coming soon)</span>
+  //     </span>
+  //   ),
+  //   content: (
+  //     <div>
+  //       Enable fair, transparent distribution of limited items through secure
+  //       lotteries and auctions.
+  //     </div>
+  //   ),
+  //   image: "/img/screenshots/Lotteries.png",
+  //   disabled: false,
+  // },
 ];
 
 export const TabsSection = () => {
@@ -87,10 +106,9 @@ export const TabsSection = () => {
           );
         })}
       </div>
-      <p className="text-center">
-        Build and customize your tickets in just 5 minutes. Integration takes
-        under 1 minute.
-      </p>
+
+      <div className="text-center mt-4">{activeTabData?.content}</div>
+
       <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4">
         <Image
           src={"/logo.svg"}
@@ -99,7 +117,7 @@ export const TabsSection = () => {
           width={100}
           className="w-[100px] h-auto"
         />
-        <div className="mt-8">{activeTabData?.content}</div>
+
         <div className="mt-4 relative w-full aspect-[802/517]">
           <Image
             src={activeTabData?.image || "/placeholder.png"}
@@ -109,6 +127,7 @@ export const TabsSection = () => {
           />
         </div>
       </div>
+
       <div
         className="absolute top-[50%] w-full h-[50%] mr-8"
         style={{ transform: "translateY(-50%)" }}

@@ -12,6 +12,7 @@ const mediumTiles = [
       button: "border-black text-black",
     },
     button: "More on GitHub",
+    link: "https://github.com/BlessedOrg/",
   },
   {
     title: "Want to partner",
@@ -22,6 +23,7 @@ const mediumTiles = [
       button: "border-black text-black",
     },
     button: "Contact us",
+    link: "/contact-us",
   },
 ];
 
@@ -54,13 +56,15 @@ export const AboutUsTiles = () => {
                 <div className="text-[xl] font-medium">{tile.description}</div>
               </div>
 
-              <Button
-                variant="outline"
-                size="xl"
-                className="rounded-[39px] w-[165px] h-[52px]"
-              >
-                {tile.button}
-              </Button>
+              <Link href={tile.link} target="_blank">
+                <Button
+                  variant="outline"
+                  size="xl"
+                  className="rounded-[39px] w-[165px] h-[52px]"
+                >
+                  {tile.button}
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
