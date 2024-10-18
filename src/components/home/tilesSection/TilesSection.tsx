@@ -4,13 +4,14 @@ import Link from "next/link";
 const mediumTiles = [
   {
     title: "Events & festivals",
-    description: "Sell and manage tickets with radical transparency and security.",
+    description:
+      "Sell and manage tickets with radical transparency and security.",
     image: "/img/icons/party-popper.svg",
     colors: {
       general: "bg-[#FFFACD]",
-      button: "border-black text-black"
+      button: "border-black text-black",
     },
-    button: "Learn more"
+    button: "Learn more",
   },
   {
     title: "Gaming",
@@ -18,48 +19,79 @@ const mediumTiles = [
     image: "/img/icons/pacman-white.svg",
     colors: {
       general: "bg-black text-white",
-      button: "border-white text-white"
+      button: "border-white text-white",
     },
-    button: "Learn more"
-  }
+    button: "Learn more",
+  },
 ];
 
 export const TilesSection = () => {
-  return <div className="flex flex-col gap-4 justify-center py-10 items-center px-4">
-    <h2 className="font-bold uppercase text-3xl md:text-6xl text-center">See Blessed in action</h2>
-    <p className="text-center">Start with a use-case template and get your project started in minutes.</p>
-    <div className="flex flex-col gap-6 items-center justify-center w-full mt-10">
-      <div className="flex w-full min-h-[374px] py-6 px-4 md:py-10 md:px-8 bg-[rgba(239,239,239,1)] rounded-[1.5rem] justify-between flex-col gap-6">
-        <div className="flex flex-col gap-6 md:flex-row justify-between">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-7xl font-bold uppercase">Conferences & meetups</h3>
-            <div className="text-[xl] font-medium">Effortlessly manage entries for a smooth check-in experience.</div>
+  return (
+    <div className="flex flex-col gap-4 justify-center py-10 items-center px-4">
+      <h2 className="font-bold uppercase text-3xl md:text-6xl text-center">
+        See Blessed in action
+      </h2>
+      <p className="text-center">
+        Start with a use-case template and get your project started in minutes.
+      </p>
+      <div className="flex flex-col gap-6 items-center justify-center w-full mt-10">
+        <div className="flex w-full min-h-[374px] py-6 px-4 md:py-10 md:px-8 bg-[rgba(239,239,239,1)] rounded-[1.5rem] justify-between flex-col gap-6">
+          <div className="flex flex-col gap-6 md:flex-row justify-between">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-7xl font-bold uppercase">
+                Conferences & meetups
+              </h3>
+              <div className="text-[xl] font-medium">
+                Effortlessly manage entries for a smooth check-in experience.
+              </div>
+            </div>
+            <Image
+              src="/img/icons/coffe.svg"
+              alt="Favorite Icon"
+              className="self-center md:self-auto"
+              width={200}
+              height={200}
+            />
           </div>
-          <Image src="/img/icons/coffe.svg" alt="Favorite Icon" className="self-center md:self-auto" width={200} height={200} />
+          <Link href="/use-cases">
+            <button className="font-semibold flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
+              Learn more
+            </button>
+          </Link>
         </div>
-        <Link href="/use_cases">
-          <button className="font-semibold flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] border-black text-black bg-transparent rounded-[39px]">
-            Learn more
-          </button>
-        </Link>
-      </div>
-      <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
-        {mediumTiles.map((tile, index) => {
-          return <div key={tile.title + index} className={`flex flex-col gap-4 w-full-[374px] py-6 px-4 md:py-10 md:px-8  ${tile.colors.general} rounded-[1.5rem] w-full`}>
-            <Image src={tile.image} alt="Favorite Icon" width={200} height={200} className="self-center md:self-end" />
-            <div className="flex flex-col gap-4 justify-between h-full">
-              <div className="flex flex-col gap-2">
-                <h3 className="text-5xl font-bold">{tile.title}</h3>
-                <div className="text-[xl] font-medium">{tile.description}
+        <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
+          {mediumTiles.map((tile, index) => {
+            return (
+              <div
+                key={tile.title + index}
+                className={`flex flex-col gap-4 w-full-[374px] py-6 px-4 md:py-10 md:px-8  ${tile.colors.general} rounded-[1.5rem] w-full`}
+              >
+                <Image
+                  src={tile.image}
+                  alt="Favorite Icon"
+                  width={200}
+                  height={200}
+                  className="self-center md:self-end"
+                />
+                <div className="flex flex-col gap-4 justify-between h-full">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-5xl font-bold">{tile.title}</h3>
+                    <div className="text-[xl] font-medium">
+                      {tile.description}
+                    </div>
+                  </div>
+                  <Link
+                    href={"/use-cases"}
+                    className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px] font-semibold`}
+                  >
+                    {tile.button}
+                  </Link>
                 </div>
               </div>
-              <Link href={"/use_cases"} className={`flex w-full md:max-w-[185px] py-[12px] px-[28px] items-center justify-center gap-[8px] border-[2px] ${tile.colors.button} bg-transparent rounded-[39px] font-semibold`}>
-                {tile.button}
-              </Link>
-            </div>
-          </div>;
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
-  </div>;
+  );
 };
