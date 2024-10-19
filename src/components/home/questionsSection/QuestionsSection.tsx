@@ -55,7 +55,7 @@ export const QuestionsSection = () => {
         type="single"
         collapsible
         className="max-w-[850px] w-full mt-10 space-y-4 border-none overflow-hidden"
-        defaultValue="item-1"
+        // defaultValue="item-1"
         style={{ flex: "1 0 auto", minWidth: "850px" }}
       >
         {accordionItems.map((item) => (

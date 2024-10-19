@@ -21,7 +21,7 @@ const tabs = [
         no-code solution.
       </div>
     ),
-    image: "/img/screenshots/DeveloperApi.png",
+    image: "/img/screenshots/Builder.png",
     disabled: false,
   },
   // {
