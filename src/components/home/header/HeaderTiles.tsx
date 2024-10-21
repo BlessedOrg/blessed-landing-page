@@ -8,22 +8,22 @@ const tiles = [
   {
     title: "Create",
     description: "Pick your entry type and begin via our UI or API",
-    image: "/img/icons/heart.svg",
+    image: "/img/icons/heart.svg"
   },
   {
     title: "Customize",
     description: "Fine tune to your liking easily as a piece of cake",
-    image: "/img/icons/cake.svg",
+    image: "/img/icons/cake.svg"
   },
   {
     title: "Publish",
     description: "Publish and go live ASAP",
-    image: "/img/icons/rocket.svg",
-  },
+    image: "/img/icons/rocket.svg"
+  }
 ];
 
 export const HeaderTiles = () => {
-  const isMobile = useMediaQuery(768);
+  const isMobile = useMediaQuery(1280);
   const { scrollY } = useScroll();
   const [adjustedScrollY, setAdjustedScrollY] = useState(50);
 
@@ -38,22 +38,20 @@ export const HeaderTiles = () => {
 
   return (
     <div
-      className="flex gap-4"
+      className="flex gap-4 overflow-x-auto max-w-full xl:max-w-none"
       style={{
-        transform: `translateX(calc(${adjustedScrollY}% - ${
-          isMobile ? "150px" : "300px"
-        }))`,
-        transition: "all 100ms",
+        transform: !isMobile && `translateX(calc(${adjustedScrollY}% - 300px))`,
+        transition: "all 100ms"
       }}
     >
       {tiles.map((tile, index) => {
         return (
           <div
             key={tile.title}
-            className="w-[253px] md:w-[598px] h-[336px] md:h-[200px] bg-gradient-to-r from-[#06F881] to-[#FFFACD] p-4"
+            className="min-w-[253px] md:w-[598px] min-h-[336px] xl:min-h-0 md:h-[200px] bg-gradient-to-r from-[#06F881] to-[#FFFACD] p-4"
           >
             <div className="flex gap-4 flex-col bg-white p-4 w-full h-full ">
-              <div className="flex flex-col-reverse md:flex-row md:justify-between gap-2">
+              <div className="flex flex-col-reverse xl:flex-row md:justify-between gap-2">
                 <div className="flex flex-col gap-2 font-bold text-2xl md:text-3xl">
                   <p>{index + 1}</p>
                   <p>{tile.title}</p>
