@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export const QuoteCard = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-[24px] pb-20">
+    <div className="flex flex-col md:flex-row gap-[24px] pb-20 px-4">
       <div
-        className="flex flex-col h-[279px] w-[624.5px] p-[24px] justify-center items-center gap-4 self-stretch
-        border-[2px] rounded-[24px] border-[#1D1D1B]"
+        className="flex flex-col h-[279px] w-full p-[24px] justify-center items-center gap-4 self-stretch
+        border-[2px] rounded-[24px] border-[#1D1D1B] max-w-[39rem]"
       >
         <div className="text-4xl font-semibold">Book a free meeting</div>
         <div className="text-xl font-regular">
@@ -21,7 +21,7 @@ export const QuoteCard = () => {
       </div>
 
       <div
-        className="flex flex-col h-[279px] w-[624.5px] p-[24px] justify-center items-center gap-4 self-stretch
+        className="flex flex-col h-[279px] w-full max-w-[39rem] p-[24px] justify-center items-center gap-4 self-stretch
         border-[2px] rounded-[24px] border-[#1D1D1B]"
       >
         <div className="text-4xl font-semibold">Chat with us</div>

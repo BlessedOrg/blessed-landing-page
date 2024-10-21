@@ -1,11 +1,6 @@
 "use client";
 import Link from "next/link";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const ContactUsQuestions = () => {
   return (
@@ -28,12 +23,10 @@ export const ContactUsQuestions = () => {
         collapsible
         className="max-w-[850px] w-full mt-10 space-y-4 border-none overflow-hidden"
         // defaultValue="item-1"
-        style={{ flex: "1 0 auto", minWidth: "850px" }}
       >
         <AccordionItem
           value="item-1"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             What is included in the pay as you go plan?
@@ -48,7 +41,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-2"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             How do I get a quote for the commitment plan?
@@ -62,7 +54,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-3"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Are there any hidden fees?
@@ -76,7 +67,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-4"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Can I switch between plans?
@@ -89,7 +79,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-5"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Can I switch between plans?
@@ -102,7 +91,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-6"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Where can I find my API key?
@@ -115,7 +103,6 @@ export const ContactUsQuestions = () => {
         <AccordionItem
           value="item-7"
           className="w-full"
-          style={{ flex: "1 0 auto", minWidth: "850px" }}
         >
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             I have an issue, what should I do?

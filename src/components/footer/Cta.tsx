@@ -9,7 +9,7 @@ export const Cta = () => {
         <div className="flex flex-col gap-6 items-center justify-center w-full mt-10">
           <div className="flex flex-col gap-6 md:flex-row justify-between items-center w-full">
             <div className="flex flex-col gap-4">
-              <h1 className="font-bold uppercase text-[36px] md:text-[96px] leading-[88px] text-left">
+              <h1 className="font-bold uppercase text-4xl md:text-8xl text-left">
                 How you manage your{" "}
                 <span className="text-[#FFA500]">Tickets</span> matters
               </h1>

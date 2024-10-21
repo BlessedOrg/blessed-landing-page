@@ -10,7 +10,7 @@ const tabs = [
     title: "Developer API",
     content: <div>Integrate ticketing seamlessly with our powerful API.</div>,
     image: "/img/screenshots/DeveloperApi.png",
-    disabled: false,
+    disabled: false
   },
   {
     id: 1,
@@ -22,8 +22,8 @@ const tabs = [
       </div>
     ),
     image: "/img/screenshots/Builder.png",
-    disabled: false,
-  },
+    disabled: false
+  }
   // {
   //   id: 0,
   //   title: "Developer API",
@@ -89,7 +89,7 @@ export const TabsSection = () => {
       <h2 className="font-bold uppercase text-3xl md:text-6xl text-center">
         Why you'll love blessed
       </h2>
-      <div className="flex rounded-full p-2 bg-white overflow-x-auto w-[340px] md:w-fit">
+      <div className="flex rounded-full p-2 bg-white overflow-x-auto w-fit md:w-fit">
         {tabs.map((tab) => {
           const isActive = tab.id === activeTab;
           return (
@@ -122,14 +122,15 @@ export const TabsSection = () => {
           <Image
             src={activeTabData?.image || "/placeholder.png"}
             alt={`${activeTabData?.title} illustration`}
-            fill
-            className="object-cover"
+            width={700}
+            height={400}
+            className="object-contain w-full h-auto"
           />
         </div>
       </div>
 
       <div
-        className="absolute top-[50%] w-full h-[50%] mr-8"
+        className="absolute top-[50%] w-full h-[50%] mr-8 hidden lg:flex"
         style={{ transform: "translateY(-50%)" }}
       >
         <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />
