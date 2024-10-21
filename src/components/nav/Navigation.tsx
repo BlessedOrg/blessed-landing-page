@@ -18,7 +18,7 @@ export const Navigation = () => {
   const { isLoggedIn, email } = useUserContext();
 
   return (
-    <nav className="py-5 lg:py-8 px-4 lg:px-6 grid grid-cols-2 lg:grid-cols-3 w-full">
+    <nav className="py-5 lg:py-8 px-4 lg:px-6 grid grid-cols-2 lg:grid-cols-3 w-full sticky top-0 lg:static bg-white z-50">
       <Link href="/">
         <Image
           src={"/logo.svg"}
