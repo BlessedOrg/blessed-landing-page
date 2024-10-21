@@ -4,64 +4,23 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "About us",
-    href: "/about-us",
-    description: "Learn more about the company.",
-  },
-  {
-    title: "Contact us",
-    href: "/contact-us",
-    description: "Get in touch with us.",
-  },
-  {
-    title: "Terms & conditions",
-    href: "/terms-and-conditions",
-    description: "Learn more about our terms and conditions.",
-  },
-  {
-    title: "Privacy policy",
-    href: "/privacy-policy",
-    description: "Learn more about our privacy policy.",
-  },
-];
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { navLinks } from "@/components/nav/nav-links";
 
 export const NavMenu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Product</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="https://docs.blessed.fan/" title="Docs">
-                Learn more about Blessed product.
-              </ListItem>
-              <ListItem href="/pricing" title="Pricing">
-                Start your free trial.
-              </ListItem>
-              <ListItem href="/guides-and-tutorials" title="Guides & Tutorials">
-                Learn more about our product and check out our guides.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        <Link href="/use-cases" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Use cases
+          </NavigationMenuLink>
+        </Link>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {navLinks.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -95,7 +54,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-[99px] p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}

@@ -1,13 +1,18 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export const Card = ({ ...props }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
+export const Card = ({
+  ...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   const { children, className, ...rest } = props;
   return (
     <div
       style={{
-        background: 'linear-gradient(180deg, rgba(255, 250, 205, 0.40) 0%, #FFFACD 100%)',
+        background:
+          "linear-gradient(180deg, rgba(255, 250, 205, 0.40) 0%, #FFFACD 100%)",
       }}
-      className={`p-8 rounded-3xl w-[405.33px] h-[180px] ${className ? className : ""}`}
+      className={`p-8 rounded-3xl w-[405.33px] h-[180px] ${
+        className ? className : ""
+      }`}
       {...rest}
     >
       {children}

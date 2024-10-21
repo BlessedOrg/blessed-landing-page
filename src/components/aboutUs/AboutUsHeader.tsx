@@ -1,7 +1,7 @@
 export const AboutUsHeader = () => {
   return (
-    <div className="py-10 flex flex-col gap-6 w-full pl-[5rem]">
-      <h2 className="font-bold uppercase text-left text-3xl md:text-[80px] md:leading-[73px]">
+    <div className="py-10 w-full pl-10 lg:pl-[5rem]">
+      <h2 className="font-bold uppercase text-6xl md:text-9xl text-left">
         Born from Frustration, Built for Fairness
       </h2>
       <p className="text-left">

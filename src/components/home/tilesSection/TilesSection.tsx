@@ -9,9 +9,9 @@ const mediumTiles = [
     image: "/img/icons/party-popper.svg",
     colors: {
       general: "bg-[#FFFACD]",
-      button: "border-black text-black",
+      button: "border-black text-black"
     },
-    button: "Learn more",
+    button: "Learn more"
   },
   {
     title: "Gaming",
@@ -19,10 +19,10 @@ const mediumTiles = [
     image: "/img/icons/pacman-white.svg",
     colors: {
       general: "bg-black text-white",
-      button: "border-white text-white",
+      button: "border-white text-white"
     },
-    button: "Learn more",
-  },
+    button: "Learn more"
+  }
 ];
 
 export const TilesSection = () => {
@@ -38,7 +38,7 @@ export const TilesSection = () => {
         <div className="flex w-full min-h-[374px] py-6 px-4 md:py-10 md:px-8 bg-[rgba(239,239,239,1)] rounded-[1.5rem] justify-between flex-col gap-6">
           <div className="flex flex-col gap-6 md:flex-row justify-between">
             <div className="flex flex-col gap-4">
-              <h3 className="text-7xl font-bold uppercase">
+              <h3 className="text-5xl md:text-7xl font-bold uppercase">
                 Conferences & meetups
               </h3>
               <div className="text-[xl] font-medium">
@@ -75,7 +75,9 @@ export const TilesSection = () => {
                 />
                 <div className="flex flex-col gap-4 justify-between h-full">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-5xl font-bold">{tile.title}</h3>
+                    <h3 className="text-5xl uppercase font-bold">
+                      {tile.title}
+                    </h3>
                     <div className="text-[xl] font-medium">
                       {tile.description}
                     </div>

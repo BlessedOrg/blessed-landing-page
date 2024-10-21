@@ -52,7 +52,12 @@ export const ComingSoon = () => {
         </div>
       </div>
 
-      <Bars leftBars={{ show: true }} rightBars={{ show: true }} color="bg-black" isInView={isInView} />
+      <Bars
+        leftBars={{ show: true }}
+        rightBars={{ show: true }}
+        color="bg-black"
+        isInView={isInView}
+      />
     </header>
   );
 };

@@ -2,9 +2,12 @@
 
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
-
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+
+// Импорт ваших иконок
+import arrowUpIcon from "/img/icons/TaillessLineArrowUp.svg";
+import arrowDownIcon from "/img/icons/TaillessLineArrowDown.svg";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -25,18 +28,34 @@ const AccordionTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header asChild className="flex">
-    <h4><AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger></h4>
+    <h4>
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={cn(
+          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline",
+          className
+        )}
+        {...props}
+      >
+        {children}
 
+        <Image
+          src={"/img/icons/Tailless-Line-Arrow-Down.svg"}
+          alt="Arrow Down"
+          width={24}
+          height={24}
+          className="h-4 w-4 shrink-0 transition-transform duration-200 [&[data-state=open]>img]:rotate-180"
+        />
+
+        <Image
+          src={"/img/icons/Tailless-Line-Arrow-Up.svg"}
+          alt="Arrow Up"
+          width={24}
+          height={24}
+          className="h-4 w-4 shrink-0 transition-transform duration-200 hidden [&[data-state=open]]:block"
+        />
+      </AccordionPrimitive.Trigger>
+    </h4>
   </AccordionPrimitive.Header>
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;

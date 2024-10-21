@@ -4,9 +4,7 @@ export const PrivacyPolicy = () => {
       <h2 className="font-bold uppercase text-3xl md:text-6xl mb-4">
         Privacy Policy of PANDR UG
       </h2>
-      <p className="mb-4">
-        Last updated: 15.10.2024
-      </p>
+      <p className="mb-4">Last updated: 15.10.2024</p>
 
       <p className="mb-4">
         PANDR UG ("we," "our," or "us") is committed to protecting your personal
@@ -26,7 +24,7 @@ export const PrivacyPolicy = () => {
         <br />
         HRB 263644 B
         <br />
-        Contact Email: {" "}
+        Contact Email:{" "}
         <a href="mailto:gdpr@licenserocks.de" className="text-blue-600">
           gdpr@licenserocks.de
         </a>
@@ -211,7 +209,7 @@ export const PrivacyPolicy = () => {
         <br />
         10439 Berlin, Germany
         <br />
-        Email: {" "}
+        Email:{" "}
         <a href="mailto:gdpr@licenserocks.de" className="text-blue-600">
           gdpr@licenserocks.de
         </a>

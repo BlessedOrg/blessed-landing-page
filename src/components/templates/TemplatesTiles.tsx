@@ -20,7 +20,11 @@ export const TemplatesTiles = () => {
 
       <HeaderTiles />
 
-      <Bars leftBars={{ show: true }} rightBars={{ show: true }} isInView={isInView} />
+      <Bars
+        leftBars={{ show: true }}
+        rightBars={{ show: true }}
+        isInView={isInView}
+      />
       <Button variant="outline" size="xl" className="rounded-[39px]">
         Create your event
       </Button>
