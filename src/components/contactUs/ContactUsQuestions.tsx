@@ -1,10 +1,15 @@
 "use client";
 import Link from "next/link";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const ContactUsQuestions = () => {
   return (
-    <div className="py-10 flex flex-col items-center gap-6 px-4 font-inter">
+    <div className="py-10 flex flex-col items-center max-w-[53rem] w-full gap-6 px-4 font-inter">
       <div className="text-center max-w-[850px] w-full">
         <h2 className="font-bold uppercase text-3xl md:text-6xl">
           Wondering about something? <br /> Check here!
@@ -24,10 +29,7 @@ export const ContactUsQuestions = () => {
         className="max-w-[850px] w-full mt-10 space-y-4 border-none overflow-hidden"
         // defaultValue="item-1"
       >
-        <AccordionItem
-          value="item-1"
-          className="w-full"
-        >
+        <AccordionItem value="item-1" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             What is included in the pay as you go plan?
           </AccordionTrigger>
@@ -38,10 +40,7 @@ export const ContactUsQuestions = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem
-          value="item-2"
-          className="w-full"
-        >
+        <AccordionItem value="item-2" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             How do I get a quote for the commitment plan?
           </AccordionTrigger>
@@ -51,10 +50,7 @@ export const ContactUsQuestions = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem
-          value="item-3"
-          className="w-full"
-        >
+        <AccordionItem value="item-3" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Are there any hidden fees?
           </AccordionTrigger>
@@ -64,10 +60,7 @@ export const ContactUsQuestions = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem
-          value="item-4"
-          className="w-full"
-        >
+        <AccordionItem value="item-4" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Can I switch between plans?
           </AccordionTrigger>
@@ -76,10 +69,7 @@ export const ContactUsQuestions = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem
-          value="item-5"
-          className="w-full"
-        >
+        <AccordionItem value="item-5" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Can I switch between plans?
           </AccordionTrigger>
@@ -88,10 +78,7 @@ export const ContactUsQuestions = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem
-          value="item-6"
-          className="w-full"
-        >
+        <AccordionItem value="item-6" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             Where can I find my API key?
           </AccordionTrigger>
@@ -100,10 +87,7 @@ export const ContactUsQuestions = () => {
             interface or directly via the API.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem
-          value="item-7"
-          className="w-full"
-        >
+        <AccordionItem value="item-7" className="w-full">
           <AccordionTrigger className="accordion-title w-full text-base font-semibold font-inter text-left">
             I have an issue, what should I do?
           </AccordionTrigger>
