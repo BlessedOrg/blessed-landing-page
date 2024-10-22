@@ -1,5 +1,5 @@
 "use client";
-import HubspotForm from "react-hubspot-form";
+import HubSpotForm from "react-hubspot-form";
 
 const subjects = [
   "Report bugs",
@@ -10,7 +10,7 @@ const subjects = [
 
 export const GetInTouch = () => {
   return (
-    <div className="flex flex-col p-4 md:p-6 rounded-lg max-w-4xl mx-auto">
+    <div className="flex flex-col p-4 md:p-6 rounded-lg w-full items-center">
       <div className="py-6 md:py-10">
         <h2 className="font-bold uppercase text-2xl md:text-4xl lg:text-6xl text-center">
           Get in touch
@@ -18,13 +18,15 @@ export const GetInTouch = () => {
         <p className="text-center mt-2">We'd love to hear from you!</p>
       </div>
 
-      <HubspotForm
-        portalId="145418239"
-        formId="c1758617-90b4-4bf9-b459-67ebdb484dee"
-        onSubmit={() => console.log("Submit!")}
-        onReady={(form) => console.log("Form ready!")}
-        loading={<div>Loading...</div>}
-      />
+      <div className="w-full max-w-[50rem]">
+        <HubSpotForm
+          portalId="145418239"
+          formId="8bc59663-1a9a-4fd3-9d56-a7106034082f"
+          onSubmit={() => console.log("Submit!")}
+          onReady={(form) => console.log("Form ready!")}
+          loading={<div>Loading...</div>}
+        />
+      </div>
       {/*<form className="space-y-4 md:space-y-6">*/}
       {/*  <div>*/}
       {/*    <label htmlFor="subject" className="block mb-1 text-sm font-medium">*/}
