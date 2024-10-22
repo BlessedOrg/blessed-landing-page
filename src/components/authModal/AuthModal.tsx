@@ -60,9 +60,7 @@ const AuthModalContent = ({ authType = "login", label = "Start for free", classN
       if (!data?.accessToken) {
         toast(`Something went wrong: ${data?.message || res.statusText}`, { type: "error" });
       } else {
-        setCookie("accessToken", data?.accessToken, {
-          maxAge: 60 * 60 * 24 * 2
-        });
+        setCookie("accessToken", data?.accessToken);
         window.location.href = `${dashboardUrl}?token=${data?.accessToken}`;
         toast("Successfully logged in!", { type: "success" });
       }
