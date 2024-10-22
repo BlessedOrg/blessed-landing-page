@@ -5,7 +5,7 @@ const subjects = [
   "Report bugs",
   "Talk to sales",
   "Account & billing",
-  "General contact inquiries"
+  "General contact inquiries",
 ];
 
 export const GetInTouch = () => {
@@ -27,6 +27,8 @@ export const GetInTouch = () => {
           loading={<div>Loading...</div>}
         />
       </div>
+      <div className="mt-[10rem]"></div>
+
       {/*<form className="space-y-4 md:space-y-6">*/}
       {/*  <div>*/}
       {/*    <label htmlFor="subject" className="block mb-1 text-sm font-medium">*/}
