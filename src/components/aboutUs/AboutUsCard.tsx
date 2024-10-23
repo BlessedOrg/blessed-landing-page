@@ -1,4 +1,5 @@
 "use client";
+
 import { Bars } from "@/components/ui/bars";
 import Image from "next/image";
 
@@ -12,8 +13,8 @@ const aboutUsData = [
       "/img/icons/about-us/Ticket-Star.svg",
       "/img/icons/about-us/Delete-2.svg",
       "/img/icons/about-us/Smiley-Grumpy.svg",
-      "/img/icons/about-us/Watch-Circle-Time.svg"
-    ]
+      "/img/icons/about-us/Watch-Circle-Time.svg",
+    ],
   },
   {
     id: 2,
@@ -23,9 +24,9 @@ const aboutUsData = [
     icons: [
       "/img/icons/about-us/Flash-1.svg",
       "/img/icons/about-us/Magnifying-Glass.svg",
+      "/img/icons/about-us/Eye-Optic.svg",
       "/img/icons/about-us/User-Feedback-Heart.svg",
-      "/img/icons/about-us/Eye-Optic.svg"
-    ]
+    ],
   },
   {
     id: 3,
@@ -44,9 +45,9 @@ const aboutUsData = [
       "/img/icons/about-us/Share.svg",
       "/img/icons/about-us/Ai-Health-Spark.svg",
       "/img/icons/about-us/No-Poverty.svg",
-      "/img/icons/Praying-Hand.svg"
-    ]
-  }
+      "/img/icons/Praying-Hand.svg",
+    ],
+  },
 ];
 
 export const AboutUsCard = () => {
@@ -65,15 +66,25 @@ export const AboutUsCard = () => {
                 key={iconIndex}
                 src={icon}
                 alt={`Icon ${iconIndex + 1}`}
-                width={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100}
-                height={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100}
-                className="absolute w-16 md:w-[9rem]"
+                width={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100} // Управляем шириной через пропсы
+                height={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100} // Управляем высотой через пропсы
+                className="absolute"
                 style={{
-                  left: iconIndex === 0 ? "50%" : iconIndex === 2 ? "10%" : "auto",
-                  right: iconIndex === 1 ? "25%" : iconIndex === 3 ? "10%" : "auto",
+                  left:
+                    iconIndex === 0 ? "50%" : iconIndex === 2 ? "10%" : "auto",
+                  right:
+                    iconIndex === 1 ? "25%" : iconIndex === 3 ? "10%" : "auto",
+                  top:
+                    iconIndex === 0
+                      ? "50%"
+                      : iconIndex === 1
+                      ? "22%"
+                      : iconIndex === 2
+                      ? "10%"
+                      : "auto",
                   bottom: iconIndex === 3 ? "10%" : "auto",
-                  top: iconIndex === 0 ? "50%" : iconIndex === 1 || iconIndex === 2 ? "10%" : "auto",
-                  transform: iconIndex === 0 ? "translate(-50%, -50%)" : "none"
+                  transform: iconIndex === 0 ? "translate(-50%, -50%)" : "none",
+                  zIndex: iconIndex === 1 ? 1 : 0,
                 }}
               />
             ))}
