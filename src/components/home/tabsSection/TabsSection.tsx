@@ -1,8 +1,9 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { Bars } from "@/components/ui/bars";
+import { AuthModal } from "@/components/authModal/AuthModal";
 
 const tabs = [
   {
@@ -10,7 +11,7 @@ const tabs = [
     title: "Developer API",
     content: <div>Integrate ticketing seamlessly with our powerful API.</div>,
     image: "/img/screenshots/DeveloperApi.png",
-    disabled: false
+    disabled: false,
   },
   {
     id: 1,
@@ -22,8 +23,8 @@ const tabs = [
       </div>
     ),
     image: "/img/screenshots/Builder.png",
-    disabled: false
-  }
+    disabled: false,
+  },
   // {
   //   id: 0,
   //   title: "Developer API",
@@ -127,6 +128,23 @@ export const TabsSection = () => {
             className="object-contain w-full h-auto"
           />
         </div>
+
+        {activeTab === 0 && (
+          <div className="flex flex-row items-center gap-0 mt-2 md:mt-2">
+            <AuthModal
+              label="Start for free"
+              authType="onboarding"
+              className="w-full h-[52px] rounded-[39px]"
+            />
+
+            <Link
+              href={"https://docs.blessed.fan/"}
+              className="text-md hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none"
+            >
+              Docs
+            </Link>
+          </div>
+        )}
       </div>
 
       <div
