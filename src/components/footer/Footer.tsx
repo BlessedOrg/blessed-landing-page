@@ -48,7 +48,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-[4px] mt-4 sm:mt-0">
+          {/* <div className="flex flex-row gap-[4px] mt-4 sm:mt-0">
             <Button
               variant="default"
               size="icon"
@@ -66,12 +66,12 @@ export const Footer = () => {
             >
               En
             </Button>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-6 sm:gap-0">
           <div className="flex items-center gap-4 text-sm sm:text-base">
-            <span className="font-medium">© 2077 Blessed</span>
+            <span className="font-medium">© 2024 Blessed</span>
             <span className="font-medium">
               <Link href="/imprint">Imprint</Link>
             </span>
