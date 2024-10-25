@@ -6,8 +6,8 @@ const locations = [
     city: "Berlin",
     address:
       "Pandr UG c/o Blessed Erich-Weinert-Str. 51, 10439 Berlin, Germany",
-    latitude: 52.5502506,
-    longitude: 13.4209922,
+    latitude: 52.5505314,
+    longitude: 13.421548,
     bgColor: "bg-[#06F881]",
     border: "border-[#06F881]",
   },
