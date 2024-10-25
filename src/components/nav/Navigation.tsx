@@ -40,12 +40,8 @@ export const Navigation = () => {
           Docs
         </Link>
 
-        {!isLoggedIn && (
-          <>
-            <AuthModal authType="login" />
-            <AuthModal authType="onboarding" />
-          </>
-        )}
+        {!isLoggedIn && <AuthModal authType="onboarding" />}
+
         {isLoggedIn && (
           <Button variant="green" className="rounded-full " size="lg" asChild>
             <Link href={`${dashboardUrl}`}>Dashboard</Link>
