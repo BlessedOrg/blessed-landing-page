@@ -32,7 +32,7 @@ export const NavMenu = () => {
                   title={component.title}
                   href={component.href}
                 >
-                  {component.description}
+                  {/* {component.description} */}
                 </ListItem>
               ))}
             </ul>

@@ -4,12 +4,12 @@ export const navLinks = [
     title: "Use cases",
     href: "/use-cases",
   },
-  {
-    id: 1,
-    title: "What's new",
-    href: "/",
-    description: "Coming soon",
-  },
+  // {
+  //   id: 1,
+  //   title: "What's new",
+  //   href: "/",
+  //   description: "Coming soon",
+  // },
   //   {
   //     id: 2,
   //     title: "Terms & conditions",
