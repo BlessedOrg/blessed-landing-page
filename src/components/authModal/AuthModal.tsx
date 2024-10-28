@@ -28,7 +28,7 @@ import { fetcher } from "@/requests/requests";
 
 export const AuthModal = ({
   authType = "login",
-  label = "Start for free",
+  label = "Log in / Start for free",
   className,
 }: {
   authType?: "onboarding" | "login";
