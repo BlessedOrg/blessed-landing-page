@@ -28,24 +28,20 @@ export const Navigation = () => {
           className="w-[100px] h-auto"
         />
       </Link>
-      <div className="lg:flex gap-4 justify-center rounded-[99px] hidden">
+      <div className="lg:flex gap-4 justify-center rounded-[6.2rem] hidden">
         <NavMenu />
       </div>
 
       <div className="lg:flex gap-4 items-center hidden justify-end">
         <Link
           href={"https://docs.blessed.fan/"}
-          className="text-md hover:bg-[#EFEFEF] py-3 px-4 rounded-[99px] outline-none"
+          className="text-md hover:bg-[#EFEFEF] py-3 px-4 rounded-[6.2rem] outline-none"
         >
           Docs
         </Link>
 
-        {!isLoggedIn && (
-          <>
-            <AuthModal authType="login" />
-            <AuthModal authType="onboarding" />
-          </>
-        )}
+        {!isLoggedIn && <AuthModal authType="onboarding" />}
+
         {isLoggedIn && (
           <Button variant="green" className="rounded-full " size="lg" asChild>
             <Link href={`${dashboardUrl}`}>Dashboard</Link>
