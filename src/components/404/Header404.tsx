@@ -12,7 +12,7 @@ export const Header404 = () => {
   return (
     <header
       ref={headerRef}
-      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-[1440px] w-full mx-auto"
+      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden w-full mx-auto"
     >
       <div className="relative bg-white w-[624px] h-[509px] flex flex-col items-center justify-center  ">
         <div className="flex gap-6 mb-6">
