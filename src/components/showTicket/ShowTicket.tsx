@@ -23,6 +23,7 @@ export function ShowTicket() {
     const contractId = searchParams.get("contractId");
     const ticketId = searchParams.get("tokenId");
     const userId = searchParams.get("userId");
+    const eventId = searchParams.get("eventId");
 
     if (!app || !contractId || !ticketId || !userId) {
       setError("Missing required query parameters");
@@ -31,7 +32,7 @@ export function ShowTicket() {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/applications/${app}/tickets/${contractId}/show-ticket/${ticketId}?userId=${userId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${eventId}/tickets/${contractId}/show-ticket/${ticketId}?userId=${userId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch ticket information");
       }
