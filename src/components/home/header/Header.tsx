@@ -28,7 +28,7 @@ export const Header = () => {
         alt="pacman"
         width={100}
         height={100}
-        className="absolute left-[1%] bottom-[0px] md:top-[30%] w-11 xl:w-20"
+        className="absolute left-[1%] bottom-[0px] md:top-[35%] w-11 xl:w-20"
       />
 
       <Bars
