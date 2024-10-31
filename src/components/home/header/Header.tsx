@@ -13,7 +13,7 @@ export const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-full xl:max-w-[1440px]"
+      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden max-w-full"
     >
       <h1 className="text-5xl md:text-6xl lg:text-8xl uppercase font-bold text-center">
         Build, manage, and distribute <br />{" "}
