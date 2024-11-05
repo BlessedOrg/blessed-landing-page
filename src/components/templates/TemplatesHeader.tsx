@@ -1,6 +1,6 @@
 export const TemplatesHeader = () => {
   return (
-    <div className="py-10 w-[1440px]" style={{ padding: "0px 80px" }}>
+    <div className="py-10 max-w-[90rem] w-full pl-10 lg:pl-[5rem]">
       <h1 className="font-bold uppercase text-3xl md:text-9xl text-left">
         Explore BLESSED templates
       </h1>

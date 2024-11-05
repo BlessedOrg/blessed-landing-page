@@ -37,7 +37,7 @@ export const TemplatesTypes = () => {
   ];
 
   return (
-    <div className="flex justify-center gap-8">
+    <div className="flex justify-center my-8 gap-8">
       {cardData.map((card, index) => (
         <Card key={index}>
           <h2 className="text-6xl uppercase font-bold">{card.title}</h2>
