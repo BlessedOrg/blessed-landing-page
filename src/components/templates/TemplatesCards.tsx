@@ -91,7 +91,7 @@ export const TemplatesCards = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-[5rem]">
       {/* Top row of 4 cards */}
       <div className="flex justify-between gap-8 mb-8">
         {cardData.slice(0, 4).map((card, index) => (
