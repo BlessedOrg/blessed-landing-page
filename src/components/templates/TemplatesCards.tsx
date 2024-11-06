@@ -30,16 +30,45 @@ export const Cards = ({
   );
 };
 
+export const CustomCard = ({
+  leftIcon,
+  rightIcon,
+  ...props
+}: { leftIcon: string; rightIcon: string } & DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>) => {
+  const { children, className, ...rest } = props;
+
+  return (
+    <div
+      className={`flex flex-col items-start p-8 w-[296px] h-[281px] rounded-[24px] bg-[#FFFACD] ${
+        className ? className : ""
+      }`}
+      {...rest}
+    >
+      <div className="flex justify-between w-full mb-4">
+        <img src={leftIcon} alt="Left Icon" className="w-[56px] h-[56px]" />
+        <div className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full">
+          <img src={rightIcon} alt="Right Icon" className="w-6 h-6" />
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+};
+
 export const TemplatesCards = () => {
   const cardData = [
     {
+      type: "secondary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference B",
-      description:
-        "Template tailored for relaxed professional and academic conferences.",
+      title: "Custom template",
+      description: "Let us know, and we’ll help you out!",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference C",
@@ -47,6 +76,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference D",
@@ -54,6 +84,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference E",
@@ -61,6 +92,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference F",
@@ -68,6 +100,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference G",
@@ -75,6 +108,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference H",
@@ -82,6 +116,7 @@ export const TemplatesCards = () => {
         "Template tailored for relaxed professional and academic conferences.",
     },
     {
+      type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Conference I",
@@ -94,9 +129,20 @@ export const TemplatesCards = () => {
     <div className="flex flex-col mt-[5rem]">
       {/* Top row of 4 cards */}
       <div className="flex justify-between gap-8 mb-8">
-        {cardData.slice(0, 4).map((card, index) => (
+        <CustomCard
+          leftIcon={cardData[0].leftIcon}
+          rightIcon={cardData[0].rightIcon}
+        >
+          <h2 className="text-3xl font-bold">{cardData[0].title}</h2>
+          <p className="mt-2 text-medium">{cardData[0].description}</p>
+          <Button variant="default" className="mt-auto">
+            Contact us
+          </Button>
+        </CustomCard>
+
+        {cardData.slice(1, 4).map((card, index) => (
           <Cards
-            key={index}
+            key={index + 1}
             leftIcon={card.leftIcon}
             rightIcon={card.rightIcon}
           >
@@ -113,7 +159,7 @@ export const TemplatesCards = () => {
       <div className="flex justify-between gap-8 mb-8">
         {cardData.slice(4, 8).map((card, index) => (
           <Cards
-            key={index}
+            key={index + 4}
             leftIcon={card.leftIcon}
             rightIcon={card.rightIcon}
           >
@@ -130,7 +176,7 @@ export const TemplatesCards = () => {
       <div className="flex gap-8 mb-12">
         {cardData.slice(0, 2).map((card, index) => (
           <Cards
-            key={index}
+            key={index + 8}
             leftIcon={card.leftIcon}
             rightIcon={card.rightIcon}
           >
