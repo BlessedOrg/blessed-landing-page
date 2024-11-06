@@ -127,6 +127,9 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
+      <div className="w-[1280px] h-[120px] flex items-center mt-[80px] mb-[56px] pl-[10px]">
+        <h1 className="text-5xl font-bold">Templates</h1>
+      </div>
       {/* Top row of 4 cards */}
       <div className="flex justify-between gap-8 mb-8">
         <CustomCard
