@@ -1,6 +1,7 @@
 "use client";
 import { useState, DetailedHTMLProps, HTMLAttributes } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const Cards = ({
   leftIcon,
@@ -137,24 +138,34 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      {/* Header with tab bar */}
-      <div className="w-[1280px] h-[120px] flex flex-col items-start mt-[80px] mb-[56px] pl-[10px]">
+      {/* Header with tab bar and search field */}
+      <div className="w-[1280px] h-[120px] flex items-center justify-between mt-[80px] mb-14 pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>
-        <div className="flex gap-4 mt-4">
-          {templateTabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => onTabClick(tab.id)}
-              className={`px-4 py-2 text-sm font-semibold rounded-full ${
-                activeTab === tab.id
-                  ? "bg-black text-white"
-                  : "bg-white text-black"
-              }`}
-            >
-              {tab.title}
-            </button>
-          ))}
+        {/* Search field */}
+        <div className="w-[300px]">
+          <Input
+            type="search"
+            placeholder="Search templates"
+            className="w-full"
+          />
         </div>
+      </div>
+
+      {/* Tab bar */}
+      <div className="flex gap-4 mt-4">
+        {templateTabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => onTabClick(tab.id)}
+            className={`px-4 py-2 text-sm font-semibold rounded-full ${
+              activeTab === tab.id
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
+          >
+            {tab.title}
+          </button>
+        ))}
       </div>
 
       {/* Top row of 4 cards */}

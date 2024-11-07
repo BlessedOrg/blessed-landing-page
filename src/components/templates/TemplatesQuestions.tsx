@@ -31,7 +31,7 @@ const accordionItems = [
     answer: (
       <Link
         href={"https://docs.blessed.fan/"}
-        className="text-md hover:bg-[#EFEFEF] py-3 px-4 rounded-[6.2rem] outline-none"
+        className="text-md py-3 px-4 outline-none"
       >
         Docs
       </Link>
