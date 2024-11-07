@@ -1,5 +1,5 @@
 "use client";
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { useState, DetailedHTMLProps, HTMLAttributes } from "react";
 import { Button } from "@/components/ui/button";
 
 export const Cards = ({
@@ -59,6 +59,16 @@ export const CustomCard = ({
 };
 
 export const TemplatesCards = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const onTabClick = (id: number) => setActiveTab(id);
+
+  const templateTabs = [
+    { id: 0, title: "All" },
+    { id: 1, title: "Conferences" },
+    { id: 2, title: "Festivals" },
+    { id: 3, title: "Gaming" },
+  ];
+
   const cardData = [
     {
       type: "secondary",
@@ -127,9 +137,26 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      <div className="w-[1280px] h-[120px] flex items-center mt-[80px] mb-[56px] pl-[10px]">
+      {/* Header with tab bar */}
+      <div className="w-[1280px] h-[120px] flex flex-col items-start mt-[80px] mb-[56px] pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>
+        <div className="flex gap-4 mt-4">
+          {templateTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => onTabClick(tab.id)}
+              className={`px-4 py-2 text-sm font-semibold rounded-full ${
+                activeTab === tab.id
+                  ? "bg-black text-white"
+                  : "bg-white text-black"
+              }`}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
       </div>
+
       {/* Top row of 4 cards */}
       <div className="flex justify-between gap-8 mb-8">
         <CustomCard
