@@ -10,7 +10,8 @@ const tabs = [
     id: 0,
     title: "Developer API",
     content: <div>Integrate ticketing seamlessly with our powerful API.</div>,
-    image: "/img/screenshots/DeveloperApi.png",
+    iframeSrc:
+      "https://drive.google.com/file/d/1CofHsz2iPCLGi-_ALf1cfKM3nRJfslhJ/preview",
     disabled: false,
   },
   {
@@ -120,13 +121,23 @@ export const TabsSection = () => {
         />
 
         <div className="mt-4 relative w-full aspect-[802/517]">
-          <Image
-            src={activeTabData?.image || "/placeholder.png"}
-            alt={`${activeTabData?.title} illustration`}
-            width={700}
-            height={400}
-            className="object-contain w-full h-auto"
-          />
+          {activeTabData?.iframeSrc ? (
+            <iframe
+              src={activeTabData.iframeSrc}
+              width="640"
+              height="480"
+              allow="autoplay"
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Image
+              src={activeTabData?.image || "/placeholder.png"}
+              alt={`${activeTabData?.title} illustration`}
+              width={700}
+              height={400}
+              className="object-contain w-full h-auto"
+            />
+          )}
         </div>
 
         {activeTab === 0 && (
