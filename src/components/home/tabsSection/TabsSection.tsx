@@ -120,15 +120,23 @@ export const TabsSection = () => {
           className="w-[100px] h-auto"
         />
 
-        <div className="mt-4 relative w-full aspect-[802/517]">
+        <div className="mt-4 relative w-full aspect-[624/400] flex justify-center items-center">
           {activeTabData?.iframeSrc ? (
-            <iframe
-              src={activeTabData.iframeSrc}
-              width="640"
-              height="480"
-              allow="autoplay"
-              className="w-full h-full object-cover"
-            />
+            <div
+              className="w-full max-w-[624px] aspect-[624/400] rounded-lg overflow-hidden mx-auto"
+              style={{
+                border: "8px solid",
+                borderImage: "linear-gradient(to right, #FFFACD, #06F881) 1",
+              }}
+            >
+              <iframe
+                src={activeTabData.iframeSrc}
+                width="640"
+                height="480"
+                allow="autoplay"
+                className="w-full h-full object-cover"
+              />
+            </div>
           ) : (
             <Image
               src={activeTabData?.image || "/placeholder.png"}
