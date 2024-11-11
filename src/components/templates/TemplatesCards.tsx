@@ -1,5 +1,5 @@
 "use client";
-import { useState, DetailedHTMLProps, HTMLAttributes } from "react";
+import { useState, DetailedHTMLProps, HTMLAttributes, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -61,6 +61,9 @@ export const CustomCard = ({
 
 export const TemplatesCards = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredCards, setFilteredCards] = useState([]);
+
   const onTabClick = (id: number) => setActiveTab(id);
 
   const templateTabs = [
@@ -76,7 +79,8 @@ export const TemplatesCards = () => {
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Custom template",
-      description: "Let us know, and we’ll help you out!",
+      description: "Let us know, and we'll help you out!",
+      category: "All",
     },
     {
       type: "primary",
@@ -85,6 +89,7 @@ export const TemplatesCards = () => {
       title: "Conference C",
       description:
         "Template tailored for relaxed professional and academic conferences.",
+      category: "Conferences",
     },
     {
       type: "primary",
@@ -93,6 +98,7 @@ export const TemplatesCards = () => {
       title: "Conference D",
       description:
         "Template tailored for relaxed professional and academic conferences.",
+      category: "Conferences",
     },
     {
       type: "primary",
@@ -101,40 +107,115 @@ export const TemplatesCards = () => {
       title: "Conference E",
       description:
         "Template tailored for relaxed professional and academic conferences.",
+      category: "Conferences",
     },
     {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference F",
+      title: "Festival F",
       description:
-        "Template tailored for relaxed professional and academic conferences.",
+        "Template tailored for exciting and vibrant festival experiences.",
+      category: "Festivals",
     },
     {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference G",
+      title: "Festival G",
       description:
-        "Template tailored for relaxed professional and academic conferences.",
+        "Template tailored for exciting and vibrant festival experiences.",
+      category: "Festivals",
     },
     {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference H",
+      title: "Gaming H",
       description:
-        "Template tailored for relaxed professional and academic conferences.",
+        "Template tailored for immersive gaming events and tournaments.",
+      category: "Gaming",
     },
     {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference I",
+      title: "Gaming I",
       description:
-        "Template tailored for relaxed professional and academic conferences.",
+        "Template tailored for immersive gaming events and tournaments.",
+      category: "Gaming",
+    },
+    {
+      type: "primary",
+      leftIcon: "/img/icons/coffe.svg",
+      rightIcon: "/img/icons/add1plus.svg",
+      title: "Gaming M",
+      description:
+        "Template tailored for immersive gaming events and tournaments.",
+      category: "Gaming",
+    },
+    {
+      type: "primary",
+      leftIcon: "/img/icons/coffe.svg",
+      rightIcon: "/img/icons/add1plus.svg",
+      title: "Gaming V",
+      description:
+        "Template tailored for immersive gaming events and tournaments.",
+      category: "Gaming",
     },
   ];
+
+  useEffect(() => {
+    filterCards();
+  }, [activeTab, searchQuery]);
+
+  const filterCards = () => {
+    let filtered = cardData;
+
+    // Фильтрация по категории (вкладке)
+    if (activeTab !== 0) {
+      const activeCategory = templateTabs[activeTab].title;
+      filtered = filtered.filter((card) => card.category === activeCategory);
+    }
+
+    // Фильтрация по поисковому запросу
+    if (searchQuery) {
+      const lowercaseQuery = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (card) =>
+          card.title.toLowerCase().includes(lowercaseQuery) ||
+          card.description.toLowerCase().includes(lowercaseQuery)
+      );
+    }
+
+    setFilteredCards(filtered);
+  };
+
+  const renderCards = (cards) => {
+    return cards.map((card, index) =>
+      card.type === "secondary" ? (
+        <CustomCard
+          key={index}
+          leftIcon={card.leftIcon}
+          rightIcon={card.rightIcon}
+        >
+          <h2 className="text-3xl font-bold">{card.title}</h2>
+          <p className="mt-2 text-medium">{card.description}</p>
+          <Button variant="default" className="mt-auto">
+            Contact us
+          </Button>
+        </CustomCard>
+      ) : (
+        <Cards key={index} leftIcon={card.leftIcon} rightIcon={card.rightIcon}>
+          <h2 className="text-3xl font-bold">{card.title}</h2>
+          <p className="mt-2 text-medium">{card.description}</p>
+          <Button variant="default" className="mt-auto">
+            Use as template
+          </Button>
+        </Cards>
+      )
+    );
+  };
 
   return (
     <div className="flex flex-col mt-[5rem]">
@@ -147,6 +228,8 @@ export const TemplatesCards = () => {
             type="search"
             placeholder="Search templates"
             className="w-full"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
       </div>
@@ -168,74 +251,19 @@ export const TemplatesCards = () => {
         ))}
       </div>
 
-      {/* Top row of 4 cards */}
-      <div className="flex justify-between gap-8 mb-8">
-        <CustomCard
-          leftIcon={cardData[0].leftIcon}
-          rightIcon={cardData[0].rightIcon}
-        >
-          <h2 className="text-3xl font-bold">{cardData[0].title}</h2>
-          <p className="mt-2 text-medium">{cardData[0].description}</p>
-          <Button variant="default" className="mt-auto">
-            Contact us
-          </Button>
-        </CustomCard>
-
-        {cardData.slice(1, 4).map((card, index) => (
-          <Cards
-            key={index + 1}
-            leftIcon={card.leftIcon}
-            rightIcon={card.rightIcon}
-          >
-            <h2 className="text-3xl font-bold">{card.title}</h2>
-            <p className="mt-2 text-medium">{card.description}</p>
-            <Button variant="default" className="mt-auto">
-              Use as template
-            </Button>
-          </Cards>
-        ))}
-      </div>
-
-      {/* Middle row of 4 cards */}
-      <div className="flex justify-between gap-8 mb-8">
-        {cardData.slice(4, 8).map((card, index) => (
-          <Cards
-            key={index + 4}
-            leftIcon={card.leftIcon}
-            rightIcon={card.rightIcon}
-          >
-            <h2 className="text-3xl font-bold">{card.title}</h2>
-            <p className="mt-2 text-medium">{card.description}</p>
-            <Button variant="default" className="mt-auto">
-              Use as template
-            </Button>
-          </Cards>
-        ))}
-      </div>
-
-      {/* Bottom row of 2 cards aligned to the left */}
-      <div className="flex gap-8 mb-12">
-        {cardData.slice(0, 2).map((card, index) => (
-          <Cards
-            key={index + 8}
-            leftIcon={card.leftIcon}
-            rightIcon={card.rightIcon}
-          >
-            <h2 className="text-3xl font-bold">{card.title}</h2>
-            <p className="mt-2 text-medium">{card.description}</p>
-            <Button variant="default" className="mt-auto">
-              Use as template
-            </Button>
-          </Cards>
-        ))}
+      {/* Отображение отфильтрованных карточек */}
+      <div className="grid grid-cols-4 gap-8 mb-8">
+        {renderCards(filteredCards)}
       </div>
 
       {/* Center button */}
-      <div className="flex justify-center mb-12">
-        <Button variant="outline" size="xl" className="rounded-[39px]">
-          See more
-        </Button>
-      </div>
+      {filteredCards.length > 8 && (
+        <div className="flex justify-center mb-12">
+          <Button variant="outline" size="xl" className="rounded-[39px]">
+            See more
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
