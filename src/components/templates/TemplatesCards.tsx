@@ -86,7 +86,7 @@ export const TemplatesCards = () => {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference C",
+      title: "Conference B",
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
@@ -95,7 +95,7 @@ export const TemplatesCards = () => {
       type: "primary",
       leftIcon: "/img/icons/coffe.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference D",
+      title: "Conference C",
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
@@ -172,13 +172,11 @@ export const TemplatesCards = () => {
   const filterCards = () => {
     let filtered = cardData;
 
-    // Фильтрация по категории (вкладке)
     if (activeTab !== 0) {
       const activeCategory = templateTabs[activeTab].title;
       filtered = filtered.filter((card) => card.category === activeCategory);
     }
 
-    // Фильтрация по поисковому запросу
     if (searchQuery) {
       const lowercaseQuery = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -251,8 +249,7 @@ export const TemplatesCards = () => {
         ))}
       </div>
 
-      {/* Отображение отфильтрованных карточек */}
-      <div className="grid grid-cols-4 gap-8 mb-8">
+      <div className="grid grid-cols-4 gap-8 mb-8 mt-[3.5rem]">
         {renderCards(filteredCards)}
       </div>
 
