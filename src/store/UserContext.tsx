@@ -31,7 +31,7 @@ const UserContextProvider = ({ children }: IProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(defaultState);
 
-  const { data, mutate, isLoading } = useSWR(`${apiUrl}/developers/me`, fetcherWithToken);
+  const { data, mutate, isLoading } = useSWR(`${apiUrl}/private/developers/me`, fetcherWithToken);
 
   useEffect(() => {
     if (!data?.error && data?.id) {
