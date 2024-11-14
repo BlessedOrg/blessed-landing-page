@@ -111,7 +111,7 @@ export const TabsSection = () => {
 
       <div className="text-center mt-4">{activeTabData?.content}</div>
 
-      <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4">
+      <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4 rounded-[24px]">
         <Image
           src={"/logo.svg"}
           alt="logo blessed"
@@ -120,7 +120,7 @@ export const TabsSection = () => {
           className="w-[100px] h-auto"
         />
 
-        <div className="mt-4 relative w-full aspect-[624/400] flex justify-center items-center">
+        <div className="mt-8 mb-5 relative w-full max-w-[624px] rounded-lg overflow-hidden mx-auto">
           {activeTabData?.iframeSrc ? (
             <div
               className="w-full max-w-[624px] aspect-[624/400] rounded-lg overflow-hidden mx-auto"
