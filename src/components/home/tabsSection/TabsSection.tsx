@@ -117,26 +117,22 @@ export const TabsSection = () => {
           alt="logo blessed"
           height={36}
           width={100}
-          className="w-[100px] h-auto"
+          className="w-[100px] h-auto mt-4"
         />
 
-        <div className="mt-8 mb-5 relative w-full max-w-[624px] rounded-lg overflow-hidden mx-auto">
+        <div className="mt-8 mb-5 relative w-full max-w-[624px] rounded-[16px] overflow-hidden mx-auto">
           {activeTabData?.iframeSrc ? (
-            <div
-              className="w-full max-w-[624px] aspect-[624/400] rounded-lg overflow-hidden mx-auto"
-              style={{
-                border: "8px solid",
-                borderImage: "linear-gradient(to right, #FFFACD, #06F881) 1",
-              }}
-            >
-              <iframe
-                src={activeTabData.iframeSrc}
-                width="640"
-                height="480"
-                allow="autoplay"
-                allowFullScreen
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-full max-w-[624px] aspect-[624/400] rounded-[16px] p-[8px] bg-gradient-to-r from-[#FFFACD] to-[#06F881]">
+              <div className="relative w-full h-full bg-white rounded-[8px] overflow-hidden">
+                <iframe
+                  src={activeTabData.iframeSrc}
+                  width="640"
+                  height="480"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           ) : (
             <Image
@@ -168,7 +164,7 @@ export const TabsSection = () => {
       </div>
 
       <div
-        className="absolute top-[50%] w-full h-[50%] mr-8 hidden lg:flex"
+        className="absolute top-[65%] w-full h-[50%] mr-8 hidden lg:flex"
         style={{ transform: "translateY(-50%)" }}
       >
         <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />
