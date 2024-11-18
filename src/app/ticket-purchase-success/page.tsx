@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { Loader2 } from "lucide-react";
-import { ShowTicket } from "@/components/showTicket/ShowTicket";
+import { TicketPurchaseSuccess } from "@/components/ticketPurchaseSuccess";
 
-export default function ShowTicketPage() {
+export default function TicketPurchaseSuccessPage() {
   return (
     <Suspense
       fallback={
@@ -11,7 +11,7 @@ export default function ShowTicketPage() {
         </div>
       }
     >
-      <ShowTicket />
+      <TicketPurchaseSuccess />
     </Suspense>
   );
 }

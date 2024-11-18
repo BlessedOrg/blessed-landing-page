@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     images: [`/metadata/og-image.svg`]
   }
 };
+
 const ttBluescreens = localFont({
   src: "../../public/fonts/TT_Bluescreens_Bold.woff",
   variable: "--font-tt-bluescreens",
