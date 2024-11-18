@@ -101,7 +101,7 @@ export const teamMembers = [
   {
     name: "Adam Leszczyński",
     role: "Full-Stack Engineer",
-    imgSrc: "/img/team-avatars/Adam.png",
+    imgSrc: "/img/team-avatars/Adam.jpg",
     socials: [
       {
         id: "twitter",
