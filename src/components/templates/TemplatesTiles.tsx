@@ -12,7 +12,7 @@ export const TemplatesTiles = () => {
   return (
     <header
       ref={headerRef}
-      className="relative flex flex-col gap-8 items-center py-10 px-4 bg-cover bg-center overflow-x-hidden overflow-y-hidden max-w-[1440px]"
+      className="relative flex flex-col gap-8 items-center py-[5rem] px-4 bg-cover bg-center overflow-x-hidden overflow-y-hidden"
     >
       <h1 className="text-[107px] leading-[94px] uppercase font-bold text-center">
         See how it works

@@ -4,23 +4,11 @@ import { Suspense, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { setCookie } from "cookies-next";
 import { apiUrl, dashboardUrl } from "@/variables/varaibles";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Card } from "@/components/ui/card";
 import { useSearchParams } from "next/navigation";
@@ -29,7 +17,7 @@ import { fetcher } from "@/requests/requests";
 export const AuthModal = ({
   authType = "login",
   label = "Log in / Start for free",
-  className,
+  className
 }: {
   authType?: "onboarding" | "login";
   label?: string;
@@ -49,7 +37,7 @@ export const AuthModal = ({
 const AuthModalContent = ({
   authType = "login",
   label = "Start for free",
-  className,
+  className
 }: {
   authType?: "onboarding" | "login";
   label?: string;
@@ -69,15 +57,15 @@ const AuthModalContent = ({
   const onEmailSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await fetcher(`${apiUrl}/developers/login`, {
+      const res = await fetcher(`${apiUrl}/private/developers/login`, {
         method: "POST",
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email })
       });
       if (!!res?.error) {
         toast(`Error: ${res?.message || res.statusText}`, { type: "error" });
       } else {
         toast("Successfully send verification code, please check your inbox!", {
-          type: "success",
+          type: "success"
         });
         setEmailSent(true);
       }
@@ -90,13 +78,13 @@ const AuthModalContent = ({
   const onCodeSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await fetcher(`${apiUrl}/developers/verify`, {
+      const res = await fetcher(`${apiUrl}/private/developers/verify`, {
         method: "POST",
-        body: JSON.stringify({ code }),
+        body: JSON.stringify({ code })
       });
       if (!res?.accessToken) {
         toast(`Something went wrong: ${res?.message || res?.error}`, {
-          type: "error",
+          type: "error"
         });
       } else {
         setCookie("accessToken", res?.accessToken);

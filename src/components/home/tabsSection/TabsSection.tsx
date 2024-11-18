@@ -10,7 +10,8 @@ const tabs = [
     id: 0,
     title: "Developer API",
     content: <div>Integrate ticketing seamlessly with our powerful API.</div>,
-    image: "/img/screenshots/DeveloperApi.png",
+    iframeSrc:
+      "https://drive.google.com/file/d/1CofHsz2iPCLGi-_ALf1cfKM3nRJfslhJ/preview",
     disabled: false,
   },
   {
@@ -110,23 +111,38 @@ export const TabsSection = () => {
 
       <div className="text-center mt-4">{activeTabData?.content}</div>
 
-      <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4">
+      <div className="relative z-10 min-h-[500px] lg:min-h-[600px] bg-[#EFEFEF] w-full max-w-[800px] flex flex-col items-center p-4 rounded-[24px]">
         <Image
           src={"/logo.svg"}
           alt="logo blessed"
           height={36}
           width={100}
-          className="w-[100px] h-auto"
+          className="w-[100px] h-auto mt-4"
         />
 
-        <div className="mt-4 relative w-full aspect-[802/517]">
-          <Image
-            src={activeTabData?.image || "/placeholder.png"}
-            alt={`${activeTabData?.title} illustration`}
-            width={700}
-            height={400}
-            className="object-contain w-full h-auto"
-          />
+        <div className="mt-8 mb-5 relative w-full max-w-[624px] rounded-[16px] overflow-hidden mx-auto">
+          {activeTabData?.iframeSrc ? (
+            <div className="relative w-full max-w-[624px] aspect-[624/400] rounded-[16px] p-[8px] bg-gradient-to-r from-[#FFFACD] to-[#06F881]">
+              <div className="relative w-full h-full bg-white rounded-[8px] overflow-hidden">
+                <iframe
+                  src={activeTabData.iframeSrc}
+                  width="640"
+                  height="480"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <Image
+              src={activeTabData?.image || "/placeholder.png"}
+              alt={`${activeTabData?.title} illustration`}
+              width={700}
+              height={400}
+              className="object-contain w-full h-auto"
+            />
+          )}
         </div>
 
         {activeTab === 0 && (
@@ -148,7 +164,7 @@ export const TabsSection = () => {
       </div>
 
       <div
-        className="absolute top-[50%] w-full h-[50%] mr-8 hidden lg:flex"
+        className="absolute top-[65%] w-full h-[50%] mr-8 hidden lg:flex"
         style={{ transform: "translateY(-50%)" }}
       >
         <Bars rightBars={{ show: true }} color="bg-yellow-500" zIndex={0} />

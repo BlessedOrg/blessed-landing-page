@@ -66,8 +66,8 @@ export const AboutUsCard = () => {
                 key={iconIndex}
                 src={icon}
                 alt={`Icon ${iconIndex + 1}`}
-                width={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100} // Управляем шириной через пропсы
-                height={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100} // Управляем высотой через пропсы
+                width={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100}
+                height={iconIndex === 0 ? 200 : iconIndex === 1 ? 150 : 100}
                 className="absolute"
                 style={{
                   left:
