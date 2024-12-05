@@ -87,6 +87,7 @@ const siweConfig = createSIWEConfig({
     return Promise.resolve(true);
   },
   onSignIn() {
+    window?.location?.reload();
     mutate(`${apiUrl}/private/developers/me`);
   },
   signOutOnDisconnect: true,
