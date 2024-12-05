@@ -9,6 +9,7 @@ import { useUserContext } from "@/store/UserContext";
 import { Button } from "@/components/ui/button";
 import { dashboardUrl } from "@/variables/varaibles";
 import { NavMenu } from "@/components/nav/NavMenu";
+import { getCookie } from "cookies-next";
 
 export const Navigation = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -44,7 +45,7 @@ export const Navigation = () => {
 
         {isLoggedIn && (
           <Button variant="green" className="rounded-full " size="lg" asChild>
-            <Link href={`${dashboardUrl}`}>Dashboard</Link>
+            <Link href={`${dashboardUrl}?token=${getCookie("accessToken") || ""}`}>Dashboard</Link>
           </Button>
         )}
       </div>

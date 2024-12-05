@@ -31,10 +31,11 @@ const siweConfig = createSIWEConfig({
   getMessageParams: async () => ({
     domain: typeof window !== "undefined" ? window.location.host : "",
     uri: typeof window !== "undefined" ? window.location.origin : "",
-    chains: [],
+    chains: [networks.map(i => i.id)],
     statement: "Please sign with your account"
   }),
   createMessage({ address, ...args }: SIWECreateMessageArgs) {
+    setCookie("chainId", args.chainId);
     return formatMessage(args, address);
   },
   getNonce() {
@@ -43,14 +44,12 @@ const siweConfig = createSIWEConfig({
   },
   getSession: async () => {
     const token = getCookie("accessToken");
-    if (token) {
-      const session = (await getUserSession(token)) as SIWESession;
-      console.log(session);
-      if (session?.address) return session;
-      return null;
-    } else {
+    const session = (await getUserSession(token)) as SIWESession;
+    if (!session?.address) {
       return null;
     }
+
+    return { address: session.address, chainId: +getCookie("chainId") || 1 };
   },
   verifyMessage: async ({ message, signature }: SIWEVerifyMessageArgs) => {
     try {
@@ -71,7 +70,6 @@ const siweConfig = createSIWEConfig({
           chainId,
           address
         });
-        console.log("res", res);
         if (res?.accessToken) {
           setCookie("accessToken", res.accessToken);
         }
