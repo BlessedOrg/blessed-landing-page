@@ -13,6 +13,7 @@ import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Card } from "@/components/ui/card";
 import { useSearchParams } from "next/navigation";
 import { fetcher } from "@/requests/requests";
+import { useAppKit } from "@reown/appkit/react";
 
 export const AuthModal = ({
   authType = "login",
@@ -43,13 +44,13 @@ const AuthModalContent = ({
   label?: string;
   className?: string;
 }) => {
+  const { open, close } = useAppKit();
   const searchParams = useSearchParams();
   const isAfterLogout = authType === "login" && searchParams.get("logout");
 
   const [resendTimer, setResendTimer] = useState(0);
   const [type, setType] = useState<"login" | "onboarding">(authType);
   const [isOpen, setIsOpen] = useState(!!isAfterLogout);
-  const [code, setCode] = useState<number | null | string>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [emailSent, setEmailSent] = useState(false);
@@ -75,12 +76,12 @@ const AuthModalContent = ({
     setIsLoading(false);
   };
 
-  const onCodeSubmit = async () => {
+  const onCodeSubmit = async (codeValue) => {
     setIsLoading(true);
     try {
       const res = await fetcher(`${apiUrl}/private/developers/verify`, {
         method: "POST",
-        body: JSON.stringify({ code })
+        body: JSON.stringify({ code: codeValue })
       });
       if (!res?.accessToken) {
         toast(`Something went wrong: ${res?.message || res?.error}`, {
@@ -125,7 +126,6 @@ const AuthModalContent = ({
   }, []);
 
   const onClearStates = () => {
-    setCode(null);
     setIsLoading(false);
     setEmail("");
     setEmailSent(false);
@@ -204,6 +204,10 @@ const AuthModalContent = ({
                 Check your inbox for the code.
               </span>
             </Card>
+            <p className="text-center font-bold">or</p>
+            <div className="flex justify-center" onClick={() => setIsOpen(false)}>
+              <Button variant="outline" size="lg" className="rounded-full" onClick={() => open({ view: "Connect" })}>Connect wallet</Button>
+            </div>
           </div>
         )}
         {emailSent && (
@@ -215,7 +219,11 @@ const AuthModalContent = ({
               <InputOTP
                 maxLength={6}
                 pattern={REGEXP_ONLY_DIGITS}
-                onChange={(value) => setCode(value)}
+                onChange={(value) => {
+                  if (value.length === 5) {
+                    onCodeSubmit(value);
+                  }
+                }}
                 disabled={isLoading}
               >
                 <InputOTPGroup>
@@ -235,18 +243,6 @@ const AuthModalContent = ({
           </div>
         )}
         <DialogFooter className="flex !flex-col gap-2 items-center !justify-center">
-          {emailSent && (
-            <Button
-              onClick={onCodeSubmit}
-              disabled={`${code}`?.length !== 5}
-              isLoading={isLoading}
-              variant="green"
-              size="xl"
-              className="rounded-full px-8 min-w-[180px]"
-            >
-              Confirm code
-            </Button>
-          )}
           {emailSent && (
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center mt-4">
