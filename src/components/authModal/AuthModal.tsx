@@ -13,6 +13,7 @@ import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Card } from "@/components/ui/card";
 import { useSearchParams } from "next/navigation";
 import { fetcher } from "@/requests/requests";
+import { useAppKit } from "@reown/appkit/react";
 
 export const AuthModal = ({
   authType = "login",
@@ -43,6 +44,7 @@ const AuthModalContent = ({
   label?: string;
   className?: string;
 }) => {
+  const { open, close } = useAppKit();
   const searchParams = useSearchParams();
   const isAfterLogout = authType === "login" && searchParams.get("logout");
 
@@ -79,7 +81,7 @@ const AuthModalContent = ({
     try {
       const res = await fetcher(`${apiUrl}/private/developers/verify`, {
         method: "POST",
-        body: JSON.stringify({ code:codeValue })
+        body: JSON.stringify({ code: codeValue })
       });
       if (!res?.accessToken) {
         toast(`Something went wrong: ${res?.message || res?.error}`, {
@@ -202,6 +204,10 @@ const AuthModalContent = ({
                 Check your inbox for the code.
               </span>
             </Card>
+            <p className="text-center font-bold">or</p>
+            <div className="flex justify-center" onClick={() => setIsOpen(false)}>
+              <Button variant="outline" size="lg" className="rounded-full" onClick={() => open({ view: "Connect" })}>Connect wallet</Button>
+            </div>
           </div>
         )}
         {emailSent && (
@@ -214,7 +220,7 @@ const AuthModalContent = ({
                 maxLength={6}
                 pattern={REGEXP_ONLY_DIGITS}
                 onChange={(value) => {
-                  if(value.length === 5) {
+                  if (value.length === 5) {
                     onCodeSubmit(value);
                   }
                 }}

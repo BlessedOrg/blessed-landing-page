@@ -9,7 +9,6 @@ import { QuestionsSection } from "@/components/home/questionsSection/QuestionsSe
 import { Header } from "@/components/home/header/Header";
 
 export default function Home() {
-
   return (
     <>
       <Navigation />

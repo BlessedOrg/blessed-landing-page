@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { RootProvider } from "@/providers/RootProvider";
 import localFont from "next/font/local";
+import { Web3Provider } from "@/providers/web3/Web3Provider";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,11 +28,14 @@ const ttBluescreens = localFont({
 });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const cookies = headers().get("cookie");
   return (
     <html lang="en" className={`${ttBluescreens.variable}`}>
     <body className={inter.className}>
     <RootProvider>
-      <main className="flex flex-col items-center w-full">{children}</main>
+      <Web3Provider cookies={cookies}>
+        <main className="flex flex-col items-center w-full">{children}</main>
+      </Web3Provider>
     </RootProvider>
     </body>
     </html>
