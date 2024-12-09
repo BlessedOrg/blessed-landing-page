@@ -91,7 +91,7 @@ export const TemplatesCards = () => {
   const cardData = [
     {
       type: "secondary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/Lock-Rotation.svg",
       rightIcon: "/img/icons/add1plus.svg",
       title: "Custom template",
       description: "Let us know, and we'll help you out!",
@@ -117,63 +117,63 @@ export const TemplatesCards = () => {
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/party-popper.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Conference E",
+      title: "Festival A",
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/party-popper.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Festival F",
+      title: "Festival B",
       description:
         "Template tailored for exciting and vibrant festival experiences.",
       category: "Festivals",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/party-popper.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Festival G",
+      title: "Festival C",
       description:
         "Template tailored for exciting and vibrant festival experiences.",
       category: "Festivals",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/pacman.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Gaming H",
+      title: "Gaming A",
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/pacman.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Gaming I",
+      title: "Gaming B",
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/pacman.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Gaming M",
+      title: "Gaming C",
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
     },
     {
       type: "primary",
-      leftIcon: "/img/icons/coffe.svg",
+      leftIcon: "/img/icons/pacman.svg",
       rightIcon: "/img/icons/add1plus.svg",
-      title: "Gaming V",
+      title: "Gaming D",
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
@@ -238,10 +238,18 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      <TemplatesModal isOpen={isModalOpen} onClose={closeModal}>
-        <h2 className="text-xl font-bold">Modal Content</h2>
-        <p>This is the content of the modal window.</p>
-      </TemplatesModal>
+      <TemplatesModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Festival Ticketing Template"
+        description="This template is designed to help you efficiently manage ticket sales for festivals.For those who want to enhance the ticketing experience and build stronger connections with their audience."
+        features={[
+          "Lower Transaction & Processing Fees",
+          "Fan Loyalty Tracking",
+          "Dynamic Pricing",
+        ]}
+        onTemplateUse={() => alert("Template used!")}
+      />
 
       <div className="w-[1280px] h-[120px] flex items-center justify-between mt-[80px] mb-14 pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>
