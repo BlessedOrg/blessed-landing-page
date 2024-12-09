@@ -2,15 +2,18 @@
 import { useState, DetailedHTMLProps, HTMLAttributes, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { TemplatesModal } from "@/components/templates/TemplatesModal";
 
 export const Cards = ({
   leftIcon,
   rightIcon,
+  onButtonClick,
   ...props
-}: { leftIcon: string; rightIcon: string } & DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->) => {
+}: {
+  leftIcon: string;
+  rightIcon: string;
+  onButtonClick: () => void;
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   const { children, className, ...rest } = props;
 
   return (
@@ -22,7 +25,10 @@ export const Cards = ({
     >
       <div className="flex justify-between w-full mb-4">
         <img src={leftIcon} alt="Left Icon" className="w-[56px] h-[56px]" />
-        <div className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full">
+        <div
+          className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full cursor-pointer"
+          onClick={onButtonClick} // Добавляем обработчик клика
+        >
           <img src={rightIcon} alt="Right Icon" className="w-6 h-6" />
         </div>
       </div>
@@ -34,11 +40,13 @@ export const Cards = ({
 export const CustomCard = ({
   leftIcon,
   rightIcon,
+  onButtonClick,
   ...props
-}: { leftIcon: string; rightIcon: string } & DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->) => {
+}: {
+  leftIcon: string;
+  rightIcon: string;
+  onButtonClick: () => void;
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
   const { children, className, ...rest } = props;
 
   return (
@@ -50,7 +58,10 @@ export const CustomCard = ({
     >
       <div className="flex justify-between w-full mb-4">
         <img src={leftIcon} alt="Left Icon" className="w-[56px] h-[56px]" />
-        <div className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full">
+        <div
+          className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full cursor-pointer"
+          onClick={onButtonClick} // Добавляем обработчик клика
+        >
           <img src={rightIcon} alt="Right Icon" className="w-6 h-6" />
         </div>
       </div>
@@ -63,8 +74,12 @@ export const TemplatesCards = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
 
   const onTabClick = (id: number) => setActiveTab(id);
+
+  const openModal = () => setIsModalOpen(true); // Функция для открытия модального окна
+  const closeModal = () => setIsModalOpen(false); // Функция для закрытия модального окна
 
   const templateTabs = [
     { id: 0, title: "All" },
@@ -196,6 +211,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
+          onButtonClick={openModal} // Передаем функцию открытия модального окна
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -204,7 +220,12 @@ export const TemplatesCards = () => {
           </Button>
         </CustomCard>
       ) : (
-        <Cards key={index} leftIcon={card.leftIcon} rightIcon={card.rightIcon}>
+        <Cards
+          key={index}
+          leftIcon={card.leftIcon}
+          rightIcon={card.rightIcon}
+          onButtonClick={openModal} // Передаем функцию открытия модального окна
+        >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
           <Button variant="default" className="mt-auto">
@@ -217,10 +238,15 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      {/* Header with tab bar and search field */}
+      {/* Модальное окно */}
+      <TemplatesModal isOpen={isModalOpen} onClose={closeModal}>
+        <h2 className="text-xl font-bold">Modal Content</h2>
+        <p>This is the content of the modal window.</p>
+      </TemplatesModal>
+
+      {/* Заголовок и фильтрация */}
       <div className="w-[1280px] h-[120px] flex items-center justify-between mt-[80px] mb-14 pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>
-        {/* Search field */}
         <div className="w-[300px]">
           <Input
             type="search"
@@ -232,7 +258,7 @@ export const TemplatesCards = () => {
         </div>
       </div>
 
-      {/* Tab bar */}
+      {/* Табуляция */}
       <div className="flex gap-4 mt-4">
         {templateTabs.map((tab) => (
           <button
@@ -249,11 +275,12 @@ export const TemplatesCards = () => {
         ))}
       </div>
 
+      {/* Карточки */}
       <div className="grid grid-cols-4 gap-8 mb-8 mt-[3.5rem]">
         {renderCards(filteredCards)}
       </div>
 
-      {/* Center button */}
+      {/* Кнопка "See more" */}
       {filteredCards.length > 8 && (
         <div className="flex justify-center mb-12">
           <Button variant="outline" size="xl" className="rounded-[39px]">
