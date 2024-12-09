@@ -27,7 +27,7 @@ export const Cards = ({
         <img src={leftIcon} alt="Left Icon" className="w-[56px] h-[56px]" />
         <div
           className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full cursor-pointer"
-          onClick={onButtonClick} // Добавляем обработчик клика
+          onClick={onButtonClick}
         >
           <img src={rightIcon} alt="Right Icon" className="w-6 h-6" />
         </div>
@@ -60,7 +60,7 @@ export const CustomCard = ({
         <img src={leftIcon} alt="Left Icon" className="w-[56px] h-[56px]" />
         <div
           className="flex w-[48px] h-[48px] p-[9px] items-center justify-center bg-[#EFEFEF] rounded-full cursor-pointer"
-          onClick={onButtonClick} // Добавляем обработчик клика
+          onClick={onButtonClick}
         >
           <img src={rightIcon} alt="Right Icon" className="w-6 h-6" />
         </div>
@@ -74,12 +74,12 @@ export const TemplatesCards = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onTabClick = (id: number) => setActiveTab(id);
 
-  const openModal = () => setIsModalOpen(true); // Функция для открытия модального окна
-  const closeModal = () => setIsModalOpen(false); // Функция для закрытия модального окна
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const templateTabs = [
     { id: 0, title: "All" },
@@ -211,7 +211,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={openModal} // Передаем функцию открытия модального окна
+          onButtonClick={openModal}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -224,7 +224,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={openModal} // Передаем функцию открытия модального окна
+          onButtonClick={openModal}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -238,13 +238,11 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      {/* Модальное окно */}
       <TemplatesModal isOpen={isModalOpen} onClose={closeModal}>
         <h2 className="text-xl font-bold">Modal Content</h2>
         <p>This is the content of the modal window.</p>
       </TemplatesModal>
 
-      {/* Заголовок и фильтрация */}
       <div className="w-[1280px] h-[120px] flex items-center justify-between mt-[80px] mb-14 pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>
         <div className="w-[300px]">
@@ -258,7 +256,6 @@ export const TemplatesCards = () => {
         </div>
       </div>
 
-      {/* Табуляция */}
       <div className="flex gap-4 mt-4">
         {templateTabs.map((tab) => (
           <button
@@ -275,12 +272,10 @@ export const TemplatesCards = () => {
         ))}
       </div>
 
-      {/* Карточки */}
       <div className="grid grid-cols-4 gap-8 mb-8 mt-[3.5rem]">
         {renderCards(filteredCards)}
       </div>
 
-      {/* Кнопка "See more" */}
       {filteredCards.length > 8 && (
         <div className="flex justify-center mb-12">
           <Button variant="outline" size="xl" className="rounded-[39px]">
