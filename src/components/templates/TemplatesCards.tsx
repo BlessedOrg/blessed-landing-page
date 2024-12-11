@@ -74,14 +74,17 @@ export const TemplatesCards = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [selectedTemplate, setSelectedTemplate] = useState<any>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const onTabClick = (id: number) => setActiveTab(id);
 
-  const openModal = (template) => {
+  const openModal = (template: any, index: number) => {
     setSelectedTemplate(template);
+    setCurrentIndex(index);
     setIsModalOpen(true);
   };
+
   const closeModal = () => setIsModalOpen(false);
 
   const templateTabs = [
@@ -159,11 +162,11 @@ export const TemplatesCards = () => {
       modalContent: {
         title: "Festival Experience Template",
         description:
-          "Create unforgettable festival moments with our feature-rich template.",
+          "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
         features: [
-          "Artist Lineup Management",
-          "Interactive Festival Map",
-          "Real-time Schedule Updates",
+          "Lower Payment Fees",
+          "Independent Publishing",
+          "Engagement & Perks",
         ],
       },
     },
@@ -175,6 +178,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for exciting and vibrant festival experiences.",
       category: "Festivals",
+      modalContent: {
+        title: "Festival Experience Template",
+        description:
+          "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
+        features: [
+          "Lower Payment Fees",
+          "Independent Publishing",
+          "Engagement & Perks",
+        ],
+      },
     },
     {
       type: "primary",
@@ -184,6 +197,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for exciting and vibrant festival experiences.",
       category: "Festivals",
+      modalContent: {
+        title: "Festival Experience Template",
+        description:
+          "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
+        features: [
+          "Lower Payment Fees",
+          "Independent Publishing",
+          "Engagement & Perks",
+        ],
+      },
     },
     {
       type: "primary",
@@ -196,11 +219,11 @@ export const TemplatesCards = () => {
       modalContent: {
         title: "Gaming Event Template",
         description:
-          "Level up your gaming events with our specialized template.",
+          "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
-          "Tournament Bracket System",
-          "Live Streaming Integration",
-          "Player Profile Management",
+          "Lower Transaction Fees",
+          "Brand Loyalty & Engagement",
+          "In-Game Rewards & Perks",
         ],
       },
     },
@@ -215,11 +238,11 @@ export const TemplatesCards = () => {
       modalContent: {
         title: "Gaming Event Template",
         description:
-          "Level up your gaming events with our specialized template.",
+          "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
-          "Tournament Bracket System",
-          "Live Streaming Integration",
-          "Player Profile Management",
+          "Lower Transaction Fees",
+          "Brand Loyalty & Engagement",
+          "In-Game Rewards & Perks",
         ],
       },
     },
@@ -234,11 +257,11 @@ export const TemplatesCards = () => {
       modalContent: {
         title: "Gaming Event Template",
         description:
-          "Level up your gaming events with our specialized template.",
+          "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
-          "Tournament Bracket System",
-          "Live Streaming Integration",
-          "Player Profile Management",
+          "Lower Transaction Fees",
+          "Brand Loyalty & Engagement",
+          "In-Game Rewards & Perks",
         ],
       },
     },
@@ -253,11 +276,11 @@ export const TemplatesCards = () => {
       modalContent: {
         title: "Gaming Event Template",
         description:
-          "Level up your gaming events with our specialized template.",
+          "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
-          "Tournament Bracket System",
-          "Live Streaming Integration",
-          "Player Profile Management",
+          "Lower Transaction Fees",
+          "Brand Loyalty & Engagement",
+          "In-Game Rewards & Perks",
         ],
       },
     },
@@ -283,14 +306,28 @@ export const TemplatesCards = () => {
     return filtered;
   }, [activeTab, searchQuery]);
 
-  const renderCards = (cards) => {
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      setSelectedTemplate(filteredCards[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < filteredCards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setSelectedTemplate(filteredCards[currentIndex + 1]);
+    }
+  };
+
+  const renderCards = (cards: any[]) => {
     return cards.map((card, index) =>
       card.type === "secondary" ? (
         <CustomCard
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={() => openModal(card)}
+          onButtonClick={() => openModal(card, index)}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -303,7 +340,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={() => openModal(card)}
+          onButtonClick={() => openModal(card, index)}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -328,6 +365,8 @@ export const TemplatesCards = () => {
             alert(`Template ${selectedTemplate.title} used!`);
             closeModal();
           }}
+          onPrev={handlePrev}
+          onNext={handleNext}
         />
       )}
 

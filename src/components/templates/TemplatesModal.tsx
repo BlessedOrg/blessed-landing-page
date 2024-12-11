@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -9,6 +8,8 @@ export const TemplatesModal = ({
   description = "",
   features = [],
   onTemplateUse,
+  onPrev,
+  onNext,
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -16,6 +17,8 @@ export const TemplatesModal = ({
   description: string;
   features: string[];
   onTemplateUse: () => void;
+  onPrev: () => void;
+  onNext: () => void;
 }) => {
   if (!isOpen) return null;
 
@@ -29,19 +32,15 @@ export const TemplatesModal = ({
           &times;
         </button>
 
-        {/* Заголовок и описание */}
-        <div className="flex flex-col mb-6">
-          <h1 className="text-2xl font-bold mb-4">{title}</h1>
+        <div className="flex flex-col items-center mb-6">
+          <h1 className="text-5xl font-bold mb-4">{title}</h1>
         </div>
 
-        {/* Список фичей */}
         <div className="w-full h-[280px] flex gap-x-4">
-          {/* Описание слева */}
           <div className="w-[50%]">
             <p className="text-sm text-gray-600">{description}</p>
           </div>
 
-          {/* Фичи справа */}
           <div className="w-[50%] flex flex-col gap-y-4">
             {features.length > 0 ? (
               features.map((feature, index) => (
@@ -50,7 +49,11 @@ export const TemplatesModal = ({
                   className="flex items-center bg-yellow-100 p-3 rounded-md"
                 >
                   <span className="flex-1">{feature}</span>
-                  <span className="text-green-500 font-bold text-xl">✔</span>
+                  <img
+                    src="/img/icons/Check.svg"
+                    alt="Check Icon"
+                    className="w-6 h-6 text-green-500"
+                  />
                 </div>
               ))
             ) : (
@@ -59,16 +62,15 @@ export const TemplatesModal = ({
           </div>
         </div>
 
-        {/* Нижняя часть с кнопками */}
         <div className="flex justify-between items-center mt-6">
-          <button className="text-lg font-bold text-black" onClick={onClose}>
+          <button className="text-lg font-bold text-black" onClick={onPrev}>
             ←
           </button>
-          <button className="text-lg font-bold text-black" onClick={onClose}>
+          <button className="text-lg font-bold text-black" onClick={onNext}>
             →
           </button>
 
-          <Button variant="green" className="rounded-full " size="lg" asChild>
+          <Button variant="green" className="rounded-full" size="lg" asChild>
             <Link href={"https://docs.blessed.fan/"}>Use as template</Link>
           </Button>
         </div>
