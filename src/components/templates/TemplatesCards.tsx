@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -351,8 +352,18 @@ export const TemplatesCards = () => {
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
-          <Button variant="default" className="mt-auto">
-            Contact us
+          <Button
+            variant="default"
+            className="mt-auto flex items-center gap-x-2"
+          >
+            <Link href="/contact-us" className="flex items-start gap-x-1">
+              Contact us
+              <img
+                src="/img/icons/Tailless-Line-Arrow-Right.svg"
+                alt="Arrow Down Icon"
+                className="w-4 h-4"
+              />
+            </Link>
           </Button>
         </CustomCard>
       ) : (
@@ -365,8 +376,22 @@ export const TemplatesCards = () => {
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.subtitle}</p>
           <p className="mt-2 text-medium">{card.description}</p>
-          <Button variant="default" className="mt-auto">
-            Use as template
+
+          <Button
+            variant="default"
+            className="mt-auto flex items-center gap-x-2 "
+          >
+            <Link
+              href="https://dashboard.blessed.fan/create-ticket"
+              className="flex items-center gap-x-1"
+            >
+              Use as template
+              <img
+                src="/img/icons/Tailless-Line-Arrow-Right.svg"
+                alt="Arrow Down Icon"
+                className="w-4 h-4"
+              />
+            </Link>
           </Button>
         </Cards>
       )

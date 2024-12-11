@@ -76,7 +76,9 @@ export const TemplatesModal = ({
           </button>
 
           <Button variant="green" className="rounded-full" size="lg" asChild>
-            <Link href={"https://docs.blessed.fan/"}>Use as template</Link>
+            <Link href={"https://dashboard.blessed.fan/create-ticket"}>
+              Use as template
+            </Link>
           </Button>
         </div>
       </div>
