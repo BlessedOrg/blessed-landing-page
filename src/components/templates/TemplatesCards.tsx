@@ -1,5 +1,5 @@
 "use client";
-import { useState, DetailedHTMLProps, HTMLAttributes, useEffect } from "react";
+import { useState, DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TemplatesModal } from "@/components/templates/TemplatesModal";
@@ -73,12 +73,15 @@ export const CustomCard = ({
 export const TemplatesCards = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCards, setFilteredCards] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
 
   const onTabClick = (id: number) => setActiveTab(id);
 
-  const openModal = () => setIsModalOpen(true);
+  const openModal = (template) => {
+    setSelectedTemplate(template);
+    setIsModalOpen(true);
+  };
   const closeModal = () => setIsModalOpen(false);
 
   const templateTabs = [
@@ -96,6 +99,16 @@ export const TemplatesCards = () => {
       title: "Custom template",
       description: "Let us know, and we'll help you out!",
       category: "All",
+      modalContent: {
+        title: "Custom Template",
+        description:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
+        features: [
+          "Personalized Consultation",
+          "Customized Features",
+          "Dedicated Support",
+        ],
+      },
     },
     {
       type: "primary",
@@ -105,6 +118,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
+      modalContent: {
+        title: "Professional Conference Template",
+        description:
+          "Streamline your conference management with our comprehensive solution.",
+        features: [
+          "Session Scheduling",
+          "Speaker Management",
+          "Attendee Networking",
+        ],
+      },
     },
     {
       type: "primary",
@@ -114,6 +137,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
+      modalContent: {
+        title: "Festival Experience Template",
+        description:
+          "Create unforgettable festival moments with our feature-rich template.",
+        features: [
+          "Artist Lineup Management",
+          "Interactive Festival Map",
+          "Real-time Schedule Updates",
+        ],
+      },
     },
     {
       type: "primary",
@@ -123,6 +156,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for relaxed professional and academic conferences.",
       category: "Conferences",
+      modalContent: {
+        title: "Festival Experience Template",
+        description:
+          "Create unforgettable festival moments with our feature-rich template.",
+        features: [
+          "Artist Lineup Management",
+          "Interactive Festival Map",
+          "Real-time Schedule Updates",
+        ],
+      },
     },
     {
       type: "primary",
@@ -150,6 +193,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
+      modalContent: {
+        title: "Gaming Event Template",
+        description:
+          "Level up your gaming events with our specialized template.",
+        features: [
+          "Tournament Bracket System",
+          "Live Streaming Integration",
+          "Player Profile Management",
+        ],
+      },
     },
     {
       type: "primary",
@@ -159,6 +212,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
+      modalContent: {
+        title: "Gaming Event Template",
+        description:
+          "Level up your gaming events with our specialized template.",
+        features: [
+          "Tournament Bracket System",
+          "Live Streaming Integration",
+          "Player Profile Management",
+        ],
+      },
     },
     {
       type: "primary",
@@ -168,6 +231,16 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
+      modalContent: {
+        title: "Gaming Event Template",
+        description:
+          "Level up your gaming events with our specialized template.",
+        features: [
+          "Tournament Bracket System",
+          "Live Streaming Integration",
+          "Player Profile Management",
+        ],
+      },
     },
     {
       type: "primary",
@@ -177,14 +250,20 @@ export const TemplatesCards = () => {
       description:
         "Template tailored for immersive gaming events and tournaments.",
       category: "Gaming",
+      modalContent: {
+        title: "Gaming Event Template",
+        description:
+          "Level up your gaming events with our specialized template.",
+        features: [
+          "Tournament Bracket System",
+          "Live Streaming Integration",
+          "Player Profile Management",
+        ],
+      },
     },
   ];
 
-  useEffect(() => {
-    filterCards();
-  }, [activeTab, searchQuery]);
-
-  const filterCards = () => {
+  const filteredCards = useMemo(() => {
     let filtered = cardData;
 
     if (activeTab !== 0) {
@@ -201,8 +280,8 @@ export const TemplatesCards = () => {
       );
     }
 
-    setFilteredCards(filtered);
-  };
+    return filtered;
+  }, [activeTab, searchQuery]);
 
   const renderCards = (cards) => {
     return cards.map((card, index) =>
@@ -211,7 +290,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={openModal}
+          onButtonClick={() => openModal(card)}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -224,7 +303,7 @@ export const TemplatesCards = () => {
           key={index}
           leftIcon={card.leftIcon}
           rightIcon={card.rightIcon}
-          onButtonClick={openModal}
+          onButtonClick={() => openModal(card)}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
           <p className="mt-2 text-medium">{card.description}</p>
@@ -238,18 +317,19 @@ export const TemplatesCards = () => {
 
   return (
     <div className="flex flex-col mt-[5rem]">
-      <TemplatesModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        title="Festival Ticketing Template"
-        description="This template is designed to help you efficiently manage ticket sales for festivals.For those who want to enhance the ticketing experience and build stronger connections with their audience."
-        features={[
-          "Lower Transaction & Processing Fees",
-          "Fan Loyalty Tracking",
-          "Dynamic Pricing",
-        ]}
-        onTemplateUse={() => alert("Template used!")}
-      />
+      {selectedTemplate && (
+        <TemplatesModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          title={selectedTemplate.modalContent.title}
+          description={selectedTemplate.modalContent.description}
+          features={selectedTemplate.modalContent.features}
+          onTemplateUse={() => {
+            alert(`Template ${selectedTemplate.title} used!`);
+            closeModal();
+          }}
+        />
+      )}
 
       <div className="w-[1280px] h-[120px] flex items-center justify-between mt-[80px] mb-14 pl-[10px]">
         <h1 className="text-5xl font-bold">Templates</h1>

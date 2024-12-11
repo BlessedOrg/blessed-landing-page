@@ -32,24 +32,31 @@ export const TemplatesModal = ({
         {/* Заголовок и описание */}
         <div className="flex flex-col mb-6">
           <h1 className="text-2xl font-bold mb-4">{title}</h1>
-          <p className="text-sm text-gray-600">{description}</p>
         </div>
 
         {/* Список фичей */}
-        <div className="flex-1 flex flex-col gap-4">
-          {features.length > 0 ? (
-            features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center bg-yellow-100 p-3 rounded-md"
-              >
-                <span className="flex-1">{feature}</span>
-                <span className="text-green-500 font-bold text-xl">✔</span>
-              </div>
-            ))
-          ) : (
-            <p className="text-gray-500">No features available.</p>
-          )}
+        <div className="w-full h-[280px] flex gap-x-4">
+          {/* Описание слева */}
+          <div className="w-[50%]">
+            <p className="text-sm text-gray-600">{description}</p>
+          </div>
+
+          {/* Фичи справа */}
+          <div className="w-[50%] flex flex-col gap-y-4">
+            {features.length > 0 ? (
+              features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center bg-yellow-100 p-3 rounded-md"
+                >
+                  <span className="flex-1">{feature}</span>
+                  <span className="text-green-500 font-bold text-xl">✔</span>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-500">No features available.</p>
+            )}
+          </div>
         </div>
 
         {/* Нижняя часть с кнопками */}
