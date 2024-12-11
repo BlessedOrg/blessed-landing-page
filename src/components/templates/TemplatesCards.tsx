@@ -104,6 +104,8 @@ export const TemplatesCards = () => {
       category: "All",
       modalContent: {
         title: "Custom Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         features: [
@@ -123,6 +125,8 @@ export const TemplatesCards = () => {
       category: "Conferences",
       modalContent: {
         title: "Professional Conference Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Streamline your conference management with our comprehensive solution.",
         features: [
@@ -142,6 +146,8 @@ export const TemplatesCards = () => {
       category: "Conferences",
       modalContent: {
         title: "Festival Experience Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create unforgettable festival moments with our feature-rich template.",
         features: [
@@ -161,6 +167,8 @@ export const TemplatesCards = () => {
       category: "Conferences",
       modalContent: {
         title: "Festival Experience Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
         features: [
@@ -180,6 +188,8 @@ export const TemplatesCards = () => {
       category: "Festivals",
       modalContent: {
         title: "Festival Experience Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
         features: [
@@ -199,6 +209,8 @@ export const TemplatesCards = () => {
       category: "Festivals",
       modalContent: {
         title: "Festival Experience Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own festival tokens—your branded currency. Offer your attendees an unforgettable experience.",
         features: [
@@ -218,6 +230,8 @@ export const TemplatesCards = () => {
       category: "Gaming",
       modalContent: {
         title: "Gaming Event Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
@@ -237,6 +251,8 @@ export const TemplatesCards = () => {
       category: "Gaming",
       modalContent: {
         title: "Gaming Event Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
@@ -256,6 +272,8 @@ export const TemplatesCards = () => {
       category: "Gaming",
       modalContent: {
         title: "Gaming Event Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
@@ -275,6 +293,8 @@ export const TemplatesCards = () => {
       category: "Gaming",
       modalContent: {
         title: "Gaming Event Template",
+        subtitle:
+          "Enhance your event experience with blockchain-powered ticketing, offering secure, transparent, and efficient solutions for both organizers and attendees.",
         description:
           "Create your own game tokens—your branded in-game currency. Elevate player engagement and brand loyalty while enhancing the in-game experience.",
         features: [
@@ -343,6 +363,7 @@ export const TemplatesCards = () => {
           onButtonClick={() => openModal(card, index)}
         >
           <h2 className="text-3xl font-bold">{card.title}</h2>
+          <p className="mt-2 text-medium">{card.subtitle}</p>
           <p className="mt-2 text-medium">{card.description}</p>
           <Button variant="default" className="mt-auto">
             Use as template
@@ -359,6 +380,7 @@ export const TemplatesCards = () => {
           isOpen={isModalOpen}
           onClose={closeModal}
           title={selectedTemplate.modalContent.title}
+          subtitle={selectedTemplate.modalContent.subtitle}
           description={selectedTemplate.modalContent.description}
           features={selectedTemplate.modalContent.features}
           onTemplateUse={() => {

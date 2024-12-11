@@ -5,6 +5,7 @@ export const TemplatesModal = ({
   isOpen,
   onClose,
   title = "",
+  subtitle = "",
   description = "",
   features = [],
   onTemplateUse,
@@ -14,6 +15,7 @@ export const TemplatesModal = ({
   isOpen: boolean;
   onClose: () => void;
   title: string;
+  subtitle: string;
   description: string;
   features: string[];
   onTemplateUse: () => void;
@@ -38,7 +40,8 @@ export const TemplatesModal = ({
 
         <div className="w-full h-[280px] flex gap-x-4">
           <div className="w-[50%]">
-            <p className="text-sm text-gray-600">{description}</p>
+            <p className="text-sm font-bold mb-2">{subtitle}</p>
+            <p className="text-sm ">{description}</p>
           </div>
 
           <div className="w-[50%] flex flex-col gap-y-4">
@@ -46,13 +49,13 @@ export const TemplatesModal = ({
               features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-yellow-100 p-3 rounded-md"
+                  className="flex items-center bg-yellow-100 p-3 rounded-md w-[314px] h-[88px]"
                 >
                   <span className="flex-1">{feature}</span>
                   <img
                     src="/img/icons/Check.svg"
                     alt="Check Icon"
-                    className="w-6 h-6 text-green-500"
+                    className="w-10 h-10 text-green-500"
                   />
                 </div>
               ))
@@ -62,11 +65,13 @@ export const TemplatesModal = ({
           </div>
         </div>
 
+        <div className="w-[652px] h-[2px] bg-[#EFEFEF] mt-2" />
+
         <div className="flex justify-between items-center mt-6">
           <button className="text-lg font-bold text-black" onClick={onPrev}>
             ←
           </button>
-          <button className="text-lg font-bold text-black" onClick={onNext}>
+          <button className="text-lg font-bold text-black " onClick={onNext}>
             →
           </button>
 
