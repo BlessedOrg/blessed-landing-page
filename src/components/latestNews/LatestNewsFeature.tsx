@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const WhatsNewFeature = () => {
+export const LatestNewsFeature = () => {
   return (
     <div className="flex flex-col items-center">
       <h2 className="font-bold uppercase text-3xl md:text-6xl text-center mb-8">
